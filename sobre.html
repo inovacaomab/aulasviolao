@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sobre | Aprenda Violão</title>
+  <meta name="description" content="Sobre o projeto Aprenda Violão com Moacir Baia." />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <strong>Aprenda Violão</strong>
+      <span>com Moacir Baia</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="aulas.html">Aulas</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="grid">
+    <article class="card cols-6">
+      <h2>Quem é o Moa</h2>
+      <p class="muted">Aqui você pode colocar um texto curto (3–6 linhas) sobre você, sua trajetória com música e a proposta do canal.</p>
+      <p>Se quiser, eu monto esse texto com seu tom (mais técnico, mais inspirador, mais “professor”, etc.).</p>
+    </article>
+
+    <article class="card cols-6">
+      <h2>Proposta do projeto</h2>
+      <ul class="list">
+        <li>Aulas objetivas</li>
+        <li>Prática com músicas</li>
+        <li>Rotina simples e consistente</li>
+        <li>Conteúdo para iniciantes e evolução</li>
+      </ul>
+      <p><a class="btn primary" href="aulas.html">Ver aulas</a></p>
+    </article>
+
+    <article class="card">
+      <h2>Redes</h2>
+      <p class="muted">Acompanhe conteúdo e novidades:</p>
+      <div class="actions">
+        <a class="btn primary" href="https://wa.me/5511960787998" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn ghost" href="https://www.youtube.com/@moacirbaia/" target="_blank" rel="noopener">YouTube</a>
+        <a class="btn ghost" href="https://www.instagram.com/moacir_baia" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </article>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div>© <span id="y"></span> Aprenda Violão — Moacir Baia</div>
+    <div>
+      <a href="contato.html">Contato</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
