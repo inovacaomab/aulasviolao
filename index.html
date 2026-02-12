@@ -2,29 +2,34 @@
 <html lang="pt-BR">
 <head>
   <!-- ======================================================
-       HEAD: metadados, SEO básico e CSS
+       HEAD: SEO básico + CSS
        ====================================================== -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Aprenda Violão com Moacir Baia</title>
-  <meta name="description" content="Aprenda violão com aulas, técnicas e prática guiada. Conteúdos e vídeos com Moacir Baia." />
+  <title>Cordas e Vida | Aprenda Violão com Moacir Baia</title>
+  <meta name="description" content="Cordas e Vida: aprenda violão com aulas objetivas, técnicas essenciais e prática com músicas." />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 
 <body>
 
   <!-- ======================================================
-       HEADER + NAV: menu fixo (sticky) e identidade do site
+       HEADER: NAV fixa (sticky), hero rola normalmente
        ====================================================== -->
   <header class="site-header">
+
+    <!-- NAV: fica fixa no topo -->
     <nav class="nav">
-      <!-- Marca / Logo textual -->
-      <a class="brand" href="index.html">
-        <strong>Aprenda Violão</strong>
-        <span>com Moacir Baia</span>
+      <!-- Marca com logo/personagem -->
+      <a class="brand" href="index.html" aria-label="Cordas e Vida - Início">
+        <img class="brand-logo" src="img/logo-cordas-e-vida.png" alt="Cordas e Vida">
+        <div class="brand-text">
+          <strong>Cordas e Vida</strong>
+          <span>com Moacir Baia</span>
+        </div>
       </a>
 
-      <!-- Links para páginas -->
+      <!-- Links -->
       <div class="nav-links">
         <a href="index.html">Início</a>
         <a href="aulas.html">Aulas</a>
@@ -33,10 +38,7 @@
       </div>
     </nav>
 
-    <!-- ======================================================
-         HERO: faixa principal (título + proposta + CTAs)
-         Ajuste: removido excesso de botões (ficou mais focado)
-         ====================================================== -->
+    <!-- HERO: só existe na Home e NÃO é fixo -->
     <section class="hero">
       <div class="container">
         <div class="hero-card">
@@ -44,7 +46,7 @@
           <h1>Uma jornada prática no violão — passo a passo</h1>
           <p>Conteúdo direto, técnicas essenciais e prática com músicas. Sem complicação — com constância e direção.</p>
 
-          <!-- CTAs: 1 principal + 2 secundários (mais conversão) -->
+          <!-- CTA: 1 principal + 2 secundários -->
           <div class="actions">
             <a class="btn primary" href="aulas.html">Ver aulas</a>
             <a class="btn ghost" href="https://wa.me/5511960787998" target="_blank" rel="noopener">Falar no WhatsApp</a>
@@ -53,15 +55,16 @@
         </div>
       </div>
     </section>
+
   </header>
 
   <!-- ======================================================
-       MAIN: conteúdo da página Home
+       MAIN: conteúdo principal da Home
        ====================================================== -->
   <main class="container">
     <section class="grid">
 
-      <!-- Card 1: benefícios -->
+      <!-- Card: por que aprender -->
       <article class="card cols-6">
         <h2>Por que aprender violão?</h2>
         <p class="muted">Versátil, portátil e excelente para expressão pessoal — além de ajudar na coordenação e disciplina.</p>
@@ -74,7 +77,7 @@
         </ul>
       </article>
 
-      <!-- Card 2: como começar -->
+      <!-- Card: como começar -->
       <article class="card cols-6">
         <h2>Como começar do jeito certo</h2>
         <p class="muted">A consistência vence. Um bom instrumento e rotina simples já destravam o progresso.</p>
@@ -87,12 +90,7 @@
         <p><a class="btn primary" href="contato.html">Quero orientação</a></p>
       </article>
 
-      <!-- ======================================================
-           VITRINE DE VÍDEOS
-           - Cards menores com thumbnail
-           - Clicar abre o vídeo no YouTube
-           - Para adicionar novos, copie um bloco "video-tile"
-           ====================================================== -->
+      <!-- Vitrine: vídeos (cards pequenos) -->
       <article class="card">
         <div class="section-title">
           <h2 style="margin:0">Aulas em destaque</h2>
@@ -110,9 +108,9 @@
             </div>
           </a>
 
-          <!-- Vídeo 2 (exemplo: abre o canal) -->
+          <!-- Vídeo 2 (canal) -->
           <a class="video-tile" href="https://www.youtube.com/@moacirbaia/" target="_blank" rel="noopener">
-            <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="Canal no YouTube">
+            <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="Canal do YouTube">
             <div class="video-meta">
               <strong>Veja mais no canal</strong>
               <span>Mais aulas e conteúdos no YouTube.</span>
@@ -120,7 +118,7 @@
             </div>
           </a>
 
-          <!-- Vídeo 3 (CTA para contato) -->
+          <!-- Vídeo 3 (CTA contato) -->
           <a class="video-tile" href="contato.html">
             <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="Contato">
             <div class="video-meta">
@@ -131,22 +129,21 @@
           </a>
         </div>
 
-        <!-- <p class="muted" style="margin-top:14px">
-          Dica: para adicionar vídeos, troque apenas o ID do YouTube nas URLs:
-          <code>img.youtube.com/vi/ID/hqdefault.jpg</code> e <code>youtube.com/watch?v=ID</code>.
-        </p> -->
+        <p class="muted" style="margin-top:14px">
+          Para adicionar vídeos: troque o ID no link (<code>watch?v=ID</code>) e na miniatura
+          (<code>img.youtube.com/vi/ID/hqdefault.jpg</code>).
+        </p>
       </article>
+
     </section>
   </main>
 
   <!-- ======================================================
-       FOOTER: rodapé com redes e ano automático
+       FOOTER: padrão do site
        ====================================================== -->
   <footer class="footer">
     <div class="container">
-      <div>
-        © <span id="y"></span> Aprenda Violão — Moacir Baia
-      </div>
+      <div>© <span id="y"></span> Cordas e Vida — Moacir Baia</div>
       <div>
         <a href="https://wa.me/5511960787998" target="_blank" rel="noopener">WhatsApp</a>
         &nbsp;·&nbsp;
@@ -157,9 +154,7 @@
     </div>
   </footer>
 
-  <!-- ======================================================
-       SCRIPT: atualiza ano no rodapé automaticamente
-       ====================================================== -->
+  <!-- Script simples: ano automático -->
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
