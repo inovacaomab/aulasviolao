@@ -4,19 +4,24 @@
   <!-- HEAD -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contato | Aprenda Violão</title>
-  <meta name="description" content="Contato com Moacir Baia: WhatsApp, Instagram e YouTube." />
+  <title>Contato | Cordas e Vida</title>
+  <meta name="description" content="Contato com Moacir Baia: WhatsApp, YouTube e Instagram." />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 
 <body>
-  <!-- HEADER + NAV -->
+
+  <!-- HEADER -->
   <header class="site-header">
     <nav class="nav">
-      <a class="brand" href="index.html">
-        <strong>Aprenda Violão</strong>
-        <span>com Moacir Baia</span>
+      <a class="brand" href="index.html" aria-label="Cordas e Vida - Início">
+        <img class="brand-logo" src="img/logo-cordas-e-vida.png" alt="Cordas e Vida">
+        <div class="brand-text">
+          <strong>Cordas e Vida</strong>
+          <span>com Moacir Baia</span>
+        </div>
       </a>
+
       <div class="nav-links">
         <a href="index.html">Início</a>
         <a href="aulas.html">Aulas</a>
@@ -30,7 +35,6 @@
   <main class="container">
     <section class="grid">
 
-      <!-- Card: WhatsApp (CTA principal de contato) -->
       <article class="card cols-6">
         <h2>Fale comigo</h2>
         <p class="muted">Para dúvidas, orientação e próximos passos:</p>
@@ -42,7 +46,6 @@
         <p class="muted">Número: +55 11 96078-7998</p>
       </article>
 
-      <!-- Card: redes -->
       <article class="card cols-6">
         <h2>Redes</h2>
         <p class="muted">Se preferir, me chame por aqui:</p>
@@ -50,9 +53,6 @@
         <p><a class="btn ghost" href="https://www.instagram.com/moacir_baia" target="_blank" rel="noopener">Instagram</a></p>
       </article>
 
-      <!-- ======================================================
-           VITRINE (opcional): atalhos em formato de card
-           ====================================================== -->
       <article class="card">
         <div class="section-title">
           <h2 style="margin:0">Acesso rápido</h2>
@@ -89,14 +89,11 @@
         </div>
       </article>
 
-      <!-- Card: mensagem pronta -->
       <article class="card">
         <h2>Mensagem pronta (copiar e colar)</h2>
         <p class="muted">Você pode enviar isso no WhatsApp:</p>
-
-        <!-- Caixa simples para texto (reutiliza card mas sem sombra interna) -->
         <div class="card" style="box-shadow:none; border:1px solid rgba(0,0,0,.08);">
-          Olá, Moacir! Vi seu site e gostaria de saber como posso começar no violão. Você recomenda uma rotina para iniciantes?
+          Olá, Moacir! Vi o Cordas e Vida e gostaria de saber como posso começar no violão. Você recomenda uma rotina para iniciantes?
         </div>
       </article>
 
@@ -106,7 +103,7 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <div>© <span id="y"></span> Aprenda Violão — Moacir Baia</div>
+      <div>© <span id="y"></span> Cordas e Vida — Moacir Baia</div>
       <div>
         <a href="https://wa.me/5511960787998" target="_blank" rel="noopener">WhatsApp</a>
         &nbsp;·&nbsp;
@@ -117,7 +114,6 @@
     </div>
   </footer>
 
-  <!-- SCRIPT: ano automático -->
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
