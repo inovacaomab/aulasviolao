@@ -1,22 +1,27 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <!-- HEAD: metadados + CSS -->
+  <!-- HEAD -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Aulas | Aprenda Violão</title>
-  <meta name="description" content="Aulas e guia prático: dedilhado, mão esquerda, acordes e prática com músicas para iniciantes." />
+  <title>Aulas | Cordas e Vida</title>
+  <meta name="description" content="Aulas de violão: fundamentos, dedilhado, acordes e prática com músicas." />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 
 <body>
-  <!-- HEADER + NAV: igual em todas as páginas -->
+
+  <!-- HEADER: somente NAV (sem hero aqui) -->
   <header class="site-header">
     <nav class="nav">
-      <a class="brand" href="index.html">
-        <strong>Aprenda Violão</strong>
-        <span>com Moacir Baia</span>
+      <a class="brand" href="index.html" aria-label="Cordas e Vida - Início">
+        <img class="brand-logo" src="img/logo-cordas-e-vida.png" alt="Cordas e Vida">
+        <div class="brand-text">
+          <strong>Cordas e Vida</strong>
+          <span>com Moacir Baia</span>
+        </div>
       </a>
+
       <div class="nav-links">
         <a href="index.html">Início</a>
         <a href="aulas.html">Aulas</a>
@@ -26,23 +31,18 @@
     </nav>
   </header>
 
-  <!-- MAIN: conteúdo de aulas -->
+  <!-- MAIN -->
   <main class="container">
     <section class="grid">
 
-      <!-- ======================================================
-           VITRINE DE AULAS (cards)
-           - Você pode adicionar quantos vídeos quiser
-           - Cada card aponta para um vídeo do YouTube
-           ====================================================== -->
+      <!-- Vitrine de aulas -->
       <article class="card">
         <div class="section-title">
-          <h2 style="margin:0">Aulas (selecione uma)</h2>
-          <small>Clique para abrir no YouTube</small>
+          <h2 style="margin:0">Aulas</h2>
+          <small>Clique e assista no YouTube</small>
         </div>
 
         <div class="video-grid">
-          <!-- Aula 1 -->
           <a class="video-tile" href="https://www.youtube.com/watch?v=480zZ0YKNIU" target="_blank" rel="noopener">
             <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="Aula 1">
             <div class="video-meta">
@@ -52,49 +52,54 @@
             </div>
           </a>
 
-          <!-- EXEMPLO (copie e troque o ID/Texto quando tiver outro vídeo) -->
           <a class="video-tile" href="https://www.youtube.com/@moacirbaia/" target="_blank" rel="noopener">
-            <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="Mais aulas">
+            <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="Canal">
             <div class="video-meta">
               <strong>Mais aulas no canal</strong>
-              <span>Veja outros vídeos e playlists.</span>
+              <span>Veja playlists e novos vídeos.</span>
               <div class="mini-actions"><span class="mini-btn">Abrir canal</span></div>
+            </div>
+          </a>
+
+          <a class="video-tile" href="contato.html">
+            <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="Contato">
+            <div class="video-meta">
+              <strong>Quer um plano?</strong>
+              <span>Me chame e eu te direciono.</span>
+              <div class="mini-actions"><span class="mini-btn">Contato</span></div>
             </div>
           </a>
         </div>
 
         <p class="muted" style="margin-top:14px">
-          Para adicionar novos vídeos, copie um bloco <code>video-tile</code> e altere:
-          o link (<code>watch?v=ID</code>) e a thumbnail (<code>img.youtube.com/vi/ID/hqdefault.jpg</code>).
+          Para adicionar vídeos: copie um <code>video-tile</code> e altere o ID do YouTube no link e na miniatura.
         </p>
       </article>
 
-      <!-- Card: técnicas de dedilhado -->
+      <!-- Conteúdo complementar -->
       <article class="card cols-6">
         <h2>Técnicas de dedilhado</h2>
-
         <h3>Dedilhado básico</h3>
         <ol class="list">
           <li>Use polegar, indicador, médio e anelar.</li>
-          <li>Toque cada corda com leveza e consistência.</li>
+          <li>Toque com leveza e consistência.</li>
           <li>Pratique padrões simples diariamente.</li>
         </ol>
 
         <h3>Ritmos e padrões</h3>
         <ul class="list">
-          <li>Padrão de 4/4</li>
-          <li>Padrão de 3/4</li>
+          <li>Padrão 4/4</li>
+          <li>Padrão 3/4</li>
           <li>Batida alternada</li>
         </ul>
       </article>
 
-      <!-- Card: mão esquerda e acordes -->
       <article class="card cols-6">
         <h2>Mão esquerda e acordes</h2>
         <ul class="list">
-          <li>Pratique mudança de acordes (devagar e limpo)</li>
-          <li>Postura boa = menos dor e mais controle</li>
-          <li>Pressão correta nas cordas (sem esmagar)</li>
+          <li>Mudança de acordes: devagar e limpo</li>
+          <li>Postura correta = mais controle</li>
+          <li>Pressão adequada (sem “esmagar”)</li>
         </ul>
 
         <h3>Acordes básicos</h3>
@@ -108,29 +113,29 @@
         </ul>
       </article>
 
-      <!-- Card: músicas para praticar -->
       <article class="card">
         <h2>Praticando com músicas</h2>
         <ul class="list">
           <li>Escolha músicas simples</li>
           <li>Use cifras/tablaturas confiáveis</li>
-          <li>Divida a música em partes e una depois</li>
+          <li>Divida em partes e una depois</li>
         </ul>
 
         <h3>Sugestões para iniciantes</h3>
         <ul class="list">
-          <li>“Knockin' on Heaven's Door”</li>
-          <li>“Smoke on the Water”</li>
-          <li>“Stand By Me”</li>
+          <li>Knockin' on Heaven's Door</li>
+          <li>Smoke on the Water</li>
+          <li>Stand By Me</li>
         </ul>
       </article>
+
     </section>
   </main>
 
-  <!-- FOOTER: padrão -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <div>© <span id="y"></span> Aprenda Violão — Moacir Baia</div>
+      <div>© <span id="y"></span> Cordas e Vida — Moacir Baia</div>
       <div>
         <a href="https://wa.me/5511960787998" target="_blank" rel="noopener">WhatsApp</a>
         &nbsp;·&nbsp;
@@ -141,7 +146,6 @@
     </div>
   </footer>
 
-  <!-- SCRIPT: ano automático -->
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
