@@ -1,14 +1,14 @@
 /* =========================================================
    Cordas e Vida — CSS Global (FINAL)
-   Objetivo:
-   - Identidade visual consistente
-   - NAV sticky (apenas a barra superior fixa)
-   - HERO rola normalmente
-   - Layout responsivo (mobile organizado)
-   - Vitrine de vídeos em cards (estilo “canal”)
+   Objetivos:
+   - NAV sticky (somente a barra superior fixa)
+   - Banner controlado no index (não sobrepõe menu)
+   - Logo pequeno + texto na marca (canto superior esquerdo)
+   - Mobile responsivo com menu organizado
+   - Cards + vitrine de vídeos em tiles (estilo canal)
    ========================================================= */
 
-/* ---------- 1) Variáveis de tema ---------- */
+/* ---------- 1) Variáveis do tema ---------- */
 :root{
   --bg:#f5f5f5;
   --card:#ffffff;
@@ -16,6 +16,7 @@
   --muted:#666;
   --brand:#61dafb;
   --dark:#282c34;
+
   --shadow:0 8px 24px rgba(0,0,0,.08);
   --radius:14px;
 }
@@ -23,16 +24,21 @@
 /* ---------- 2) Reset e base ---------- */
 *{ box-sizing:border-box; }
 
+html, body{ height:100%; }
+
 body{
+  margin:0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   line-height:1.7;
-  margin:0;
   background:var(--bg);
   color:var(--text);
 }
 
 a{ color:inherit; text-decoration:none; }
 
+code{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+
+/* ---------- 3) Container padrão ---------- */
 .container{
   max-width:1050px;
   margin:0 auto;
@@ -40,19 +46,17 @@ a{ color:inherit; text-decoration:none; }
 }
 
 /* =========================================================
-   3) HEADER + NAV
-   - HEADER não é sticky (para o hero rolar)
-   - NAV é sticky (fica fixa no topo)
+   4) HEADER + NAV
+   - Header apenas “aparência”
+   - NAV é sticky (fixa no topo) e compacta
    ========================================================= */
-
-/* HEADER: apenas cor/fundo */
 header.site-header{
   background:linear-gradient(135deg, var(--dark), #1f232a);
   color:#fff;
   border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-/* NAV: somente a barra do menu fica fixa */
+/* NAV: somente a barra do menu é fixa */
 header.site-header .nav{
   position:sticky;
   top:0;
@@ -68,42 +72,38 @@ header.site-header .nav{
 
   max-width:1050px;
   margin:0 auto;
-
-  /* compacto para não ocupar a tela */
-  padding:10px 16px;
+  padding:10px 16px; /* compacto */
 }
 
 /* =========================================================
-   4) Marca (logo/personagem + texto)
+   5) Marca do site (logo/personagem + texto)
    ========================================================= */
 .brand{
   display:flex;
-  flex-direction: row;
   align-items:center;
   gap:10px;
 }
 
-/* Mascote/logo (arquivo em /img) */
 .brand-logo{
   width:44px;
   height:44px;
   border-radius:12px;
   object-fit:cover;
-  box-shadow: 0 6px 16px rgba(0,0,0,.18);
-  border: 1px solid rgba(255,255,255,.10);
+  box-shadow:0 6px 16px rgba(0,0,0,.18);
+  border:1px solid rgba(255,255,255,.10);
 }
 
 .brand-text{
   display:flex;
-  flex-direction: column;
+  flex-direction:column;
   gap:2px;
 }
 
-.brand strong{ font-size:1.02rem; }
-.brand span{ font-size:.86rem; color:rgba(255,255,255,.72); }
+.brand-text strong{ font-size:1.02rem; }
+.brand-text span{ font-size:.86rem; color:rgba(255,255,255,.72); }
 
 /* =========================================================
-   5) Links do menu
+   6) Links do menu
    ========================================================= */
 .nav-links{
   display:flex;
@@ -115,27 +115,53 @@ header.site-header .nav{
 .nav-links a{
   padding:6px 10px;
   border-radius:10px;
-  color:rgba(255,255,255,.9);
+  color:rgba(255,255,255,.92);
+  border:1px solid transparent;
 }
+
 .nav-links a:hover{
   background:rgba(255,255,255,.08);
+  border-color:rgba(255,255,255,.10);
+}
+
+/* (Opcional) indicar página atual: basta colocar class="active" no link */
+.nav-links a.active{
+  background:rgba(97,218,251,.14);
+  border-color:rgba(97,218,251,.28);
 }
 
 /* =========================================================
-   6) HERO (somente na Home)
-   - Fica logo abaixo da NAV
-   - NÃO é fixo: rola normalmente
+   7) HERO (index)
+   - Seção abaixo do menu
+   - Rola normalmente (não é fixa)
    ========================================================= */
-.hero{ padding:18px 0 10px; }
+.hero{ padding:14px 0 10px; }
 
-.hero .container{ padding-top: 14px; }
+/* Banner controlado (imagem grande) */
+.hero-banner{
+  width:100%;
+  margin:0 auto 14px;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(255,255,255,.10);
+}
 
+.hero-banner img{
+  display:block;
+  width:100%;
+  height:260px;          /* controla a altura e evita “invadir” o menu */
+  object-fit:cover;      /* corta sem distorcer */
+  object-position:center;
+}
+
+/* Card do hero */
 .hero-card{
   background:linear-gradient(135deg, rgba(97,218,251,.16), rgba(255,255,255,.02));
   border:1px solid rgba(97,218,251,.25);
   border-radius:var(--radius);
   padding:18px;
-  box-shadow: var(--shadow);
+  box-shadow:var(--shadow);
 }
 
 .badge{
@@ -144,7 +170,7 @@ header.site-header .nav{
   border-radius:999px;
   background:rgba(97,218,251,.14);
   border:1px solid rgba(97,218,251,.28);
-  font-weight:700;
+  font-weight:800;
   color:#0b1b22;
 }
 
@@ -156,12 +182,12 @@ header.site-header .nav{
 
 .hero p{
   margin:0 0 14px;
-  color:rgba(255,255,255,.8);
+  color:rgba(255,255,255,.82);
   max-width:60ch;
 }
 
 /* =========================================================
-   7) Botões / CTAs
+   8) Botões / CTA
    ========================================================= */
 .actions{
   display:flex;
@@ -176,9 +202,10 @@ header.site-header .nav{
   gap:8px;
   padding:10px 14px;
   border-radius:12px;
-  border:1px solid rgba(255,255,255,.14);
+  font-weight:800;
   cursor:pointer;
-  font-weight:700;
+  border:1px solid rgba(255,255,255,.14);
+  user-select:none;
 }
 
 .btn.primary{
@@ -186,16 +213,16 @@ header.site-header .nav{
   color:#0b1b22;
   border-color:transparent;
 }
-.btn.primary:hover{ filter:brightness(.95); }
+.btn.primary:hover{ filter:brightness(.96); }
 
 .btn.ghost{
   background:rgba(255,255,255,.06);
   color:#fff;
 }
-.btn.ghost:hover{ background:rgba(255,255,255,.1); }
+.btn.ghost:hover{ background:rgba(255,255,255,.10); }
 
 /* =========================================================
-   8) Layout de conteúdo: grid + cards
+   9) Conteúdo (cards + grid)
    ========================================================= */
 .grid{
   display:grid;
@@ -205,10 +232,10 @@ header.site-header .nav{
 }
 
 .card{
-  grid-column: span 12;
+  grid-column:span 12;
   background:var(--card);
   border-radius:var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow:var(--shadow);
   padding:24px;
 }
 
@@ -227,7 +254,7 @@ header.site-header .nav{
 .cols-4{ grid-column:span 12; }
 
 /* =========================================================
-   9) Vitrine de vídeos (cards estilo “canal”)
+   10) Vitrine de vídeos (tiles estilo “canal”)
    ========================================================= */
 .section-title{
   display:flex;
@@ -235,7 +262,6 @@ header.site-header .nav{
   justify-content:space-between;
   gap:12px;
 }
-
 .section-title small{ color:var(--muted); }
 
 .video-grid{
@@ -246,11 +272,11 @@ header.site-header .nav{
 }
 
 .video-tile{
-  grid-column: span 12;
+  grid-column:span 12;
   background:#fff;
   border-radius:14px;
-  box-shadow: var(--shadow);
   overflow:hidden;
+  box-shadow:var(--shadow);
   border:1px solid rgba(0,0,0,.06);
 }
 
@@ -276,7 +302,7 @@ header.site-header .nav{
   color:var(--muted);
 }
 
-.video-meta .mini-actions{
+.mini-actions{
   display:flex;
   gap:8px;
   flex-wrap:wrap;
@@ -289,13 +315,12 @@ header.site-header .nav{
   border-radius:10px;
   border:1px solid rgba(0,0,0,.08);
   background:#fff;
-  font-weight:700;
+  font-weight:800;
 }
-
 .mini-btn:hover{ background:rgba(0,0,0,.03); }
 
 /* =========================================================
-   10) Rodapé
+   11) Rodapé
    ========================================================= */
 .footer{
   margin-top:26px;
@@ -319,35 +344,32 @@ header.site-header .nav{
 }
 
 /* =========================================================
-   11) Responsividade (desktop/tablet)
+   12) Responsividade (desktop/tablet)
    ========================================================= */
 @media (min-width: 860px){
   .cols-6{ grid-column:span 6; }
   .cols-4{ grid-column:span 4; }
   .hero h1{ font-size:2.4rem; }
-
-  /* 3 colunas no desktop */
-  .video-tile{ grid-column:span 4; }
+  .video-tile{ grid-column:span 4; } /* 3 colunas */
 }
 
 @media (min-width: 520px) and (max-width: 859px){
-  /* 2 colunas no tablet */
-  .video-tile{ grid-column:span 6; }
+  .video-tile{ grid-column:span 6; } /* 2 colunas */
 }
 
 /* =========================================================
-   12) Ajustes mobile (até 520px)
+   13) Mobile (até 520px)
    - Menu em grid 2x2
-   - Botões do hero em grid (2 colunas + 3º full)
-   - Logo reduzida
+   - Botões em grid 2 colunas (3º full)
+   - Banner menor
    ========================================================= */
 @media (max-width: 520px){
 
   header.site-header .nav{
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 10px 12px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+    padding:10px 12px;
   }
 
   .brand-logo{
@@ -357,81 +379,44 @@ header.site-header .nav{
   }
 
   .nav-links{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
   }
 
   .nav-links a{
-    text-align: center;
-    padding: 10px 10px;
-    background: rgba(255,255,255,.06);
-    border: 1px solid rgba(255,255,255,.10);
+    text-align:center;
+    padding:10px 10px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.10);
   }
 
-  .hero{ padding: 12px 0 8px; }
+  .container{ padding:18px 14px; }
 
-  .hero-card{ padding: 16px; }
+  .hero-banner img{ height:170px; }
+
+  .hero-card{ padding:16px; }
 
   .hero h1{
-    font-size: 1.55rem;
-    line-height: 1.15;
+    font-size:1.55rem;
+    line-height:1.15;
   }
 
-  .hero p{
-    font-size: 1rem;
-    margin-bottom: 12px;
-  }
+  .hero p{ margin-bottom:12px; }
 
-  /* Botões: 2 colunas e o 3º ocupa toda a linha */
   .actions{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
   }
 
   .btn{
-    width: 100%;
-    justify-content: center;
-    padding: 12px 12px;
+    width:100%;
+    padding:12px 12px;
   }
 
   .actions .btn:nth-child(3){
-    grid-column: 1 / -1;
-  }
-
-  .container{
-    padding: 18px 14px;
-  }
-}
-
-/* =========================================================
-   HERO BANNER (arte grande controlada)
-   - Impede sobreposição no menu
-   - Limita altura e corta com elegância
-   ========================================================= */
-.hero-banner{
-  width:100%;
-  max-width:1050px;
-  margin:0 auto 14px;
-  border-radius:16px;
-  overflow:hidden;
-  box-shadow: var(--shadow);
-  border:1px solid rgba(255,255,255,.10);
-}
-
-.hero-banner img{
-  display:block;
-  width:100%;
-  height:260px;          /* altura controlada no desktop */
-  object-fit:cover;      /* corta sem distorcer */
-  object-position:center;
-}
-
-/* Mobile: banner mais baixo */
-@media (max-width: 520px){
-  .hero-banner img{
-    height:170px;
+    grid-column:1 / -1;
   }
 }
