@@ -4,19 +4,24 @@
   <!-- HEAD -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sobre | Aprenda Violão</title>
-  <meta name="description" content="Sobre o projeto Aprenda Violão com Moacir Baia." />
+  <title>Sobre | Cordas e Vida</title>
+  <meta name="description" content="Conheça o projeto Cordas e Vida com Moacir Baia." />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 
 <body>
-  <!-- HEADER + NAV -->
+
+  <!-- HEADER -->
   <header class="site-header">
     <nav class="nav">
-      <a class="brand" href="index.html">
-        <strong>Aprenda Violão</strong>
-        <span>com Moacir Baia</span>
+      <a class="brand" href="index.html" aria-label="Cordas e Vida - Início">
+        <img class="brand-logo" src="img/logo-cordas-e-vida.png" alt="Cordas e Vida">
+        <div class="brand-text">
+          <strong>Cordas e Vida</strong>
+          <span>com Moacir Baia</span>
+        </div>
       </a>
+
       <div class="nav-links">
         <a href="index.html">Início</a>
         <a href="aulas.html">Aulas</a>
@@ -30,19 +35,17 @@
   <main class="container">
     <section class="grid">
 
-      <!-- Quem é o Moa -->
       <article class="card cols-6">
-        <h2>Quem é o Moa</h2>
+        <h2>Quem é o Moacir</h2>
         <p class="muted">
-          Escreva aqui um texto curto (3–6 linhas) sobre você: experiência com música, propósito e como você ensina.
+          (Você pode trocar este texto.) Conte um pouco sobre sua trajetória com música/violão e o propósito do Cordas e Vida.
         </p>
-        <p>
-          Se você me disser 5 pontos sobre sua história (ex: há quanto tempo toca, estilos, objetivo do canal),
-          eu monto um texto pronto bem alinhado com sua identidade.
+        <p class="muted">
+          Se você me mandar 5 pontos da sua história (tempo tocando, estilo, objetivo do canal),
+          eu escrevo uma bio forte para esta página.
         </p>
       </article>
 
-      <!-- Proposta do projeto -->
       <article class="card cols-6">
         <h2>Proposta do projeto</h2>
         <ul class="list">
@@ -54,15 +57,10 @@
         <p><a class="btn primary" href="aulas.html">Ver aulas</a></p>
       </article>
 
-      <!-- ======================================================
-           VITRINE “SOBRE” (opcional): 2 cards rápidos
-           - Um para YouTube
-           - Um para Instagram
-           ====================================================== -->
       <article class="card">
         <div class="section-title">
           <h2 style="margin:0">Onde acompanhar</h2>
-          <small>Conteúdo e novidades</small>
+          <small>YouTube, Instagram e contato</small>
         </div>
 
         <div class="video-grid">
@@ -70,7 +68,7 @@
             <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="YouTube">
             <div class="video-meta">
               <strong>YouTube</strong>
-              <span>Aulas e vídeos completos.</span>
+              <span>Aulas completas e playlists.</span>
               <div class="mini-actions"><span class="mini-btn">Abrir</span></div>
             </div>
           </a>
@@ -79,7 +77,7 @@
             <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="Instagram">
             <div class="video-meta">
               <strong>Instagram</strong>
-              <span>Clipes, bastidores e avisos.</span>
+              <span>Clipes e avisos rápidos.</span>
               <div class="mini-actions"><span class="mini-btn">Abrir</span></div>
             </div>
           </a>
@@ -94,13 +92,14 @@
           </a>
         </div>
       </article>
+
     </section>
   </main>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <div>© <span id="y"></span> Aprenda Violão — Moacir Baia</div>
+      <div>© <span id="y"></span> Cordas e Vida — Moacir Baia</div>
       <div>
         <a href="https://wa.me/5511960787998" target="_blank" rel="noopener">WhatsApp</a>
         &nbsp;·&nbsp;
@@ -111,7 +110,6 @@
     </div>
   </footer>
 
-  <!-- SCRIPT: ano automático -->
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
