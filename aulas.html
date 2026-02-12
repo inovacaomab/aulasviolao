@@ -5,13 +5,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Aulas | Cordas e Vida</title>
-  <meta name="description" content="Aulas de violão: fundamentos, dedilhado, acordes e prática com músicas." />
+  <meta name="description" content="Aulas de violão e prática musical no Cordas e Vida." />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 
 <body>
 
-  <!-- HEADER: somente NAV (sem hero aqui) -->
+  <!-- HEADER (sem hero/banner) -->
   <header class="site-header">
     <nav class="nav">
       <a class="brand" href="index.html" aria-label="Cordas e Vida - Início">
@@ -24,7 +24,7 @@
 
       <div class="nav-links">
         <a href="index.html">Início</a>
-        <a href="aulas.html">Aulas</a>
+        <a class="active" href="aulas.html">Aulas</a>
         <a href="sobre.html">Sobre</a>
         <a href="contato.html">Contato</a>
       </div>
@@ -39,10 +39,11 @@
       <article class="card">
         <div class="section-title">
           <h2 style="margin:0">Aulas</h2>
-          <small>Clique e assista no YouTube</small>
+          <small>Cards menores — estilo “canal”</small>
         </div>
 
         <div class="video-grid">
+          <!-- Exemplo 1 -->
           <a class="video-tile" href="https://www.youtube.com/watch?v=480zZ0YKNIU" target="_blank" rel="noopener">
             <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="Aula 1">
             <div class="video-meta">
@@ -52,15 +53,17 @@
             </div>
           </a>
 
+          <!-- Exemplo 2 -->
           <a class="video-tile" href="https://www.youtube.com/@moacirbaia/" target="_blank" rel="noopener">
             <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="Canal">
             <div class="video-meta">
               <strong>Mais aulas no canal</strong>
-              <span>Veja playlists e novos vídeos.</span>
+              <span>Playlists e novidades.</span>
               <div class="mini-actions"><span class="mini-btn">Abrir canal</span></div>
             </div>
           </a>
 
+          <!-- Exemplo 3 -->
           <a class="video-tile" href="contato.html">
             <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="Contato">
             <div class="video-meta">
@@ -72,61 +75,29 @@
         </div>
 
         <p class="muted" style="margin-top:14px">
-          Para adicionar vídeos: copie um <code>video-tile</code> e altere o ID do YouTube no link e na miniatura.
+          Para adicionar vídeos: duplique um <code>video-tile</code> e troque o ID do YouTube no link e na miniatura.
         </p>
       </article>
 
-      <!-- Conteúdo complementar -->
+      <!-- Conteúdo extra -->
       <article class="card cols-6">
-        <h2>Técnicas de dedilhado</h2>
-        <h3>Dedilhado básico</h3>
-        <ol class="list">
-          <li>Use polegar, indicador, médio e anelar.</li>
-          <li>Toque com leveza e consistência.</li>
-          <li>Pratique padrões simples diariamente.</li>
-        </ol>
-
-        <h3>Ritmos e padrões</h3>
+        <h2>Rotina de estudo (simples)</h2>
         <ul class="list">
-          <li>Padrão 4/4</li>
-          <li>Padrão 3/4</li>
-          <li>Batida alternada</li>
+          <li>5 min: aquecimento (cordas soltas / troca de acordes)</li>
+          <li>10 min: técnica (dedilhado / batida)</li>
+          <li>10 min: música (trechos curtos)</li>
+          <li>5 min: revisão (o que ficou difícil)</li>
         </ul>
       </article>
 
       <article class="card cols-6">
-        <h2>Mão esquerda e acordes</h2>
+        <h2>Dicas rápidas</h2>
         <ul class="list">
-          <li>Mudança de acordes: devagar e limpo</li>
-          <li>Postura correta = mais controle</li>
-          <li>Pressão adequada (sem “esmagar”)</li>
+          <li>Devagar e limpo vale mais que rápido e sujo.</li>
+          <li>Use metrônomo (mesmo lento).</li>
+          <li>Grave você mesmo 1x por semana.</li>
         </ul>
-
-        <h3>Acordes básicos</h3>
-        <ul class="list">
-          <li>Dó (C)</li>
-          <li>Ré (D)</li>
-          <li>Mi (E)</li>
-          <li>Fá (F)</li>
-          <li>Sol (G)</li>
-          <li>Lá (A)</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h2>Praticando com músicas</h2>
-        <ul class="list">
-          <li>Escolha músicas simples</li>
-          <li>Use cifras/tablaturas confiáveis</li>
-          <li>Divida em partes e una depois</li>
-        </ul>
-
-        <h3>Sugestões para iniciantes</h3>
-        <ul class="list">
-          <li>Knockin' on Heaven's Door</li>
-          <li>Smoke on the Water</li>
-          <li>Stand By Me</li>
-        </ul>
+        <p><a class="btn primary" href="contato.html">Tirar dúvidas</a></p>
       </article>
 
     </section>
