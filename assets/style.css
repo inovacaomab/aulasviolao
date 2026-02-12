@@ -149,8 +149,8 @@ header.site-header .nav{
 
 .hero-banner img{
   display:block;
-  width:70%;
-  height:210px;          /* controla a altura e evita “invadir” o menu */
+  width:100%;
+  height:300px;          /* controla a altura e evita “invadir” o menu */
   object-fit:contain;      /* nao corta - mostra a imagem inteira */
   object-position:center;
 }
