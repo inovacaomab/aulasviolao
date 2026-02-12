@@ -14,13 +14,13 @@
 <body>
 
   <!-- ======================================================
-       HEADER: NAV fixa (sticky), hero rola normalmente
+       HEADER: NAV sticky (fixa), conteúdo do hero rola normalmente
        ====================================================== -->
   <header class="site-header">
 
-    <!-- NAV: fica fixa no topo -->
+    <!-- NAV: fica fixa no topo (sticky via CSS) -->
     <nav class="nav">
-      <!-- Marca com logo/personagem -->
+      <!-- Marca do site (logo pequeno + texto) -->
       <a class="brand" href="index.html" aria-label="Cordas e Vida - Início">
         <img class="brand-logo" src="img/logo-cordas-e-vida.png" alt="Cordas e Vida">
         <div class="brand-text">
@@ -29,7 +29,7 @@
         </div>
       </a>
 
-      <!-- Links -->
+      <!-- Links de navegação -->
       <div class="nav-links">
         <a href="index.html">Início</a>
         <a href="aulas.html">Aulas</a>
@@ -38,28 +38,39 @@
       </div>
     </nav>
 
-    <!-- HERO: só existe na Home e NÃO é fixo -->
+    <!-- HERO: NÃO é sticky (rola normalmente) -->
     <section class="hero">
       <div class="container">
+
+        <!-- ==================================================
+             BANNER (imagem grande controlada)
+             - Não fica dentro do menu
+             - Não sobrepõe a NAV
+             ================================================== -->
+        <div class="hero-banner">
+          <img src="img/logo-cordas-e-vida.png" alt="Cordas e Vida">
+        </div>
+
+        <!-- Card do hero com mensagem + botões -->
         <div class="hero-card">
           <span class="badge">Do básico ao progresso real</span>
           <h1>Uma jornada prática no violão — passo a passo</h1>
           <p>Conteúdo direto, técnicas essenciais e prática com músicas. Sem complicação — com constância e direção.</p>
 
-          <!-- CTA: 1 principal + 2 secundários -->
           <div class="actions">
             <a class="btn primary" href="aulas.html">Ver aulas</a>
             <a class="btn ghost" href="https://wa.me/5511960787998" target="_blank" rel="noopener">Falar no WhatsApp</a>
             <a class="btn ghost" href="https://www.youtube.com/@moacirbaia/" target="_blank" rel="noopener">YouTube</a>
           </div>
         </div>
+
       </div>
     </section>
 
   </header>
 
   <!-- ======================================================
-       MAIN: conteúdo principal da Home
+       MAIN: conteúdo principal
        ====================================================== -->
   <main class="container">
     <section class="grid">
@@ -90,7 +101,7 @@
         <p><a class="btn primary" href="contato.html">Quero orientação</a></p>
       </article>
 
-      <!-- Vitrine: vídeos (cards pequenos) -->
+      <!-- Vitrine: vídeos -->
       <article class="card">
         <div class="section-title">
           <h2 style="margin:0">Aulas em destaque</h2>
@@ -108,7 +119,7 @@
             </div>
           </a>
 
-          <!-- Vídeo 2 (canal) -->
+          <!-- Vídeo 2 -->
           <a class="video-tile" href="https://www.youtube.com/@moacirbaia/" target="_blank" rel="noopener">
             <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="Canal do YouTube">
             <div class="video-meta">
@@ -118,7 +129,7 @@
             </div>
           </a>
 
-          <!-- Vídeo 3 (CTA contato) -->
+          <!-- Vídeo 3 -->
           <a class="video-tile" href="contato.html">
             <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="Contato">
             <div class="video-meta">
@@ -139,7 +150,7 @@
   </main>
 
   <!-- ======================================================
-       FOOTER: padrão do site
+       FOOTER
        ====================================================== -->
   <footer class="footer">
     <div class="container">
@@ -154,9 +165,10 @@
     </div>
   </footer>
 
-  <!-- Script simples: ano automático -->
+  <!-- Ano automático -->
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
