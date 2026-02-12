@@ -1,71 +1,119 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
+  <!-- HEAD -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sobre | Aprenda Violão</title>
   <meta name="description" content="Sobre o projeto Aprenda Violão com Moacir Baia." />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
+
 <body>
-
-<header class="site-header">
-  <nav class="nav">
-    <a class="brand" href="index.html">
-      <strong>Aprenda Violão</strong>
-      <span>com Moacir Baia</span>
-    </a>
-    <div class="nav-links">
-      <a href="index.html">Início</a>
-      <a href="aulas.html">Aulas</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="contato.html">Contato</a>
-    </div>
-  </nav>
-</header>
-
-<main class="container">
-  <section class="grid">
-    <article class="card cols-6">
-      <h2>Quem é o Moa</h2>
-      <p class="muted">Aqui você pode colocar um texto curto (3–6 linhas) sobre você, sua trajetória com música e a proposta do canal.</p>
-      <p>Se quiser, eu monto esse texto com seu tom (mais técnico, mais inspirador, mais “professor”, etc.).</p>
-    </article>
-
-    <article class="card cols-6">
-      <h2>Proposta do projeto</h2>
-      <ul class="list">
-        <li>Aulas objetivas</li>
-        <li>Prática com músicas</li>
-        <li>Rotina simples e consistente</li>
-        <li>Conteúdo para iniciantes e evolução</li>
-      </ul>
-      <p><a class="btn primary" href="aulas.html">Ver aulas</a></p>
-    </article>
-
-    <article class="card">
-      <h2>Redes</h2>
-      <p class="muted">Acompanhe conteúdo e novidades:</p>
-      <div class="actions">
-        <a class="btn primary" href="https://wa.me/5511960787998" target="_blank" rel="noopener">WhatsApp</a>
-        <a class="btn ghost" href="https://www.youtube.com/@moacirbaia/" target="_blank" rel="noopener">YouTube</a>
-        <a class="btn ghost" href="https://www.instagram.com/moacir_baia" target="_blank" rel="noopener">Instagram</a>
+  <!-- HEADER + NAV -->
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <strong>Aprenda Violão</strong>
+        <span>com Moacir Baia</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Início</a>
+        <a href="aulas.html">Aulas</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
       </div>
-    </article>
-  </section>
-</main>
+    </nav>
+  </header>
 
-<footer class="footer">
-  <div class="container">
-    <div>© <span id="y"></span> Aprenda Violão — Moacir Baia</div>
-    <div>
-      <a href="contato.html">Contato</a>
+  <!-- MAIN -->
+  <main class="container">
+    <section class="grid">
+
+      <!-- Quem é o Moa -->
+      <article class="card cols-6">
+        <h2>Quem é o Moa</h2>
+        <p class="muted">
+          Escreva aqui um texto curto (3–6 linhas) sobre você: experiência com música, propósito e como você ensina.
+        </p>
+        <p>
+          Se você me disser 5 pontos sobre sua história (ex: há quanto tempo toca, estilos, objetivo do canal),
+          eu monto um texto pronto bem alinhado com sua identidade.
+        </p>
+      </article>
+
+      <!-- Proposta do projeto -->
+      <article class="card cols-6">
+        <h2>Proposta do projeto</h2>
+        <ul class="list">
+          <li>Aulas objetivas</li>
+          <li>Prática com músicas</li>
+          <li>Rotina simples e consistente</li>
+          <li>Conteúdo para iniciantes e evolução</li>
+        </ul>
+        <p><a class="btn primary" href="aulas.html">Ver aulas</a></p>
+      </article>
+
+      <!-- ======================================================
+           VITRINE “SOBRE” (opcional): 2 cards rápidos
+           - Um para YouTube
+           - Um para Instagram
+           ====================================================== -->
+      <article class="card">
+        <div class="section-title">
+          <h2 style="margin:0">Onde acompanhar</h2>
+          <small>Conteúdo e novidades</small>
+        </div>
+
+        <div class="video-grid">
+          <a class="video-tile" href="https://www.youtube.com/@moacirbaia/" target="_blank" rel="noopener">
+            <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="YouTube">
+            <div class="video-meta">
+              <strong>YouTube</strong>
+              <span>Aulas e vídeos completos.</span>
+              <div class="mini-actions"><span class="mini-btn">Abrir</span></div>
+            </div>
+          </a>
+
+          <a class="video-tile" href="https://www.instagram.com/moacir_baia" target="_blank" rel="noopener">
+            <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="Instagram">
+            <div class="video-meta">
+              <strong>Instagram</strong>
+              <span>Clipes, bastidores e avisos.</span>
+              <div class="mini-actions"><span class="mini-btn">Abrir</span></div>
+            </div>
+          </a>
+
+          <a class="video-tile" href="contato.html">
+            <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="Contato">
+            <div class="video-meta">
+              <strong>Fale comigo</strong>
+              <span>Direcionamento e dúvidas no WhatsApp.</span>
+              <div class="mini-actions"><span class="mini-btn">Contato</span></div>
+            </div>
+          </a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div>© <span id="y"></span> Aprenda Violão — Moacir Baia</div>
+      <div>
+        <a href="https://wa.me/5511960787998" target="_blank" rel="noopener">WhatsApp</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.youtube.com/@moacirbaia/" target="_blank" rel="noopener">YouTube</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.instagram.com/moacir_baia" target="_blank" rel="noopener">Instagram</a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
+  <!-- SCRIPT: ano automático -->
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
