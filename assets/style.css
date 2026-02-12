@@ -1,9 +1,8 @@
 /* =========================================================
    STYLE.CSS — ESTILO GLOBAL DO SITE
-   - Variáveis de cor e layout
-   - Componentes reutilizáveis (navbar, cards, botões)
-   - Grade responsiva
-   - Vitrine de vídeos (cards estilo canal)
+   (ATUALIZADO)
+   ✅ Mudança principal: SOMENTE a NAV (barra do menu) é sticky.
+      O HERO não fica preso, então ao rolar não oculta conteúdo.
    ========================================================= */
 
 /* ---------- 1) Variáveis do tema (cores, sombras, raios) ---------- */
@@ -29,10 +28,8 @@ body{
   color:var(--text);
 }
 
-/* Links sem sublinhado por padrão */
 a{ color:inherit; text-decoration:none; }
 
-/* Container central (limita largura e cria margens) */
 .container{
   max-width:1050px;
   margin:0 auto;
@@ -42,17 +39,22 @@ a{ color:inherit; text-decoration:none; }
 /* =========================================================
    HEADER + NAVBAR
    ========================================================= */
+
+/* HEADER: NÃO é sticky (para o hero não grudar) */
 header.site-header{
   background:linear-gradient(135deg, var(--dark), #1f232a);
   color:#fff;
-  position:sticky;  /* Mantém o header no topo ao rolar */
-  top:0;
-  z-index:50;
   border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-/* Barra de navegação */
-.nav{
+/* NAV: SOMENTE a barra do menu fica sticky */
+header.site-header .nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:linear-gradient(135deg, var(--dark), #1f232a);
+  border-bottom:1px solid rgba(255,255,255,.08);
+
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -62,7 +64,7 @@ header.site-header{
   padding:14px 16px;
 }
 
-/* “Marca” (nome do site) */
+/* Marca / Logo textual */
 .brand{
   display:flex;
   flex-direction:column;
@@ -112,7 +114,7 @@ header.site-header{
   max-width:60ch;
 }
 
-/* Badge (selo) do hero */
+/* Badge do hero */
 .badge{
   display:inline-flex;
   padding:6px 10px;
@@ -132,7 +134,6 @@ header.site-header{
   flex-wrap:wrap;
 }
 
-/* Botão padrão */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -145,7 +146,6 @@ header.site-header{
   font-weight:700;
 }
 
-/* Botão principal (conversão) */
 .btn.primary{
   background:var(--brand);
   color:#0b1b22;
@@ -153,7 +153,6 @@ header.site-header{
 }
 .btn.primary:hover{ filter:brightness(.95); }
 
-/* Botão secundário (links externos) */
 .btn.ghost{
   background:rgba(255,255,255,.06);
   color:#fff;
@@ -170,40 +169,31 @@ header.site-header{
   margin-top:18px;
 }
 
-/* Card padrão do site */
 .card{
   grid-column: span 12;
   background:var(--card);
   border-radius:var(--radius);
   box-shadow: var(--shadow);
-  padding:24px; /* Mais “premium” do que 18px */
+  padding:24px;
 }
 
-/* Títulos com linha de destaque */
 .card h2, .card h3{
   margin:0 0 10px;
   border-bottom:2px solid var(--brand);
   padding-bottom:6px;
 }
 
-/* Texto secundário */
 .muted{ color:var(--muted); }
 
-/* Listas */
 .list{ padding-left:18px; margin:0; }
 .list li{ margin:8px 0; }
 
-/* Colunas responsivas (desktop 2 colunas; mobile 1) */
 .cols-6{ grid-column:span 12; }
 .cols-4{ grid-column:span 12; }
 
 /* =========================================================
    VITRINE DE VÍDEOS (estilo “escolha de canal”)
-   - Em vez de iframe gigante, usamos cards com thumbnail.
-   - Mais leve, mais “cara de YouTube”, e fácil de manter.
    ========================================================= */
-
-/* Cabeçalho da seção de vídeos */
 .section-title{
   display:flex;
   align-items:baseline;
@@ -212,7 +202,6 @@ header.site-header{
 }
 .section-title small{ color:var(--muted); }
 
-/* Grade de vídeos */
 .video-grid{
   display:grid;
   grid-template-columns:repeat(12, 1fr);
@@ -220,7 +209,6 @@ header.site-header{
   margin-top:12px;
 }
 
-/* Card de vídeo (clique abre no YouTube) */
 .video-tile{
   grid-column: span 12;
   background:#fff;
@@ -230,7 +218,6 @@ header.site-header{
   border:1px solid rgba(0,0,0,.06);
 }
 
-/* Miniatura do YouTube */
 .thumb{
   display:block;
   width:100%;
@@ -238,7 +225,6 @@ header.site-header{
   object-fit:cover;
 }
 
-/* Texto do card */
 .video-meta{ padding:12px 14px; }
 
 .video-meta strong{
@@ -254,13 +240,13 @@ header.site-header{
   color:var(--muted);
 }
 
-/* “Botõezinhos” dentro do card */
 .video-meta .mini-actions{
   display:flex;
   gap:8px;
   flex-wrap:wrap;
   margin-top:10px;
 }
+
 .mini-btn{
   display:inline-flex;
   padding:8px 10px;
@@ -280,6 +266,7 @@ header.site-header{
   color:#fff;
   padding:18px 0;
 }
+
 .footer .container{
   display:flex;
   justify-content:space-between;
@@ -287,6 +274,7 @@ header.site-header{
   flex-wrap:wrap;
   align-items:center;
 }
+
 .footer a{
   color:#fff;
   text-decoration:underline;
