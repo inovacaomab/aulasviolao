@@ -1,98 +1,167 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
+  <!-- ======================================================
+       HEAD: metadados, SEO básico e CSS
+       ====================================================== -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Aprenda Violão com Moacir Baia</title>
   <meta name="description" content="Aprenda violão com aulas, técnicas e prática guiada. Conteúdos e vídeos com Moacir Baia." />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
+
 <body>
 
-<header class="site-header">
-  <nav class="nav">
-    <a class="brand" href="index.html">
-      <strong>Aprenda Violão</strong>
-      <span>com Moacir Baia</span>
-    </a>
-    <div class="nav-links">
-      <a href="index.html">Início</a>
-      <a href="aulas.html">Aulas</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="contato.html">Contato</a>
-    </div>
-  </nav>
+  <!-- ======================================================
+       HEADER + NAV: menu fixo (sticky) e identidade do site
+       ====================================================== -->
+  <header class="site-header">
+    <nav class="nav">
+      <!-- Marca / Logo textual -->
+      <a class="brand" href="index.html">
+        <strong>Aprenda Violão</strong>
+        <span>com Moacir Baia</span>
+      </a>
 
-  <section class="hero">
-    <div class="container">
-      <div class="hero-card">
-        <span class="badge">Do básico ao progresso real</span>
-        <h1>Uma jornada prática no violão — passo a passo</h1>
-        <p>Conteúdo direto, técnicas essenciais e prática com músicas. Sem complicação — com constância e direção.</p>
-        <div class="actions">
-          <a class="btn primary" href="aulas.html">Ver aulas</a>
-          <a class="btn ghost" href="https://wa.me/5511960787998" target="_blank" rel="noopener">Falar no WhatsApp</a>
-          <a class="btn ghost" href="https://www.youtube.com/@moacirbaia/" target="_blank" rel="noopener">YouTube</a>
-          <a class="btn ghost" href="https://www.instagram.com/moacir_baia" target="_blank" rel="noopener">Instagram</a>
+      <!-- Links para páginas -->
+      <div class="nav-links">
+        <a href="index.html">Início</a>
+        <a href="aulas.html">Aulas</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+      </div>
+    </nav>
+
+    <!-- ======================================================
+         HERO: faixa principal (título + proposta + CTAs)
+         Ajuste: removido excesso de botões (ficou mais focado)
+         ====================================================== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <span class="badge">Do básico ao progresso real</span>
+          <h1>Uma jornada prática no violão — passo a passo</h1>
+          <p>Conteúdo direto, técnicas essenciais e prática com músicas. Sem complicação — com constância e direção.</p>
+
+          <!-- CTAs: 1 principal + 2 secundários (mais conversão) -->
+          <div class="actions">
+            <a class="btn primary" href="aulas.html">Ver aulas</a>
+            <a class="btn ghost" href="https://wa.me/5511960787998" target="_blank" rel="noopener">Falar no WhatsApp</a>
+            <a class="btn ghost" href="https://www.youtube.com/@moacirbaia/" target="_blank" rel="noopener">YouTube</a>
+          </div>
         </div>
       </div>
+    </section>
+  </header>
+
+  <!-- ======================================================
+       MAIN: conteúdo da página Home
+       ====================================================== -->
+  <main class="container">
+    <section class="grid">
+
+      <!-- Card 1: benefícios -->
+      <article class="card cols-6">
+        <h2>Por que aprender violão?</h2>
+        <p class="muted">Versátil, portátil e excelente para expressão pessoal — além de ajudar na coordenação e disciplina.</p>
+        <ul class="list">
+          <li>Expressão criativa pessoal</li>
+          <li>Capacidade de tocar em grupo</li>
+          <li>Facilidade de transporte</li>
+          <li>Habilidade para a vida toda</li>
+          <li>Melhora coordenação e foco</li>
+        </ul>
+      </article>
+
+      <!-- Card 2: como começar -->
+      <article class="card cols-6">
+        <h2>Como começar do jeito certo</h2>
+        <p class="muted">A consistência vence. Um bom instrumento e rotina simples já destravam o progresso.</p>
+        <ul class="list">
+          <li>Escolha o violão certo</li>
+          <li>Prepare um local tranquilo</li>
+          <li>Defina rotina de estudo</li>
+          <li>Paciência + repetição com intenção</li>
+        </ul>
+        <p><a class="btn primary" href="contato.html">Quero orientação</a></p>
+      </article>
+
+      <!-- ======================================================
+           VITRINE DE VÍDEOS
+           - Cards menores com thumbnail
+           - Clicar abre o vídeo no YouTube
+           - Para adicionar novos, copie um bloco "video-tile"
+           ====================================================== -->
+      <article class="card">
+        <div class="section-title">
+          <h2 style="margin:0">Aulas em destaque</h2>
+          <small>Escolha e assista no YouTube</small>
+        </div>
+
+        <div class="video-grid">
+          <!-- Vídeo 1 -->
+          <a class="video-tile" href="https://www.youtube.com/watch?v=480zZ0YKNIU" target="_blank" rel="noopener">
+            <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="Aula em destaque">
+            <div class="video-meta">
+              <strong>Aula em destaque</strong>
+              <span>Comece por aqui e avance com consistência.</span>
+              <div class="mini-actions"><span class="mini-btn">Assistir</span></div>
+            </div>
+          </a>
+
+          <!-- Vídeo 2 (exemplo: abre o canal) -->
+          <a class="video-tile" href="https://www.youtube.com/@moacirbaia/" target="_blank" rel="noopener">
+            <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="Canal no YouTube">
+            <div class="video-meta">
+              <strong>Veja mais no canal</strong>
+              <span>Mais aulas e conteúdos no YouTube.</span>
+              <div class="mini-actions"><span class="mini-btn">Abrir canal</span></div>
+            </div>
+          </a>
+
+          <!-- Vídeo 3 (CTA para contato) -->
+          <a class="video-tile" href="contato.html">
+            <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="Contato">
+            <div class="video-meta">
+              <strong>Quer orientação?</strong>
+              <span>Me chame no WhatsApp e eu te direciono.</span>
+              <div class="mini-actions"><span class="mini-btn">Contato</span></div>
+            </div>
+          </a>
+        </div>
+
+        <p class="muted" style="margin-top:14px">
+          Dica: para adicionar vídeos, troque apenas o ID do YouTube nas URLs:
+          <code>img.youtube.com/vi/ID/hqdefault.jpg</code> e <code>youtube.com/watch?v=ID</code>.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <!-- ======================================================
+       FOOTER: rodapé com redes e ano automático
+       ====================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div>
+        © <span id="y"></span> Aprenda Violão — Moacir Baia
+      </div>
+      <div>
+        <a href="https://wa.me/5511960787998" target="_blank" rel="noopener">WhatsApp</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.youtube.com/@moacirbaia/" target="_blank" rel="noopener">YouTube</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.instagram.com/moacir_baia" target="_blank" rel="noopener">Instagram</a>
+      </div>
     </div>
-  </section>
-</header>
+  </footer>
 
-<main class="container">
-  <section class="grid">
-    <article class="card cols-6">
-      <h2>Por que aprender violão?</h2>
-      <p class="muted">Versátil, portátil e excelente para expressão pessoal — além de ajudar na coordenação e disciplina.</p>
-      <ul class="list">
-        <li>Expressão criativa pessoal</li>
-        <li>Capacidade de tocar em grupo</li>
-        <li>Facilidade de transporte</li>
-        <li>Habilidade para a vida toda</li>
-        <li>Melhora coordenação e foco</li>
-      </ul>
-    </article>
-
-    <article class="card cols-6">
-      <h2>Como começar do jeito certo</h2>
-      <p class="muted">A consistência vence. Um bom instrumento e rotina simples já destravam o progresso.</p>
-      <ul class="list">
-        <li>Escolha o violão certo</li>
-        <li>Prepare um local tranquilo</li>
-        <li>Defina rotina de estudo</li>
-        <li>Paciência + repetição com intenção</li>
-      </ul>
-      <p><a class="btn primary" href="contato.html">Quero orientação</a></p>
-    </article>
-
-    <article class="card">
-      <h2>Vídeo em destaque</h2>
-      <iframe class="video"
-        src="https://www.youtube.com/embed/480zZ0YKNIU"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
-      <p class="muted">Se você sempre sonhou em tocar violão, chegou a hora de dar o primeiro passo.</p>
-    </article>
-  </section>
-</main>
-
-<footer class="footer">
-  <div class="container">
-    <div>© <span id="y"></span> Aprenda Violão — Moacir Baia</div>
-    <div>
-      <a href="https://wa.me/5511960787998" target="_blank" rel="noopener">WhatsApp</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.youtube.com/@moacirbaia/" target="_blank" rel="noopener">YouTube</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.instagram.com/moacir_baia" target="_blank" rel="noopener">Instagram</a>
-    </div>
-  </div>
-</footer>
-
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
+  <!-- ======================================================
+       SCRIPT: atualiza ano no rodapé automaticamente
+       ====================================================== -->
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
