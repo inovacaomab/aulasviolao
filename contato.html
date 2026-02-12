@@ -1,65 +1,125 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
+  <!-- HEAD -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contato | Aprenda Violão</title>
   <meta name="description" content="Contato com Moacir Baia: WhatsApp, Instagram e YouTube." />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
+
 <body>
-
-<header class="site-header">
-  <nav class="nav">
-    <a class="brand" href="index.html">
-      <strong>Aprenda Violão</strong>
-      <span>com Moacir Baia</span>
-    </a>
-    <div class="nav-links">
-      <a href="index.html">Início</a>
-      <a href="aulas.html">Aulas</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="contato.html">Contato</a>
-    </div>
-  </nav>
-</header>
-
-<main class="container">
-  <section class="grid">
-    <article class="card cols-6">
-      <h2>Fale comigo</h2>
-      <p class="muted">Para dúvidas, orientação e próximos passos:</p>
-      <p><a class="btn primary" href="https://wa.me/5511960787998" target="_blank" rel="noopener">Abrir WhatsApp</a></p>
-      <p class="muted">Número: +55 11 96078-7998</p>
-    </article>
-
-    <article class="card cols-6">
-      <h2>Redes</h2>
-      <p><a class="btn ghost" href="https://www.instagram.com/moacir_baia" target="_blank" rel="noopener">Instagram</a></p>
-      <p><a class="btn ghost" href="https://www.youtube.com/@moacirbaia/" target="_blank" rel="noopener">YouTube</a></p>
-    </article>
-
-    <article class="card">
-      <h2>Mensagem pronta (copiar e colar)</h2>
-      <p class="muted">Você pode colocar isso no WhatsApp:</p>
-      <div class="card" style="box-shadow:none; border:1px solid rgba(0,0,0,.08);">
-        Olá, Moacir! Vi seu site e gostaria de saber como posso começar no violão. Você recomenda uma rotina para iniciantes?
+  <!-- HEADER + NAV -->
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <strong>Aprenda Violão</strong>
+        <span>com Moacir Baia</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Início</a>
+        <a href="aulas.html">Aulas</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
       </div>
-    </article>
-  </section>
-</main>
+    </nav>
+  </header>
 
-<footer class="footer">
-  <div class="container">
-    <div>© <span id="y"></span> Aprenda Violão — Moacir Baia</div>
-    <div>
-      <a href="index.html">Início</a>
+  <!-- MAIN -->
+  <main class="container">
+    <section class="grid">
+
+      <!-- Card: WhatsApp (CTA principal de contato) -->
+      <article class="card cols-6">
+        <h2>Fale comigo</h2>
+        <p class="muted">Para dúvidas, orientação e próximos passos:</p>
+        <p>
+          <a class="btn primary" href="https://wa.me/5511960787998" target="_blank" rel="noopener">
+            Abrir WhatsApp
+          </a>
+        </p>
+        <p class="muted">Número: +55 11 96078-7998</p>
+      </article>
+
+      <!-- Card: redes -->
+      <article class="card cols-6">
+        <h2>Redes</h2>
+        <p class="muted">Se preferir, me chame por aqui:</p>
+        <p><a class="btn ghost" href="https://www.youtube.com/@moacirbaia/" target="_blank" rel="noopener">YouTube</a></p>
+        <p><a class="btn ghost" href="https://www.instagram.com/moacir_baia" target="_blank" rel="noopener">Instagram</a></p>
+      </article>
+
+      <!-- ======================================================
+           VITRINE (opcional): atalhos em formato de card
+           ====================================================== -->
+      <article class="card">
+        <div class="section-title">
+          <h2 style="margin:0">Acesso rápido</h2>
+          <small>Escolha o canal</small>
+        </div>
+
+        <div class="video-grid">
+          <a class="video-tile" href="https://wa.me/5511960787998" target="_blank" rel="noopener">
+            <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="WhatsApp">
+            <div class="video-meta">
+              <strong>WhatsApp</strong>
+              <span>Mensagem direta e rápida.</span>
+              <div class="mini-actions"><span class="mini-btn">Abrir</span></div>
+            </div>
+          </a>
+
+          <a class="video-tile" href="https://www.youtube.com/@moacirbaia/" target="_blank" rel="noopener">
+            <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="YouTube">
+            <div class="video-meta">
+              <strong>YouTube</strong>
+              <span>Aulas completas e playlists.</span>
+              <div class="mini-actions"><span class="mini-btn">Abrir</span></div>
+            </div>
+          </a>
+
+          <a class="video-tile" href="https://www.instagram.com/moacir_baia" target="_blank" rel="noopener">
+            <img class="thumb" src="https://img.youtube.com/vi/480zZ0YKNIU/hqdefault.jpg" alt="Instagram">
+            <div class="video-meta">
+              <strong>Instagram</strong>
+              <span>Clipes e avisos rápidos.</span>
+              <div class="mini-actions"><span class="mini-btn">Abrir</span></div>
+            </div>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card: mensagem pronta -->
+      <article class="card">
+        <h2>Mensagem pronta (copiar e colar)</h2>
+        <p class="muted">Você pode enviar isso no WhatsApp:</p>
+
+        <!-- Caixa simples para texto (reutiliza card mas sem sombra interna) -->
+        <div class="card" style="box-shadow:none; border:1px solid rgba(0,0,0,.08);">
+          Olá, Moacir! Vi seu site e gostaria de saber como posso começar no violão. Você recomenda uma rotina para iniciantes?
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div>© <span id="y"></span> Aprenda Violão — Moacir Baia</div>
+      <div>
+        <a href="https://wa.me/5511960787998" target="_blank" rel="noopener">WhatsApp</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.youtube.com/@moacirbaia/" target="_blank" rel="noopener">YouTube</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.instagram.com/moacir_baia" target="_blank" rel="noopener">Instagram</a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
+  <!-- SCRIPT: ano automático -->
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
