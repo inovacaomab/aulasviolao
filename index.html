@@ -2,12 +2,29 @@
 <html lang="pt-BR">
 <head>
   <!-- ======================================================
-       HEAD: SEO básico + CSS
+       HEAD: SEO básico + CSS + FAVICON
        ====================================================== -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Cordas e Vida | Aprenda Violão com Moacir Baia</title>
   <meta name="description" content="Cordas e Vida: aprenda violão com aulas objetivas, técnicas essenciais e prática com músicas." />
+
+  <!-- ======================================================
+       FAVICON (ícone da aba)
+       Regras:
+       - favicon.ico na raiz (/) do site
+       - PNGs dentro de /img
+       ====================================================== -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+
+  <!-- Cor do navegador em mobile (opcional, melhora a “cara” no Android) -->
+  <meta name="theme-color" content="#282c34">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 
@@ -130,11 +147,6 @@
           </a>
         </div>
 
-        <!--
-        <p class="muted" style="margin-top:14px">
-          Para adicionar vídeos: troque o ID no link (<code>watch?v=ID</code>) e na miniatura
-          (<code>img.youtube.com/vi/ID/hqdefault.jpg</code>).
-        </p> -->
       </article>
 
     </section>
@@ -156,6 +168,7 @@
     </div>
   </footer>
 
+  <!-- Ano automático -->
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
