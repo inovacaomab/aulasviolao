@@ -405,3 +405,33 @@ header.site-header .nav{
     padding: 18px 14px;
   }
 }
+
+/* =========================================================
+   HERO BANNER (arte grande controlada)
+   - Impede sobreposição no menu
+   - Limita altura e corta com elegância
+   ========================================================= */
+.hero-banner{
+  width:100%;
+  max-width:1050px;
+  margin:0 auto 14px;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow: var(--shadow);
+  border:1px solid rgba(255,255,255,.10);
+}
+
+.hero-banner img{
+  display:block;
+  width:100%;
+  height:260px;          /* altura controlada no desktop */
+  object-fit:cover;      /* corta sem distorcer */
+  object-position:center;
+}
+
+/* Mobile: banner mais baixo */
+@media (max-width: 520px){
+  .hero-banner img{
+    height:170px;
+  }
+}
