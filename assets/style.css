@@ -1,15 +1,26 @@
+/* =========================================================
+   STYLE.CSS — ESTILO GLOBAL DO SITE
+   - Variáveis de cor e layout
+   - Componentes reutilizáveis (navbar, cards, botões)
+   - Grade responsiva
+   - Vitrine de vídeos (cards estilo canal)
+   ========================================================= */
+
+/* ---------- 1) Variáveis do tema (cores, sombras, raios) ---------- */
 :root{
-  --bg:#f5f5f5;
-  --card:#ffffff;
-  --text:#333;
-  --muted:#666;
-  --brand:#61dafb;
-  --dark:#282c34;
-  --shadow:0 8px 24px rgba(0,0,0,.08);
-  --radius:14px;
+  --bg:#f5f5f5;                 /* Cor de fundo geral */
+  --card:#ffffff;               /* Fundo de cards */
+  --text:#333;                  /* Texto principal */
+  --muted:#666;                 /* Texto secundário */
+  --brand:#61dafb;              /* Cor de destaque/CTA */
+  --dark:#282c34;               /* Fundo do header/rodapé */
+  --shadow:0 8px 24px rgba(0,0,0,.08); /* Sombra padrão */
+  --radius:14px;                /* Raio padrão */
 }
 
-*{box-sizing:border-box}
+/* ---------- 2) Reset básico ---------- */
+*{ box-sizing:border-box; }
+
 body{
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   line-height:1.7;
@@ -18,35 +29,69 @@ body{
   color:var(--text);
 }
 
-a{color:inherit; text-decoration:none}
-.container{max-width:1050px; margin:0 auto; padding:24px 16px}
+/* Links sem sublinhado por padrão */
+a{ color:inherit; text-decoration:none; }
 
+/* Container central (limita largura e cria margens) */
+.container{
+  max-width:1050px;
+  margin:0 auto;
+  padding:24px 16px;
+}
+
+/* =========================================================
+   HEADER + NAVBAR
+   ========================================================= */
 header.site-header{
   background:linear-gradient(135deg, var(--dark), #1f232a);
   color:#fff;
-  position:sticky; top:0; z-index:50;
+  position:sticky;  /* Mantém o header no topo ao rolar */
+  top:0;
+  z-index:50;
   border-bottom:1px solid rgba(255,255,255,.08);
 }
 
+/* Barra de navegação */
 .nav{
-  display:flex; align-items:center; justify-content:space-between;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
   gap:16px;
-  max-width:1050px; margin:0 auto; padding:14px 16px;
+  max-width:1050px;
+  margin:0 auto;
+  padding:14px 16px;
 }
 
-.brand{display:flex; flex-direction:column; gap:2px;}
-.brand strong{font-size:1.02rem}
-.brand span{font-size:.86rem; color:rgba(255,255,255,.72)}
+/* “Marca” (nome do site) */
+.brand{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+.brand strong{ font-size:1.02rem; }
+.brand span{ font-size:.86rem; color:rgba(255,255,255,.72); }
 
-.nav-links{display:flex; gap:14px; flex-wrap:wrap; align-items:center;}
+/* Links do menu */
+.nav-links{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  align-items:center;
+}
 .nav-links a{
   padding:8px 10px;
   border-radius:10px;
   color:rgba(255,255,255,.9);
 }
-.nav-links a:hover{background:rgba(255,255,255,.08)}
+.nav-links a:hover{
+  background:rgba(255,255,255,.08);
+}
 
-.hero{padding:28px 0 10px;}
+/* =========================================================
+   HERO (faixa de destaque da Home)
+   ========================================================= */
+.hero{ padding:28px 0 10px; }
+
 .hero-card{
   background:linear-gradient(135deg, rgba(97,218,251,.16), rgba(255,255,255,.02));
   border:1px solid rgba(97,218,251,.25);
@@ -54,52 +99,20 @@ header.site-header{
   padding:22px;
   box-shadow: var(--shadow);
 }
-.hero h1{margin:0 0 8px; font-size:2rem; line-height:1.2}
-.hero p{margin:0 0 16px; color:rgba(255,255,255,.8); max-width:60ch}
 
-.actions{display:flex; gap:10px; flex-wrap:wrap}
-.btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  gap:8px;
-  padding:11px 14px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,.14);
-  cursor:pointer;
-  font-weight:700;
-}
-.btn.primary{background:var(--brand); color:#0b1b22; border-color:transparent}
-.btn.primary:hover{filter:brightness(.95)}
-.btn.ghost{background:rgba(255,255,255,.06); color:#fff}
-.btn.ghost:hover{background:rgba(255,255,255,.1)}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(12, 1fr);
-  gap:16px;
-  margin-top:18px;
+.hero h1{
+  margin:0 0 8px;
+  font-size:2rem;
+  line-height:1.2;
 }
 
-.card{
-  grid-column: span 12;
-  background:var(--card);
-  border-radius:var(--radius);
-  box-shadow: var(--shadow);
-  padding:24px; /* mais “premium” */
+.hero p{
+  margin:0 0 16px;
+  color:rgba(255,255,255,.8);
+  max-width:60ch;
 }
 
-.card h2, .card h3{
-  margin:0 0 10px;
-  border-bottom:2px solid var(--brand);
-  padding-bottom:6px;
-}
-
-.muted{color:var(--muted)}
-.list{padding-left:18px; margin:0}
-.list li{margin:8px 0}
-
-.cols-6{grid-column:span 12}
-.cols-4{grid-column:span 12}
-
+/* Badge (selo) do hero */
 .badge{
   display:inline-flex;
   padding:6px 10px;
@@ -110,12 +123,96 @@ header.site-header{
   color:#0b1b22;
 }
 
-/* ===== VITRINE DE VÍDEOS (estilo canal) ===== */
-.section-title{
-  display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+/* =========================================================
+   BOTÕES (CTA)
+   ========================================================= */
+.actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
 }
-.section-title small{color:var(--muted)}
 
+/* Botão padrão */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:11px 14px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.14);
+  cursor:pointer;
+  font-weight:700;
+}
+
+/* Botão principal (conversão) */
+.btn.primary{
+  background:var(--brand);
+  color:#0b1b22;
+  border-color:transparent;
+}
+.btn.primary:hover{ filter:brightness(.95); }
+
+/* Botão secundário (links externos) */
+.btn.ghost{
+  background:rgba(255,255,255,.06);
+  color:#fff;
+}
+.btn.ghost:hover{ background:rgba(255,255,255,.1); }
+
+/* =========================================================
+   GRID + CARDS (layout das seções)
+   ========================================================= */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(12, 1fr);
+  gap:16px;
+  margin-top:18px;
+}
+
+/* Card padrão do site */
+.card{
+  grid-column: span 12;
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow: var(--shadow);
+  padding:24px; /* Mais “premium” do que 18px */
+}
+
+/* Títulos com linha de destaque */
+.card h2, .card h3{
+  margin:0 0 10px;
+  border-bottom:2px solid var(--brand);
+  padding-bottom:6px;
+}
+
+/* Texto secundário */
+.muted{ color:var(--muted); }
+
+/* Listas */
+.list{ padding-left:18px; margin:0; }
+.list li{ margin:8px 0; }
+
+/* Colunas responsivas (desktop 2 colunas; mobile 1) */
+.cols-6{ grid-column:span 12; }
+.cols-4{ grid-column:span 12; }
+
+/* =========================================================
+   VITRINE DE VÍDEOS (estilo “escolha de canal”)
+   - Em vez de iframe gigante, usamos cards com thumbnail.
+   - Mais leve, mais “cara de YouTube”, e fácil de manter.
+   ========================================================= */
+
+/* Cabeçalho da seção de vídeos */
+.section-title{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:12px;
+}
+.section-title small{ color:var(--muted); }
+
+/* Grade de vídeos */
 .video-grid{
   display:grid;
   grid-template-columns:repeat(12, 1fr);
@@ -123,6 +220,7 @@ header.site-header{
   margin-top:12px;
 }
 
+/* Card de vídeo (clique abre no YouTube) */
 .video-tile{
   grid-column: span 12;
   background:#fff;
@@ -132,6 +230,7 @@ header.site-header{
   border:1px solid rgba(0,0,0,.06);
 }
 
+/* Miniatura do YouTube */
 .thumb{
   display:block;
   width:100%;
@@ -139,9 +238,8 @@ header.site-header{
   object-fit:cover;
 }
 
-.video-meta{
-  padding:12px 14px;
-}
+/* Texto do card */
+.video-meta{ padding:12px 14px; }
 
 .video-meta strong{
   display:block;
@@ -156,8 +254,11 @@ header.site-header{
   color:var(--muted);
 }
 
+/* “Botõezinhos” dentro do card */
 .video-meta .mini-actions{
-  display:flex; gap:8px; flex-wrap:wrap;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
   margin-top:10px;
 }
 .mini-btn{
@@ -168,9 +269,11 @@ header.site-header{
   background:#fff;
   font-weight:700;
 }
-.mini-btn:hover{background:rgba(0,0,0,.03)}
+.mini-btn:hover{ background:rgba(0,0,0,.03); }
 
-/* footer */
+/* =========================================================
+   FOOTER (rodapé)
+   ========================================================= */
 .footer{
   margin-top:26px;
   background:var(--dark);
@@ -178,21 +281,31 @@ header.site-header{
   padding:18px 0;
 }
 .footer .container{
-  display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
   align-items:center;
 }
-.footer a{color:#fff; text-decoration:underline; text-underline-offset:3px}
+.footer a{
+  color:#fff;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
 
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
 @media (min-width: 860px){
-  .cols-6{grid-column:span 6}
-  .cols-4{grid-column:span 4}
-  .hero h1{font-size:2.4rem}
+  .cols-6{ grid-column:span 6; }
+  .cols-4{ grid-column:span 4; }
+  .hero h1{ font-size:2.4rem; }
 
-  /* cards de vídeo: 3 colunas no desktop */
-  .video-tile{grid-column:span 4;}
+  /* 3 colunas de vídeos no desktop */
+  .video-tile{ grid-column:span 4; }
 }
 
 @media (min-width: 520px) and (max-width: 859px){
-  /* 2 colunas no tablet */
-  .video-tile{grid-column:span 6;}
+  /* 2 colunas de vídeos no tablet */
+  .video-tile{ grid-column:span 6; }
 }
