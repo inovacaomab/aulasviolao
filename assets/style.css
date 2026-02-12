@@ -1,12 +1,14 @@
 /* =========================================================
-   STYLE.CSS — ESTILO GLOBAL DO SITE
-   (VERSÃO FINAL COM CORREÇÃO)
-   ✅ HERO rola normalmente (não é fixo)
-   ✅ Somente a NAV (barra superior) fica sticky
-   ✅ NAV mais compacta para não esconder conteúdo
+   Cordas e Vida — CSS Global (FINAL)
+   Objetivo:
+   - Identidade visual consistente
+   - NAV sticky (apenas a barra superior fixa)
+   - HERO rola normalmente
+   - Layout responsivo (mobile organizado)
+   - Vitrine de vídeos em cards (estilo “canal”)
    ========================================================= */
 
-/* ---------- 1) Variáveis do tema ---------- */
+/* ---------- 1) Variáveis de tema ---------- */
 :root{
   --bg:#f5f5f5;
   --card:#ffffff;
@@ -18,7 +20,7 @@
   --radius:14px;
 }
 
-/* ---------- 2) Reset básico ---------- */
+/* ---------- 2) Reset e base ---------- */
 *{ box-sizing:border-box; }
 
 body{
@@ -38,48 +40,71 @@ a{ color:inherit; text-decoration:none; }
 }
 
 /* =========================================================
-   HEADER + NAVBAR
+   3) HEADER + NAV
+   - HEADER não é sticky (para o hero rolar)
+   - NAV é sticky (fica fixa no topo)
    ========================================================= */
 
-/* HEADER: NÃO é sticky (assim o HERO rola e não oculta conteúdo) */
+/* HEADER: apenas cor/fundo */
 header.site-header{
   background:linear-gradient(135deg, var(--dark), #1f232a);
   color:#fff;
   border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-/* NAV: SOMENTE a barra do menu fica fixa (sticky) */
+/* NAV: somente a barra do menu fica fixa */
 header.site-header .nav{
   position:sticky;
   top:0;
   z-index:50;
 
-  /* Fundo e borda para não “sumir” ao rolar */
   background:linear-gradient(135deg, var(--dark), #1f232a);
   border-bottom:1px solid rgba(255,255,255,.08);
 
-  /* Layout da barra */
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:16px;
+
   max-width:1050px;
   margin:0 auto;
 
-  /* Mais compacto que antes */
+  /* compacto para não ocupar a tela */
   padding:10px 16px;
 }
 
-/* Marca / Logo textual */
+/* =========================================================
+   4) Marca (logo/personagem + texto)
+   ========================================================= */
 .brand{
   display:flex;
-  flex-direction:column;
+  flex-direction: row;
+  align-items:center;
+  gap:10px;
+}
+
+/* Mascote/logo (arquivo em /img) */
+.brand-logo{
+  width:44px;
+  height:44px;
+  border-radius:12px;
+  object-fit:cover;
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+.brand-text{
+  display:flex;
+  flex-direction: column;
   gap:2px;
 }
+
 .brand strong{ font-size:1.02rem; }
 .brand span{ font-size:.86rem; color:rgba(255,255,255,.72); }
 
-/* Links do menu */
+/* =========================================================
+   5) Links do menu
+   ========================================================= */
 .nav-links{
   display:flex;
   gap:12px;
@@ -87,7 +112,6 @@ header.site-header .nav{
   align-items:center;
 }
 
-/* Links mais compactos */
 .nav-links a{
   padding:6px 10px;
   border-radius:10px;
@@ -98,31 +122,22 @@ header.site-header .nav{
 }
 
 /* =========================================================
-   HERO (faixa de destaque — rola normalmente)
+   6) HERO (somente na Home)
+   - Fica logo abaixo da NAV
+   - NÃO é fixo: rola normalmente
    ========================================================= */
-.hero{ padding:18px 0 10px; } /* compactado */
+.hero{ padding:18px 0 10px; }
+
+.hero .container{ padding-top: 14px; }
 
 .hero-card{
   background:linear-gradient(135deg, rgba(97,218,251,.16), rgba(255,255,255,.02));
   border:1px solid rgba(97,218,251,.25);
   border-radius:var(--radius);
-  padding:18px; /* compactado */
+  padding:18px;
   box-shadow: var(--shadow);
 }
 
-.hero h1{
-  margin:0 0 8px;
-  font-size:2rem;
-  line-height:1.2;
-}
-
-.hero p{
-  margin:0 0 14px;
-  color:rgba(255,255,255,.8);
-  max-width:60ch;
-}
-
-/* Badge do hero */
 .badge{
   display:inline-flex;
   padding:6px 10px;
@@ -133,8 +148,20 @@ header.site-header .nav{
   color:#0b1b22;
 }
 
+.hero h1{
+  margin:10px 0 8px;
+  font-size:2rem;
+  line-height:1.2;
+}
+
+.hero p{
+  margin:0 0 14px;
+  color:rgba(255,255,255,.8);
+  max-width:60ch;
+}
+
 /* =========================================================
-   BOTÕES (CTA)
+   7) Botões / CTAs
    ========================================================= */
 .actions{
   display:flex;
@@ -168,7 +195,7 @@ header.site-header .nav{
 .btn.ghost:hover{ background:rgba(255,255,255,.1); }
 
 /* =========================================================
-   GRID + CARDS
+   8) Layout de conteúdo: grid + cards
    ========================================================= */
 .grid{
   display:grid;
@@ -200,7 +227,7 @@ header.site-header .nav{
 .cols-4{ grid-column:span 12; }
 
 /* =========================================================
-   VITRINE DE VÍDEOS (cards estilo canal)
+   9) Vitrine de vídeos (cards estilo “canal”)
    ========================================================= */
 .section-title{
   display:flex;
@@ -208,6 +235,7 @@ header.site-header .nav{
   justify-content:space-between;
   gap:12px;
 }
+
 .section-title small{ color:var(--muted); }
 
 .video-grid{
@@ -263,10 +291,11 @@ header.site-header .nav{
   background:#fff;
   font-weight:700;
 }
+
 .mini-btn:hover{ background:rgba(0,0,0,.03); }
 
 /* =========================================================
-   FOOTER
+   10) Rodapé
    ========================================================= */
 .footer{
   margin-top:26px;
@@ -290,43 +319,43 @@ header.site-header .nav{
 }
 
 /* =========================================================
-   RESPONSIVIDADE
+   11) Responsividade (desktop/tablet)
    ========================================================= */
 @media (min-width: 860px){
   .cols-6{ grid-column:span 6; }
   .cols-4{ grid-column:span 4; }
   .hero h1{ font-size:2.4rem; }
 
-  /* 3 colunas de vídeos no desktop */
+  /* 3 colunas no desktop */
   .video-tile{ grid-column:span 4; }
 }
 
 @media (min-width: 520px) and (max-width: 859px){
-  /* 2 colunas de vídeos no tablet */
+  /* 2 colunas no tablet */
   .video-tile{ grid-column:span 6; }
 }
 
 /* =========================================================
-   MOBILE TUNING (até 520px)
-   - Organiza o menu em grid 2x2
-   - Reduz altura do topo
-   - Botões em 2 colunas (e o 3º em linha inteira)
+   12) Ajustes mobile (até 520px)
+   - Menu em grid 2x2
+   - Botões do hero em grid (2 colunas + 3º full)
+   - Logo reduzida
    ========================================================= */
 @media (max-width: 520px){
 
-  /* NAV: empilha marca + menu (mais limpo) */
   header.site-header .nav{
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    padding: 10px 12px; /* menor */
+    padding: 10px 12px;
   }
 
-  /* Marca mais compacta */
-  .brand strong{ font-size: 1rem; }
-  .brand span{ font-size: .82rem; }
+  .brand-logo{
+    width:38px;
+    height:38px;
+    border-radius:10px;
+  }
 
-  /* Menu: vira grade 2x2 */
   .nav-links{
     width: 100%;
     display: grid;
@@ -334,7 +363,6 @@ header.site-header .nav{
     gap: 8px;
   }
 
-  /* Links: viram “botõezinhos” */
   .nav-links a{
     text-align: center;
     padding: 10px 10px;
@@ -342,12 +370,12 @@ header.site-header .nav{
     border: 1px solid rgba(255,255,255,.10);
   }
 
-  /* HERO: mais compacto no mobile */
   .hero{ padding: 12px 0 8px; }
+
   .hero-card{ padding: 16px; }
 
   .hero h1{
-    font-size: 1.55rem;  /* reduz pra caber sem quebrar estranho */
+    font-size: 1.55rem;
     line-height: 1.15;
   }
 
@@ -356,7 +384,7 @@ header.site-header .nav{
     margin-bottom: 12px;
   }
 
-  /* Botões do hero: 2 colunas; último ocupa a linha toda */
+  /* Botões: 2 colunas e o 3º ocupa toda a linha */
   .actions{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -366,15 +394,13 @@ header.site-header .nav{
   .btn{
     width: 100%;
     justify-content: center;
-    padding: 12px 12px; /* mais “tocável” */
+    padding: 12px 12px;
   }
 
-  /* 3º botão (YouTube) ocupa toda a linha */
   .actions .btn:nth-child(3){
     grid-column: 1 / -1;
   }
 
-  /* Espaçamento geral do container menor no mobile */
   .container{
     padding: 18px 14px;
   }
