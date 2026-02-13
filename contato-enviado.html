@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Enviando mensagem...</title>
+
+<style>
+body{
+  font-family:system-ui;
+  background:#282c34;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  margin:0;
+}
+
+.box{
+  text-align:center;
+  max-width:320px;
+}
+
+.spinner{
+  width:50px;
+  height:50px;
+  border:4px solid rgba(255,255,255,.2);
+  border-top:4px solid #61dafb;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+  margin:20px auto;
+}
+
+@keyframes spin{
+  to{transform:rotate(360deg);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h2>Enviando sua mensagem…</h2>
+<div class="spinner"></div>
+<p>Aguarde um instante.</p>
+</div>
+
+</body>
+</html>
