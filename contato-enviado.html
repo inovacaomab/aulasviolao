@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Enviando mensagem...</title>
+<title>Mensagem enviada</title>
 
 <style>
 body{
@@ -20,7 +20,7 @@ body{
 
 .box{
   text-align:center;
-  max-width:320px;
+  max-width:340px;
 }
 
 .spinner{
@@ -36,16 +36,33 @@ body{
 @keyframes spin{
   to{transform:rotate(360deg);}
 }
+
+.ok{
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+small{opacity:.7}
 </style>
 </head>
 
 <body>
 
 <div class="box">
-<h2>Enviando sua mensagem…</h2>
+<div class="ok">✅</div>
+<h2>Mensagem enviada!</h2>
+
 <div class="spinner"></div>
-<p>Aguarde um instante.</p>
+
+<p>Voltando para a página de contato…</p>
+<small>Se não voltar automaticamente, <a href="contato.html" style="color:#61dafb">clique aqui</a>.</small>
 </div>
+
+<script>
+setTimeout(()=>{
+  window.location.href="contato.html";
+},4000);
+</script>
 
 </body>
 </html>
