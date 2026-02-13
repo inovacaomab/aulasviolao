@@ -420,3 +420,45 @@ header.site-header .nav{
     grid-column:1 / -1;
   }
 }
+
+/* ================================
+   Sitemap Footer
+================================ */
+
+.sitemap {
+  background:#1e2229;
+  padding:40px 0;
+  border-top:1px solid rgba(255,255,255,.05);
+}
+
+.sitemap-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:30px;
+}
+
+.sitemap strong {
+  display:block;
+  margin-bottom:10px;
+  color:#fff;
+}
+
+.sitemap ul {
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.sitemap li {
+  margin-bottom:6px;
+}
+
+.sitemap a {
+  color:#aeb6c2;
+  text-decoration:none;
+  font-size:.9rem;
+}
+
+.sitemap a:hover {
+  color:#6be1ff;
+}
