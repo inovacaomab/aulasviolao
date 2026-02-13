@@ -39,7 +39,7 @@
       <article class="card">
         <div class="section-title">
           <h2 style="margin:0">Acesso rápido</h2>
-          <small>Escolha um canal</small>
+          <small></small>
         </div>
 
         <div class="video-grid">
@@ -83,25 +83,96 @@
       </article> 
 
 							-->
+		<!-- =========================
+     FORMULÁRIO DE EMAIL
+========================= -->
+<article class="card cols-6">
+
+<h2>Enviar mensagem</h2>
+
+<p class="muted">Preencha abaixo — a mensagem chega direto no meu e-mail.</p>
+
+<form action="https://formsubmit.co/inovacaomab@gmail.com" method="POST">
+
+  <!-- MUDE PARA SEU EMAIL REAL -->
+  <!-- exemplo: moacir@gmail.com -->
+
+  <input type="hidden" name="_subject" value="Contato - Cordas e Vida">
+  <input type="hidden" name="_template" value="table">
+
+  <!-- voltar para esta página -->
+  <input type="hidden" name="_next" value="https://cordasevida.com.br/contato.html">
+
+  <!-- anti-spam -->
+  <input type="text" name="_honey" style="display:none">
+
+  <p>
+    <input required type="text" name="nome" placeholder="Seu nome" style="width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;">
+  </p>
+
+  <p>
+    <input required type="email" name="email" placeholder="Seu e-mail" style="width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;">
+  </p>
+
+  <p>
+    <textarea required name="mensagem" placeholder="Sua mensagem" rows="5"
+      style="width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;"></textarea>
+  </p>
+
+  <button class="btn primary" type="submit">Enviar mensagem</button>
+
+</form>
+
+<p class="muted" style="margin-top:10px;font-size:.9rem;">
+* Na primeira vez você receberá um e-mail do FormSubmit pedindo confirmação.
+</p>
+
+</article>
+
 
     </section>
   </main>
 
   <!-- FOOTER -->
   <footer class="footer">
+<section class="sitemap">
+  <div class="container sitemap-grid">
+
+    <div>
+      <strong>Cordas e Vida</strong>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="aulas.html">Aulas</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <strong>Conteúdo</strong>
+      <ul>
+        <li><a href="https://www.youtube.com/@moacirbaia/" target="_blank">YouTube</a></li>
+        <li><a href="https://www.instagram.com/moacir_baia" target="_blank">Instagram</a></li>
+        <li><a href="https://open.spotify.com/intl-pt/artist/01oUYR9PJsVMq2ii90pncU" target="_blank">Spotify</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <strong>Contato</strong>
+      <ul>
+        <li><a href="https://whatsapp.com/channel/0029Vb7BnjJ6rsQrLobubF1Q" target="_blank">Comunidade no WhatsApp</a></li>
+        <li><a href="contato.html">Página de contato</a></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
     <div class="container">
       <div>© <span id="y"></span> Cordas e Vida — Moacir Baia</div>
-      <div>
-        <!-- 
-<a href="https://wa.me/5511960787998" target="_blank" rel="noopener">WhatsApp</a>
-        &nbsp;·&nbsp; 						-->
-        <a href="https://www.youtube.com/@moacirbaia/" target="_blank" rel="noopener">YouTube</a>
-        &nbsp;·&nbsp;
-        <a href="https://www.instagram.com/moacir_baia" target="_blank" rel="noopener">Instagram</a>
-      </div>
-    </div>
-  </footer>
+      </footer>
 
+  <!-- Ano automático -->
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
