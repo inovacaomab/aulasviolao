@@ -6,6 +6,7 @@
    - Logo pequeno + texto na marca (canto superior esquerdo)
    - Mobile responsivo com menu organizado
    - Cards + vitrine de vídeos em tiles (estilo canal)
+   - Equipamentos em cards claros (mesmo padrão do site)
    ========================================================= */
 
 /* ---------- 1) Variáveis do tema ---------- */
@@ -151,7 +152,7 @@ header.site-header .nav{
   display:block;
   width:100%;
   height:300px;          /* controla a altura e evita “invadir” o menu */
-  object-fit:contain;      /* nao corta - mostra a imagem inteira */
+  object-fit:contain;      /* não corta - mostra a imagem inteira */
   object-position:center;
 }
 
@@ -424,7 +425,6 @@ header.site-header .nav{
 /* ================================
    Sitemap Footer
 ================================ */
-
 .sitemap {
   background:#1e2229;
   padding:40px 0;
@@ -466,7 +466,6 @@ header.site-header .nav{
 /* ================================
    Vídeo incorporado (embed interno)
 ================================ */
-
 .video-embed {
   position: relative;
   padding-bottom: 56.25%;
@@ -484,4 +483,105 @@ header.site-header .nav{
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+/* ================================
+   EQUIPAMENTOS INDICADOS (NOVO PADRÃO)
+   - Cards claros (igual ao resto do site)
+   - Imagens "contain" com fundo neutro
+   - Texto legível
+================================ */
+
+/* Grid dos produtos */
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+/* Card do produto */
+.produto-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.produto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* Imagem do produto */
+.produto-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain; /* não corta */
+  background: #f4f6f8; /* neutro */
+  border-radius: 12px;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,0.06);
+  margin-bottom: 12px;
+}
+
+/* Título (seu JS pode usar h3 OU h4; suportamos ambos) */
+.produto-card h3,
+.produto-card h4 {
+  font-size: 15px;
+  margin: 0 0 8px 0;
+  color: #222;
+  line-height: 1.25;
+}
+
+/* Categoria / pequenos textos */
+.produto-card small {
+  color: #6b7280;
+  font-weight: 700;
+}
+
+/* Descrição */
+.produto-card p {
+  font-size: 13px;
+  color: #555;
+  margin: 6px 0 12px;
+}
+
+/* Empurra o botão pro final quando o texto varia */
+.produto-card .btn-produto {
+  margin-top: auto;
+}
+
+/* Botão */
+.btn-produto {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+
+  width: 100%;
+  background: var(--brand);
+  color: #0b1b22;
+
+  padding: 11px 14px;
+  border-radius: 12px;
+  font-weight: 900;
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: transform .12s ease, filter .12s ease;
+}
+
+.btn-produto:hover {
+  filter: brightness(.96);
+  transform: translateY(-1px);
+}
+
+/* Ajustes mobile para cards */
+@media (max-width: 520px){
+  .produtos-grid { gap: 14px; }
+  .produto-card img { height: 170px; }
 }

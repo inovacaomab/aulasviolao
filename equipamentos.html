@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Equipamentos Indicados | Cordas e Vida</title>
+
+  <meta name="description"
+        content="Equipamentos indicados por Moacir Baia para estudo e evolução no violão." />
+  <!-- ======================================================
+       FAVICON (ícone da aba)
+       Regras:
+       - favicon.ico na raiz (/) do site
+       - PNGs dentro de /img
+       ====================================================== -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="img/logo-cordas-e-vida.png" alt="Cordas e Vida">
+      <div class="brand-text">
+        <strong>Cordas e Vida</strong>
+        <span>com Moacir Baia</span>
+      </div>
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="aulas.html">Aulas</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="equipamentos.html" class="active">Equipamentos Indicados</a>
+      <a href="contato.html">Contato</a>
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="grid">
+
+    <article class="card cols-12">
+      <h2>Equipamentos Indicados</h2>
+      <p class="muted">
+        Sugestões organizadas por categoria e custo-benefício.
+        Alguns links são afiliados — você apoia o projeto sem pagar nada a mais.<br> DEUS abençoe!
+      </p>
+    </article>
+
+    <article class="card cols-12">
+      <!-- JS vai preencher aqui -->
+      <div id="lista-produtos">
+        <p class="muted">Carregando equipamentos…</p>
+      </div>
+    </article>
+
+  </section>
+</main>
+
+  <!-- ======================================================
+       FOOTER
+       ====================================================== -->
+  <footer class="footer">
+<section class="sitemap">
+  <div class="container sitemap-grid">
+
+    <div>
+      <strong>Cordas e Vida</strong>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="aulas.html">Aulas</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+		<li><a href="equipamentos.html">Equipamentos Indicados</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <strong>Conteúdo</strong>
+      <ul>
+        <li><a href="https://www.youtube.com/@moacirbaia/" target="_blank">YouTube</a></li>
+        <li><a href="https://www.instagram.com/moacir_baia" target="_blank">Instagram</a></li>
+        <li><a href="https://open.spotify.com/intl-pt/artist/01oUYR9PJsVMq2ii90pncU" target="_blank">Spotify</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <strong>Contato</strong>
+      <ul>
+        <li><a href="https://whatsapp.com/channel/0029Vb7BnjJ6rsQrLobubF1Q" target="_blank">Comunidade no WhatsApp</a></li>
+        <li><a href="contato.html">Página de contato</a></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+    <div class="container">
+      <div>© <span id="y"></span> Cordas e Vida — Moacir Baia<br><br>
+JESUS CRISTO É O SENHOR! - "Entrega o teu caminho ao Senhor; confia nEle, e Ele o fará." (Salmos 37:5)</div>
+      </footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+
+<!-- ORDEM CORRETA -->
+<script src="assets/produtos-data.js"></script>
+<script src="assets/equipamentos.js"></script>
+
+</body>
+</html>
