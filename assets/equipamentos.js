@@ -1,4 +1,8 @@
 // assets/equipamentos.js
+// - Renderiza catálogo por categoria
+// - Mostra selo "Indicado" nos cards
+// - Rastreia cliques no GA4 (click_produto)
+
 (function () {
   const container = document.getElementById("lista-produtos");
   if (!container) return;
@@ -10,7 +14,7 @@
   }
 
   const html = catalogo
-    .map(secao => {
+    .map((secao) => {
       const itens = Array.isArray(secao.itens) ? secao.itens : [];
       if (!itens.length) return "";
 
@@ -18,7 +22,7 @@
         <section class="equip-section">
           <h3 class="equip-title">${escHtml(secao.categoria)}</h3>
           <div class="produtos-grid">
-            ${itens.map(p => cardProduto(p)).join("")}
+            ${itens.map((p) => cardProduto(p)).join("")}
           </div>
         </section>
       `;
@@ -28,30 +32,54 @@
   container.innerHTML = html || `<p class="muted">Nenhum produto cadastrado.</p>`;
 
   function cardProduto(p) {
-    const nome = escHtml(p.nome || "Produto");
-    const desc = escHtml(p.descricao || "");
-    const img = escAttr(p.imagem || "");
-    const link = escAttr(p.linkAfiliado || "#");
+    const nome = escHtml(p?.nome || "Produto");
+    const desc = escHtml(p?.descricao || "");
+    const img = escAttr(p?.imagem || "");
+    const link = escAttr(p?.linkAfiliado || "#");
 
     return `
       <article class="produto-card">
+        <div class="badge-indicado">Indicação MOA</div>
+
         <img src="${img}" alt="${nome}" loading="lazy">
+
         <h4>${nome}</h4>
+
         ${desc ? `<p class="muted">${desc}</p>` : ""}
+
         <a class="btn-produto"
            href="${link}"
            target="_blank"
            rel="noopener sponsored"
-           onclick="if(typeof gtag==='function'){gtag('event','click_produto',{event_category:'afiliado',event_label:'${escJs(p.nome || "")}'});}">
+           onclick="trackCliqueProduto('${escJs(p?.nome || "")}')">
            Ver no Mercado Livre
         </a>
       </article>
     `;
   }
 
+  // Tracking GA4 (mantém o evento que você já estava usando)
+  // Você verá em GA4: Relatórios > Engajamento > Eventos > click_produto
+  window.trackCliqueProduto = function (nomeProduto) {
+    try {
+      if (typeof gtag === "function") {
+        gtag("event", "click_produto", {
+          event_category: "afiliado",
+          event_label: nomeProduto || "produto-sem-nome",
+        });
+      }
+    } catch (e) {
+      // silencioso (não quebra o clique)
+    }
+  };
+
   function escHtml(s) {
-    return String(s ?? "").replace(/[&<>"']/g, m => ({
-      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+    return String(s ?? "").replace(/[&<>"']/g, (m) => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#039;",
     }[m]));
   }
 
