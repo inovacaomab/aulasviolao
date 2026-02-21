@@ -7,6 +7,13 @@ const catalogo = [
     "categoria": "Cordas",
     "itens": [
       {
+        "nome": "Encordoamento Violão Nylon D'Addario Normal / Hard Tension",
+        "descricao": "Nylon de qualidade, boa projeção e durabilidade para estudo e uso frequente.",
+        "linkProduto": "https://produto.mercadolivre.com.br/MLB-4141376891-encordoamento-violo-nylon-daddario-normal-hard-tension-_JM",
+        "linkAfiliado": "https://mercadolivre.com/sec/1uPDyhS",
+        "imagem": "img/produtos/encordoamento-violao-nylon-d-addario-normal-hard-tension.webp"
+      },
+      {
         "nome": "Encordoamento D’Addario Aço Extra Light 0.09 (violão)",
         "descricao": "Cordas de aço leves, boa tocabilidade e brilho. Ótima para iniciantes.",
         "linkProduto": "https://produto.mercadolivre.com.br/MLB-2680938057-encordoamento-cordas-violo-aco-daddario-09-010-011-mi-extra-_JM",
@@ -15,14 +22,14 @@ const catalogo = [
       },
       {
         "nome": "Encordoamento Augustine Regal Blue (nylon alta tensão)",
-        "descricao": "Nylon de qualidade, boa projeção e resposta. Excelente para violão clássico.",
+        "descricao": "Nylon com ótima resposta e projeção. Excelente para violão clássico.",
         "linkProduto": "https://www.mercadolivre.com.br/encordoamento-violo-nailon-6-cordas-augustine-regal-blue-alta-tenso/p/MLB21790784",
         "linkAfiliado": "https://mercadolivre.com/sec/1gqUamm",
         "imagem": "img/produtos/encordoamento-augustine-regal-blue-nylon-alta-tensao.webp"
       },
       {
         "nome": "Encordoamento Elixir 0.11 Custom Light (violão aço)",
-        "descricao": "Cordas com ótima durabilidade e toque confortável. Boa opção para quem quer longevidade.",
+        "descricao": "Ótima durabilidade e toque confortável. Boa opção para quem quer longevidade.",
         "linkProduto": "https://www.mercadolivre.com.br/encordoamento-elixir-cordas-011-custom-light-violao-aco/up/MLBU1407216030",
         "linkAfiliado": "https://mercadolivre.com/sec/1zzgw6p",
         "imagem": "img/produtos/encordoamento-elixir-0-11-custom-light-violao-aco.webp"
@@ -61,6 +68,13 @@ const catalogo = [
         "imagem": "img/produtos/luz-led-para-leitura-de-partitura-clip-on.webp"
       },
       {
+        "nome": "Kit acessórios para violão/baixo/guitarra",
+        "descricao": "Kit útil com itens básicos de apoio e prática.",
+        "linkProduto": "https://produto.mercadolivre.com.br/MLB-1488881424-kit-acessorios-violo-baixo-guitarra-_JM",
+        "linkAfiliado": "https://mercadolivre.com/sec/29zYHCH",
+        "imagem": "img/produtos/kit-acessorios-para-violao-baixo-guitarra.webp"
+      },
+      {
         "nome": "Apoio de perna para violão (modelo flat Pompeo)",
         "descricao": "Ótimo para postura no violão clássico, sem precisar de banquinho alto.",
         "linkProduto": "https://produto.mercadolivre.com.br/MLB-2718718575-apoio-de-perna-para-violo-modelo-flat-pompeo-_JM",
@@ -77,6 +91,44 @@ const catalogo = [
     ]
   },
   {
+    "categoria": "Manutenção e Limpeza",
+    "itens": [
+      {
+        "nome": "Kit completo troca e limpeza de cordas",
+        "descricao": "Ajuda a manter o instrumento limpo e as cordas durarem mais.",
+        "linkProduto": "https://www.mercadolivre.com.br/kit-completo-troca-limpeza-de-cordas-violao-guitarra-musicos/up/MLBU3253573445",
+        "linkAfiliado": "https://mercadolivre.com/sec/2fGb5JS",
+        "imagem": "img/produtos/kit-completo-troca-e-limpeza-de-cordas.webp"
+      },
+      {
+        "nome": "Kit ferramentas reparação e cuidados (luthier)",
+        "descricao": "Ferramentas para ajustes simples e cuidados no dia a dia.",
+        "linkProduto": "https://www.mercadolivre.com.br/kit-ferramentas-reparacao-e-cuidados-guitarra-luthier/up/MLBU3749067477",
+        "linkAfiliado": "https://mercadolivre.com/sec/2ELC3vD",
+        "imagem": "img/produtos/kit-ferramentas-reparacao-e-cuidados-luthier.webp"
+      },
+      {
+        "nome": "Kit D’Addario manutenção e limpeza de instrumentos",
+        "descricao": "Kit premium de cuidado. Mantém acabamento e cordas em melhor estado.",
+        "linkProduto": "https://www.mercadolivre.com.br/kit-daddario-manutencao-e-limpeza-de-instrumentos-musicais/up/MLBU2932003884",
+        "linkAfiliado": "https://mercadolivre.com/sec/15Q1XKi",
+        "imagem": "img/produtos/kit-d-addario-manutencao-e-limpeza-de-instrumentos.webp"
+      }
+    ]
+  },
+  {
+    "categoria": "Cabos / Áudio",
+    "itens": [
+      {
+        "nome": "Cabo para violão Santo Ângelo Acoustic 4,57m (plug em L)",
+        "descricao": "Bom cabo faz diferença no ruído e na durabilidade (uso em culto e ensaio).",
+        "linkProduto": "https://www.mercadolivre.com.br/cabo-para-violo-santo-angelo-acoustic-457-metros-plug-em-l/p/MLB21618274",
+        "linkAfiliado": "https://mercadolivre.com/sec/211fZM8",
+        "imagem": "img/produtos/cabo-para-violao-santo-angelo-acoustic-4-57m-plug-em-l.webp"
+      }
+    ]
+  },
+  {
     "categoria": "Suportes e Apoios",
     "itens": [
       {
@@ -87,8 +139,22 @@ const catalogo = [
         "imagem": "img/produtos/banqueta-apoio-para-violao-guitarra-e-baixo.webp"
       },
       {
+        "nome": "Suporte para instrumentos (chão) — ASK G3S",
+        "descricao": "Organiza o ambiente e protege o instrumento (ótimo para casa/igreja).",
+        "linkProduto": "https://www.mercadolivre.com.br/suporte-para-instrumentos-cho-guitarra-violo-baixo-ask-g3s-cor-preto/p/MLB27048469",
+        "linkAfiliado": "https://mercadolivre.com/sec/2Pk7D1c",
+        "imagem": "img/produtos/suporte-para-instrumentos-chao-ask-g3s.webp"
+      },
+      {
+        "nome": "Apoio de pé profissional (violão) — SATY APV05",
+        "descricao": "Excelente para violão clássico e postura correta ao tocar sentado.",
+        "linkProduto": "https://www.mercadolivre.com.br/apoio-de-pe-profissional-suporte-saty-para-violao--apv05/up/MLBU2071551185",
+        "linkAfiliado": "https://mercadolivre.com/sec/1sSvwTq",
+        "imagem": "img/produtos/apoio-de-pe-profissional-violao-saty-apv05.webp"
+      },
+      {
         "nome": "Kit 3 suportes de parede (guitarra/violão/baixo)",
-        "descricao": "Organiza o ambiente e protege o instrumento. Ótimo para estúdio e igreja.",
+        "descricao": "Organiza o ambiente e protege os instrumentos. Ótimo para estúdio e igreja.",
         "linkProduto": "https://www.mercadolivre.com.br/kit-3-suporte-ibox-fixo-de-parede-p-guitarra-violo-baixo-cor-outro/p/MLB44309731",
         "linkAfiliado": "https://mercadolivre.com/sec/25pdRtZ",
         "imagem": "img/produtos/kit-3-suportes-de-parede-guitarra-violao-baixo.webp"
