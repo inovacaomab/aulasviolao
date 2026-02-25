@@ -205,6 +205,13 @@ const catalogo = [
     "categoria": "Violões",
     "itens": [
       {
+        "nome": "Violão Clássico Giannini N-14 Natural Tampo Sabina Verniz Brilhante Com Cordas De Nylon",
+        "descricao": "Violão IDEAL para INICIANTES - ÓTIMO CUSTO BENEFICIO.",
+        "linkProduto": "https://www.mercadolivre.com.br/violo-classico-giannini-n-14-natural-tampo-sabina-verniz-brilhante-com-cordas-de-nylon/p/MLB16038230#polycard_client=bookmarks&wid=MLB4233673361&sid=bookmarks",
+        "linkAfiliado": "https://meli.la/2w62FCa",
+        "imagem": "img/produtos/violao-classico-giannini-n-14-natural-tampo-sabina-verniz-brilhante-com-cordas-de-nylon.webp"
+      },
+      {
         "nome": "Violão Yamaha TransAcoustic FS-TA (vintage tint)",
         "descricao": "Violão premium com efeitos embutidos. Excelente para tocar sem amplificador.",
         "linkProduto": "https://www.mercadolivre.com.br/violo-acustico-yamaha-transacoustic-fs-ta-para-destros-vintage-tint-brilhante/p/MLB15490374",
