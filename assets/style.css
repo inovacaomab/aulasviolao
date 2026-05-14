@@ -606,3 +606,325 @@ header.site-header .nav{
 .produto-card {
   position: relative;
 }
+
+/* Novidades - cards (Top 5) */
+.nov-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+@media (max-width: 980px) {
+  .nov-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  .nov-grid { grid-template-columns: 1fr; }
+}
+
+.nov-card {
+  display: block;
+  text-decoration: none;
+  border-radius: 14px;
+  padding: 14px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  transition: transform .12s ease, border-color .12s ease;
+}
+.nov-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,.16);
+}
+
+.nov-card-title {
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.nov-card-text { font-size: 14px; }
+.nov-card-date { margin-top: 10px; font-size: 12px; }
+
+/* Novidades - lista completa */
+.nov-item {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.nov-item h3 { margin: 0 0 6px 0; }
+.nov-item a { text-decoration: none; }
+
+/* ================================
+   BIBLIOTECA DE ESTUDOS
+================================ */
+#biblioteca-grid {
+  margin-top: 20px;
+}
+.bib-secao {
+  margin-bottom: 32px;
+}
+.bib-categoria {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #64748b;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding-bottom: 8px;
+}
+.bib-livros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.bib-card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+.bib-card h4 {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+}
+.bib-capitulos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.bib-capitulos li {
+  margin-bottom: 8px;
+}
+.btn-capitulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: background 0.15s ease;
+}
+.btn-cap-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-capitulo:hover {
+  background: #f1f5f9;
+}
+.btn-cap-text svg {
+  flex-shrink: 0;
+  color: var(--muted);
+}
+
+/* ================================
+   PROGRESSION BADGES & BANNER
+================================ */
+.bib-continue-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid rgba(0,0,0,0.05);
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.bib-continue-banner:hover {
+  background: #f1f5f9;
+  border-color: rgba(0,0,0,0.08);
+}
+.bib-continue-info {
+  display: flex;
+  flex-direction: column;
+}
+.bib-continue-info small {
+  color: #64748b;
+  font-weight: 500;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.bib-continue-info strong {
+  font-size: 1rem;
+  color: #1e293b;
+  display: block;
+  margin-top: 2px;
+}
+.bib-continue-action {
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+}
+.badge-status {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+.badge-status.novo {
+  background: #f1f5f9;
+  color: #94a3b8; /* Cinza muito suave */
+}
+.badge-status.lendo {
+  background: #eff6ff;
+  color: #3b82f6; /* Azul */
+  border: 1px solid #bfdbfe;
+}
+.badge-status.concluido {
+  background: #ecfdf5;
+  color: #10b981; /* Verde */
+  border: 1px solid #a7f3d0;
+}
+.drawer-footer-action {
+  margin-top: 40px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  padding-top: 24px;
+  text-align: center;
+}
+.drawer-footer-action.concluido-texto {
+  background: #ecfdf5;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #a7f3d0;
+}
+@media (max-width: 520px) {
+  .bib-continue-banner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+}
+
+/* ================================
+   LEITOR LATERAL (SIDE DRAWER)
+================================ */
+.drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+.drawer-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Hidden off-screen */
+  width: 100%;
+  max-width: 600px; /* Limits width on desktop */
+  height: 100vh; /* Full height */
+  background: #fff;
+  z-index: 100;
+  box-shadow: -4px 0 24px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease;
+}
+.drawer.open {
+  right: 0; /* Slide in */
+}
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  background: #f9fafb;
+}
+.drawer-content {
+  flex: 1;
+  padding: 40px 48px;
+  overflow-y: auto;
+  /* Book typography */
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.7;
+  color: #1f2937;
+  scroll-behavior: smooth;
+}
+/* Reading column restriction for better eye tracking */
+.drawer-content > * {
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.drawer-content h1, 
+.drawer-content h2, 
+.drawer-content h3 {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #111827;
+  line-height: 1.3;
+}
+.drawer-content h1 {
+  font-size: 2.2rem;
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-weight: 800;
+  border-bottom: 2px solid rgba(0,0,0,0.05);
+  padding-bottom: 16px;
+}
+.drawer-content h2 {
+  font-size: 1.5rem;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+.drawer-content h3 {
+  font-size: 1.25rem;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #374151;
+}
+.drawer-content p {
+  margin-bottom: 20px;
+}
+/* Exercises & Callouts */
+.drawer-content .exercicio {
+  background: rgba(97,218,251,0.08);
+  border-left: 4px solid var(--brand);
+  padding: 20px 24px;
+  margin: 32px auto;
+  border-radius: 0 8px 8px 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1rem;
+}
+.drawer-content .exercicio h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #0b1b22;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.drawer-content .exercicio p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .drawer-content {
+    padding: 24px 20px;
+    font-size: 1.05rem;
+  }
+  .drawer-content h1 {
+    font-size: 1.8rem;
+  }
+  .drawer-content .exercicio {
+    padding: 16px 20px;
+  }
+}

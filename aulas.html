@@ -76,6 +76,7 @@
       allowfullscreen>
     </iframe>
   </div>
+<br>
   <div class="video-meta">
     <strong>Bem vindos!</strong>
     <span>É um prazer ter você por aqui!</span>
@@ -100,6 +101,7 @@
               <div class="mini-actions"><span class="mini-btn">Abrir canal</span></div>
             </div>
           </a>
+
           <!-- Exemplo 3 -->
           <a class="video-tile" href="contato.html">
             <img class="thumb" src="img/contatosdiversos.jpg" alt="Contato">
@@ -118,6 +120,17 @@ Para adicionar vídeos: duplique um <code>video-tile</code> e troque o ID do You
 
 			-->
         </p>
+      </article>
+
+      <!-- Nova seção: Biblioteca de Estudos -->
+      <article class="card cols-12">
+        <div class="section-title" style="flex-direction: column; align-items: flex-start; gap: 4px;">
+          <h2 style="margin:0; border-bottom: none; padding-bottom: 0;">Biblioteca de Estudos</h2>
+          <p class="muted" style="margin: 0 0 16px 0;">Leituras, exercícios e trilhas práticas para aprofundar sua musicalidade.</p>
+        </div>
+        
+        <!-- O JS preencherá isso aqui -->
+        <div id="biblioteca-grid"></div>
       </article>
 
       <!-- Conteúdo extra -->
@@ -200,5 +213,23 @@ JESUS CRISTO É O SENHOR! - "Entrega o teu caminho ao Senhor; confia nEle, e Ele
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
+
+  <!-- ======================================================
+       LEITOR LATERAL (SIDE DRAWER)
+       ====================================================== -->
+  <div id="leitor-overlay" class="drawer-overlay"></div>
+  <div id="leitor-drawer" class="drawer">
+    <div class="drawer-header">
+      <h3 id="drawer-titulo" style="margin:0;">Leitor</h3>
+      <button id="fechar-leitor" class="mini-btn">Fechar (ESC)</button>
+    </div>
+    <div id="leitor-conteudo" class="drawer-content">
+      <!-- Conteúdo carregado via fetch entra aqui -->
+    </div>
+  </div>
+
+  <!-- Scripts da Biblioteca -->
+  <script src="assets/livros-data.js"></script>
+  <script src="assets/livros.js"></script>
 </body>
 </html>
