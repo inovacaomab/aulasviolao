@@ -10,6 +10,7 @@ const bibliotecaData = [
         capitulos: [
           { titulo: "1. Preparação para o Estudo", arquivo: "livros/mao-direita/01-preparacao-para-o-estudo.html" },
           { titulo: "2. Introdução à Mão Direita", arquivo: "livros/mao-direita/01-introducao.html" },
+          { titulo: "3. O Fluxo dos Dedos", arquivo: "livros/mao-direita/02-o-fluxo-dos-dedos.html" },
           // Adicione novos capítulos aqui
           // { titulo: "3. Padrões Básicos", arquivo: "livros/mao-direita/02-padroes.html" }
         ]
