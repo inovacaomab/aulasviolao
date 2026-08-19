@@ -27,6 +27,17 @@ const bibliotecaData = [
         ]
       }
     ]
+  },
+  {
+    categoria: "Harmonia",
+    livros: [
+      {
+        titulo: "Campo Harmônico",
+        capitulos: [
+          { titulo: "1. Introdução ao Campo Harmônico", arquivo: "livros/harmonia/01-introducao-campo-harmonico.html" },
+        ]
+      }
+    ]
   }
 ];
 
