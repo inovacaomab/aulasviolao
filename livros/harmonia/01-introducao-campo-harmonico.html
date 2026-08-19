@@ -1,0 +1,279 @@
+<style>
+/* CSS incorporated directly in the HTML to avoid touching the global style.css */
+.campo-harmonico-lesson {
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+.diagrama-wrapper {
+  overflow-x: auto;
+  margin: 2rem 0;
+  padding: 1.5rem 1rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+.diagrama {
+  display: flex;
+  flex-direction: column;
+  min-width: 600px;
+}
+.d-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.d-label {
+  width: 100px;
+  text-align: right;
+  padding-right: 15px;
+  font-weight: bold;
+  color: #555;
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+.d-items {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  position: relative;
+}
+.d-item {
+  width: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.grau-box {
+  border: 1px solid #333;
+  padding: 2px 6px;
+  font-weight: bold;
+}
+.d-intervalos {
+  display: flex;
+  flex-grow: 1;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.d-intervalo {
+  flex-grow: 1;
+  text-align: center;
+  position: relative;
+}
+.d-arc {
+  border-bottom: 1.5px solid #888;
+  border-left: 1.5px solid #888;
+  border-right: 1.5px solid #888;
+  height: 12px;
+  border-radius: 0 0 10px 10px;
+  margin: 0 auto;
+  width: 100%;
+}
+.d-text {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 5px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.tabela-harmonico {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  text-align: center;
+  overflow-x: auto;
+  display: block;
+  white-space: nowrap;
+}
+.tabela-harmonico th, .tabela-harmonico td {
+  padding: 12px 15px;
+}
+.tabela-harmonico tr {
+  border-bottom: 1px solid #ddd;
+}
+.tabela-harmonico .row-label {
+  text-align: right;
+  font-weight: bold;
+  color: #555;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  border-right: 2px solid #ddd;
+}
+.diminuto-symbol {
+  font-size: 1.1rem;
+  line-height: 0;
+  vertical-align: super;
+}
+
+.tabela-tonalidades {
+  margin: 2rem auto;
+  border-collapse: collapse;
+  font-size: 1.1rem;
+  text-align: center;
+}
+.tabela-tonalidades td {
+  padding: 10px 15px;
+}
+.tabela-tonalidades td:first-child {
+  font-weight: bold;
+  border-right: 2px solid #ccc;
+}
+</style>
+
+<div class="campo-harmonico-lesson">
+  <h1>Introdução ao Campo Harmônico</h1>
+
+  <p>
+  O <strong>campo harmônico</strong> é a sequência de acordes formada a partir das escalas: maior e menor (natural, harmônica e melódica).
+  </p>
+
+  <p>
+  Tomando por exemplo a escala de <strong>Dó Maior</strong>:
+  </p>
+
+  <div class="diagrama-wrapper">
+    <div class="diagrama">
+      <div class="d-row">
+        <div class="d-label">CIFRAS &rarr;</div>
+        <div class="d-items">
+          <div class="d-item">C</div><div class="d-item">D</div><div class="d-item">E</div><div class="d-item">F</div><div class="d-item">G</div><div class="d-item">A</div><div class="d-item">B</div><div class="d-item">C<br><small style="font-size:0.6rem; color:#888;">[8ª rep.]</small></div>
+        </div>
+      </div>
+      <div class="d-row">
+        <div class="d-label">NOTAS &rarr;</div>
+        <div class="d-items">
+          <div class="d-item">(Dó)</div><div class="d-item">(Ré)</div><div class="d-item">(Mi)</div><div class="d-item">(Fá)</div><div class="d-item">(Sol)</div><div class="d-item">(Lá)</div><div class="d-item">(Si)</div><div class="d-item">(Dó)</div>
+        </div>
+      </div>
+      <div class="d-row">
+        <div class="d-label">GRAUS &rarr;</div>
+        <div class="d-items">
+          <div class="d-item"><span class="grau-box">I</span></div><div class="d-item"><span class="grau-box">II</span></div><div class="d-item"><span class="grau-box">III</span></div><div class="d-item"><span class="grau-box">IV</span></div><div class="d-item"><span class="grau-box">V</span></div><div class="d-item"><span class="grau-box">VI</span></div><div class="d-item"><span class="grau-box">VII</span></div><div class="d-item"><span class="grau-box">I</span></div>
+        </div>
+      </div>
+      <div class="d-row" style="margin-top: 5px; align-items: flex-start;">
+        <div class="d-label" style="padding-top: 15px;">INTERVALOS &rarr;</div>
+        <div class="d-intervalos">
+          <div class="d-intervalo"><div class="d-arc"></div><span class="d-text">1 TON</span></div>
+          <div class="d-intervalo"><div class="d-arc"></div><span class="d-text">1 TON</span></div>
+          <div class="d-intervalo"><div class="d-arc"></div><span class="d-text">½ TON</span></div>
+          <div class="d-intervalo"><div class="d-arc"></div><span class="d-text">1 TON</span></div>
+          <div class="d-intervalo"><div class="d-arc"></div><span class="d-text">1 TON</span></div>
+          <div class="d-intervalo"><div class="d-arc"></div><span class="d-text">1 TON</span></div>
+          <div class="d-intervalo"><div class="d-arc"></div><span class="d-text">½ TON</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>
+  A escala maior é formada por 7 notas distribuídas em <strong>intervalos</strong> e seus respectivos <strong>graus</strong>.
+  </p>
+
+  <ul>
+    <li><strong>Intervalos:</strong> Distância entre as notas. Pode ser de 1 tom, ½ tom e a soma de ambas — o menor seria ½ tom.</li>
+    <li><strong>Graus:</strong> Cada nota tem sua ordem na escala em determinado grau, ou seja, resumidamente seu número ordinal para cada tonalidade.</li>
+    <li>
+      <strong>Cifras:</strong> Representação de cada nota por uma letra. A cifra (nota tônica) pode estar acompanhada por mais uma letra (minúscula) ou números. 
+      <br>Exemplo: <strong>Cm7</strong> (C = Tônica, m = menor, 7 = sétima. Lê-se: Dó menor com sétima).
+    </li>
+  </ul>
+
+  <section>
+    <h3>Estrutura dos Acordes</h3>
+
+    <p>
+    A partir do princípio da escala, no exemplo de Dó Maior, as notas formarão os respectivos acordes, seguindo a estrutura definida a seguir:
+    </p>
+
+    <table class="tabela-harmonico">
+      <tr>
+        <td class="row-label">Grau</td>
+        <td><span class="grau-box">I</span></td>
+        <td><span class="grau-box">II</span></td>
+        <td><span class="grau-box">III</span></td>
+        <td><span class="grau-box">IV</span></td>
+        <td><span class="grau-box">V</span></td>
+        <td><span class="grau-box">VI</span></td>
+        <td><span class="grau-box">VII</span></td>
+      </tr>
+      <tr>
+        <td class="row-label">Estrutura</td>
+        <td>Maior</td>
+        <td>menor</td>
+        <td>menor</td>
+        <td>Maior</td>
+        <td>Maior</td>
+        <td>menor</td>
+        <td>meio diminuto <span class="diminuto-symbol">ø</span></td>
+      </tr>
+      <tr style="border-bottom: 2px solid #555;">
+        <td class="row-label">Resultado</td>
+        <td style="color: #2b78e4;"><strong>I</strong></td>
+        <td style="color: #2b78e4;"><strong>IIm</strong></td>
+        <td style="color: #2b78e4;"><strong>IIIm</strong></td>
+        <td style="color: #2b78e4;"><strong>IV</strong></td>
+        <td style="color: #2b78e4;"><strong>V</strong></td>
+        <td style="color: #2b78e4;"><strong>VIm</strong></td>
+        <td style="color: #2b78e4;"><strong>VII<span class="diminuto-symbol">ø</span></strong></td>
+      </tr>
+    </table>
+
+    <p>
+    Aplicando à escala de <strong>Dó Maior</strong>, o resultado:
+    </p>
+
+    <table class="tabela-harmonico">
+      <tr>
+        <td class="row-label">Cifras <br> Notas</td>
+        <td>C <br> <small>(Dó)</small></td>
+        <td>D <br> <small>(Ré)</small></td>
+        <td>E <br> <small>(Mi)</small></td>
+        <td>F <br> <small>(Fá)</small></td>
+        <td>G <br> <small>(Sol)</small></td>
+        <td>A <br> <small>(Lá)</small></td>
+        <td>B <br> <small>(Si)</small></td>
+      </tr>
+      <tr style="border-bottom: 2px solid #555;">
+        <td class="row-label">Resultado <br> + Notas</td>
+        <td style="color: #2b78e4;"><strong>C</strong></td>
+        <td style="color: #2b78e4;"><strong>Dm</strong></td>
+        <td style="color: #2b78e4;"><strong>Em</strong></td>
+        <td style="color: #2b78e4;"><strong>F</strong></td>
+        <td style="color: #2b78e4;"><strong>G</strong></td>
+        <td style="color: #2b78e4;"><strong>Am</strong></td>
+        <td style="color: #2b78e4;"><strong>B<span class="diminuto-symbol">ø</span></strong></td>
+      </tr>
+      <tr>
+        <td class="row-label" style="border-bottom: none;">Leitura</td>
+        <td style="border-bottom: none;"><small>Dó Maior</small></td>
+        <td style="border-bottom: none;"><small>Ré menor</small></td>
+        <td style="border-bottom: none;"><small>Mi menor</small></td>
+        <td style="border-bottom: none;"><small>Fá Maior</small></td>
+        <td style="border-bottom: none;"><small>Sol Maior</small></td>
+        <td style="border-bottom: none;"><small>Lá menor</small></td>
+        <td style="border-bottom: none;"><small>Si meio-diminuta</small></td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h3>Outras Tonalidades</h3>
+    
+    <p>Aplica-se o mesmo princípio para as escalas em cada tonalidade, por exemplo a seguir:</p>
+
+    <div style="overflow-x: auto; padding-bottom: 1rem;">
+      <table class="tabela-tonalidades">
+        <tr><td>D</td> <td>E</td> <td>F#</td> <td>G</td> <td>A</td> <td>B</td> <td>C#</td></tr>
+        <tr><td>E</td> <td>F#</td> <td>G#</td> <td>A</td> <td>B</td> <td>C#</td> <td>D#</td></tr>
+        <tr><td>F</td> <td>G</td> <td>A</td> <td>Bb</td> <td>C</td> <td>D</td> <td>E</td></tr>
+        <tr><td>G</td> <td>A</td> <td>B</td> <td>C</td> <td>D</td> <td>E</td> <td>F#</td></tr>
+        <tr><td>A</td> <td>B</td> <td>C#</td> <td>D</td> <td>E</td> <td>F#</td> <td>G#</td></tr>
+        <tr><td>B</td> <td>C#</td> <td>D#</td> <td>E</td> <td>F#</td> <td>G#</td> <td>A#</td></tr>
+      </table>
+    </div>
+  </section>
+</div>
