@@ -1,0 +1,227 @@
+<style>
+/* CSS incorporated directly in the HTML to avoid touching the global style.css */
+.intervalos-lesson {
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+/* Diagrams and Containers */
+.diagrama-wrapper {
+  overflow-x: auto;
+  margin: 2rem 0;
+  padding: 1.5rem 1rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+.diagrama {
+  display: flex;
+  flex-direction: column;
+  min-width: 600px;
+}
+.d-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.d-label {
+  width: 100px;
+  text-align: right;
+  padding-right: 15px;
+  font-weight: bold;
+  color: #555;
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+.d-items {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  position: relative;
+}
+.d-item {
+  width: 45px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.grau-box {
+  border: 1px solid #333;
+  padding: 2px 6px;
+  font-weight: bold;
+}
+
+/* Nomenclatura */
+.nomenclatura-box {
+  background: #f9f9f9;
+  padding: 2rem 1rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.nom-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.nom-wrapper:last-child {
+  margin-bottom: 0;
+}
+.nom-word {
+  font-weight: bold;
+  font-size: 1rem;
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+.nom-arrows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+  font-family: monospace;
+}
+.arrow-up {
+  color: #2b78e4;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+.arrow-down {
+  color: #d62728;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-top: 2px;
+}
+</style>
+
+<div class="intervalos-lesson">
+  <h1>Intervalos</h1>
+
+  <section>
+    <h2>Introdução aos Intervalos a partir da Tônica</h2>
+    <p>O intervalo pode ser "calculado" a partir da Tônica, ou seja, do <strong>I Grau</strong> da tonalidade. Vamos analisar os intervalos a partir do tom de <strong>Dó Maior</strong>, por exemplo:</p>
+    
+    <div class="diagrama-wrapper">
+      <div class="diagrama">
+        <div class="d-row">
+          <div class="d-label">GRAUS &rarr;</div>
+          <div class="d-items">
+            <div class="d-item"><span class="grau-box">I</span><br><small style="color: #888; font-size: 0.65rem;">"TÔNICA"</small></div>
+            <div class="d-item"><span class="grau-box">II</span></div>
+            <div class="d-item"><span class="grau-box">III</span></div>
+            <div class="d-item"><span class="grau-box">IV</span></div>
+            <div class="d-item"><span class="grau-box">V</span></div>
+            <div class="d-item"><span class="grau-box">VI</span></div>
+            <div class="d-item"><span class="grau-box">VII</span></div>
+            <div class="d-item"><span class="grau-box">I</span><br><small style="color: #888; font-size: 0.65rem;">"REPETIÇÃO"</small></div>
+          </div>
+        </div>
+        <div class="d-row" style="margin-bottom: 20px;">
+          <div class="d-label">NOTAS &rarr;</div>
+          <div class="d-items">
+            <div class="d-item">DÓ</div>
+            <div class="d-item">RÉ</div>
+            <div class="d-item">MI</div>
+            <div class="d-item">FÁ</div>
+            <div class="d-item">SOL</div>
+            <div class="d-item">LÁ</div>
+            <div class="d-item">SI</div>
+            <div class="d-item">DÓ</div>
+          </div>
+        </div>
+        
+        <table style="width: 100%; font-size: 0.9rem; border-collapse: collapse; text-align: center; margin-top: 10px;">
+          <tr style="border-bottom: 2px solid #ccc;">
+            <th style="padding-bottom: 8px;">De...</th>
+            <th style="padding-bottom: 8px;">Para...</th>
+            <th style="padding-bottom: 8px;">Grau</th>
+            <th style="padding-bottom: 8px;">Intervalo</th>
+            <th style="padding-bottom: 8px; color: #2b78e4;">Distância</th>
+          </tr>
+          <tr><td style="padding: 8px 0;">Dó</td><td>Ré</td><td><strong>II</strong></td><td>2ª Maior</td><td style="color: #2b78e4; font-weight: bold;">1 Ton</td></tr>
+          <tr><td style="padding: 8px 0;">Dó</td><td>Mi</td><td><strong>III</strong></td><td>3ª Maior</td><td style="color: #2b78e4; font-weight: bold;">2 Tons</td></tr>
+          <tr><td style="padding: 8px 0;">Dó</td><td>Fá</td><td><strong>IV</strong></td><td>4ª Justa</td><td style="color: #2b78e4; font-weight: bold;">2 ½ Tons</td></tr>
+          <tr><td style="padding: 8px 0;">Dó</td><td>Sol</td><td><strong>V</strong></td><td>5ª Justa</td><td style="color: #2b78e4; font-weight: bold;">3 ½ Tons</td></tr>
+          <tr><td style="padding: 8px 0;">Dó</td><td>Lá</td><td><strong>VI</strong></td><td>6ª Maior</td><td style="color: #2b78e4; font-weight: bold;">4 ½ Tons</td></tr>
+          <tr><td style="padding: 8px 0;">Dó</td><td>Si</td><td><strong>VII</strong></td><td>7ª Maior</td><td style="color: #2b78e4; font-weight: bold;">5 ½ Tons</td></tr>
+          <tr><td style="padding: 8px 0;">Dó</td><td>Dó (8ª)</td><td><strong>I</strong></td><td>8ª Justa</td><td style="color: #2b78e4; font-weight: bold;">6 Tons</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <p>Conforme apresentado, temos os 7 intervalos a partir da tônica <strong>Dó</strong>, ou seja, a quantidade de notas entre Dó e as notas seguintes, de modo acumulado.</p>
+  </section>
+
+  <section>
+    <h3>Nomenclatura e Alterações</h3>
+    <p>Aprofundando um pouco mais, para subsidiar futuras e necessárias explorações no estudo dos intervalos, a nomenclatura obedecerá o seguinte padrão para cada avanço ou recuo de <strong>meio tom (½)</strong>, seja ascendente ou descendente:</p>
+
+    <div class="nomenclatura-box">
+      <div class="nom-wrapper">
+        <div class="nom-word">DIMINUTO</div>
+        <div class="nom-arrows">
+          <div class="arrow-up">+½ &rarr;</div>
+          <div class="arrow-down">&larr; -½</div>
+        </div>
+        <div class="nom-word">MENOR</div>
+        <div class="nom-arrows">
+          <div class="arrow-up">+½ &rarr;</div>
+          <div class="arrow-down">&larr; -½</div>
+        </div>
+        <div class="nom-word">MAIOR</div>
+        <div class="nom-arrows">
+          <div class="arrow-up">+½ &rarr;</div>
+          <div class="arrow-down">&larr; -½</div>
+        </div>
+        <div class="nom-word">AUMENTADO</div>
+      </div>
+      
+      <div class="nom-wrapper">
+        <div class="nom-word">DIMINUTO</div>
+        <div class="nom-arrows">
+          <div class="arrow-up">+½ &rarr;</div>
+          <div class="arrow-down">&larr; -½</div>
+        </div>
+        <div class="nom-word">JUSTO</div>
+        <div class="nom-arrows">
+          <div class="arrow-up">+½ &rarr;</div>
+          <div class="arrow-down">&larr; -½</div>
+        </div>
+        <div class="nom-word">AUMENTADO</div>
+      </div>
+    </div>
+
+    <div class="exercicio" style="margin-bottom: 3rem; background: #fdfdfd; padding: 1.5rem; border: 1px solid #eee; border-radius: 8px;">
+      <p style="text-transform: uppercase; font-weight: bold; margin-bottom: 2rem; text-align: center; color: #333;">Exemplo Prático:</p>
+      
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: nowrap; gap: 10px; overflow-x: auto; padding-bottom: 10px;">
+        
+        <div style="text-align: center; flex-shrink: 0;">
+          <span style="font-size: 1.1rem; font-weight: bold;">Dó &rarr; Mi</span><br>
+          <span style="color: #2b78e4; font-weight: bold; font-size: 0.95rem;">3ª Maior</span><br>
+          <small>(2 Tons)</small>
+        </div>
+        
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 15px; flex-shrink: 0;">
+          <div style="font-weight: bold; color: #2ca02c; font-size: 0.85rem; display: flex; align-items: center;">
+            &larr; <span style="background: #eaf5ea; padding: 3px 8px; border-radius: 12px; margin-left: 5px;">+ ½ ton</span>
+          </div>
+          <div style="font-weight: bold; color: #d62728; font-size: 0.85rem; display: flex; align-items: center;">
+            <span style="background: #fceae9; padding: 3px 8px; border-radius: 12px; margin-right: 5px;">- ½ ton</span> &rarr;
+          </div>
+        </div>
+        
+        <div style="text-align: center; flex-shrink: 0;">
+          <span style="font-size: 1.1rem; font-weight: bold;">Dó &rarr; Mi bemol</span><br>
+          <span style="color: #2b78e4; font-weight: bold; font-size: 0.95rem;">3ª menor</span><br>
+          <small>(1½ Ton)</small>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
