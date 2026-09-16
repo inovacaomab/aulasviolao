@@ -1,0 +1,320 @@
+<style>
+/* CSS incorporated directly in the HTML to avoid touching the global style.css */
+.harmonia-lesson {
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+.table-cadencias {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 1rem;
+}
+.table-cadencias th, .table-cadencias td {
+  border: 1px solid #ccc;
+  padding: 1.5rem;
+  vertical-align: middle;
+}
+.table-cadencias th {
+  background-color: #f0f4f8;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+.table-cadencias td:last-child {
+  text-align: center;
+}
+.prog-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.prog-list li {
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.prog-list li:last-child {
+  margin-bottom: 0;
+}
+.box-v {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  line-height: 1;
+}
+.box-v-label {
+  font-size: 0.55rem;
+  color: #d62728;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.box-v-num {
+  border: 1.5px solid #d62728;
+  padding: 3px 8px;
+  color: #333;
+}
+.cad-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+.cad-desc {
+  font-size: 0.9rem;
+  color: #d62728;
+}
+.cad-desc-black {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Logic box */
+.logica-box {
+  background-color: #fdfdfd;
+  border: 1px solid #eee;
+  border-left: 4px solid #d62728; /* Using red for the highlight based on the red box */
+  padding: 2rem;
+  border-radius: 4px;
+  margin-top: 3rem;
+}
+.logica-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.logica-subtitle {
+  color: #d62728;
+  border: 1px solid #d62728;
+  padding: 6px 12px;
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+.q-list {
+  list-style: none;
+  padding: 0;
+}
+.q-list > li {
+  margin-bottom: 1.5rem;
+}
+.q-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1.5px solid #d62728;
+  border-radius: 50%;
+  color: #d62728;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+.q-text {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.q-answer {
+  margin-left: 36px;
+  margin-top: 8px;
+  color: #555;
+  font-weight: bold;
+}
+.expectativas-list {
+  list-style: none;
+  padding-left: 36px;
+  margin-top: 10px;
+}
+.expectativas-list li {
+  margin-bottom: 8px;
+  position: relative;
+}
+.expectativas-list li::before {
+  content: "→";
+  position: absolute;
+  left: -20px;
+  color: #555;
+  font-weight: bold;
+}
+</style>
+
+<div class="harmonia-lesson">
+  <h1>Progressões Harmônicas - Cadências</h1>
+
+  <section>
+    <p>A seguir, em continuidade no estudo das Progressões Harmônicas, vamos conhecer as cadências nos exemplos a seguir (em graus - experimentar diversos tons):</p>
+    
+    <div style="background-color: #f0f4f8; padding: 10px 15px; border-radius: 4px; border-left: 4px solid #2b78e4; margin-bottom: 2rem;">
+      <strong>Dica prática:</strong> É importante tocar prestando atenção nas resoluções sonoras das progressões.
+    </div>
+
+    <table class="table-cadencias">
+      <thead>
+        <tr>
+          <th>Progressão</th>
+          <th>Cadência</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 1. Perfeita -->
+        <tr>
+          <td>
+            <ul class="prog-list">
+              <li>&lowast; II - 
+                <div class="box-v">
+                  <span class="box-v-label">DOMINANTE</span>
+                  <span class="box-v-num">V</span>
+                </div> - I
+              </li>
+              <li>&lowast; IV - 
+                <div class="box-v">
+                  <span class="box-v-num">V</span>
+                </div> - I
+              </li>
+            </ul>
+          </td>
+          <td>
+            <span class="cad-title">PERFEITA</span>
+            <span class="cad-desc">(AUTÊNTICA)</span>
+          </td>
+        </tr>
+
+        <!-- 2. Imperfeita -->
+        <tr>
+          <td>
+            <ul class="prog-list">
+              <li>&lowast; 
+                <div class="box-v">
+                  <span class="box-v-label">DOMINANTE</span>
+                  <span class="box-v-num">V</span>
+                </div> - I/III
+              </li>
+              <li>&lowast; V/VII - I</li>
+              <li>&lowast; V/VII - I/III</li>
+              <li>&lowast; VII&oslash; - I</li>
+            </ul>
+          </td>
+          <td>
+            <span class="cad-title">IMPERFEITA</span>
+            <span class="cad-desc" style="display: block; text-align: left; font-size: 0.85rem; margin-top: 10px;">
+              (OCORRE RESOLUÇÃO PARA A TÔNICA, MAS ALGUMA CARACTERÍSTICA IMPEDE A CLASSIFICAÇÃO COMO PERFEITA - EXEMPLO: A INVERSÃO)
+            </span>
+          </td>
+        </tr>
+
+        <!-- 3. Plagal -->
+        <tr>
+          <td>
+            <ul class="prog-list">
+              <li>&lowast; IV - I</li>
+              <li>&lowast; II - I</li>
+            </ul>
+          </td>
+          <td>
+            <span class="cad-title">PLAGAL</span>
+            <span class="cad-desc">(SUAVE, SOLENE)</span>
+          </td>
+        </tr>
+
+        <!-- 4. Deceptiva -->
+        <tr>
+          <td>
+            <ul class="prog-list">
+              <li>&lowast; 
+                <div class="box-v">
+                  <span class="box-v-num">V</span>
+                </div> - II
+              </li>
+              <li>&lowast; 
+                <div class="box-v">
+                  <span class="box-v-num">V</span>
+                </div> - IV
+              </li>
+              <li>&lowast; 
+                <div class="box-v">
+                  <span class="box-v-num">V</span>
+                  <span class="box-v-label" style="margin-top: 3px; margin-bottom: 0;">DOMINANTE</span>
+                </div> - VI
+              </li>
+            </ul>
+          </td>
+          <td>
+            <span class="cad-title">DECEPTIVA</span>
+            <span class="cad-desc" style="display: block; font-size: 0.85rem; margin-top: 5px;">
+              (FRUSTRA A CONCLUSÃO ESPERADA, EXEMPLO: I)
+            </span>
+          </td>
+        </tr>
+
+        <!-- 5. Modulante -->
+        <tr>
+          <td>
+            <ul class="prog-list">
+              <li>&lowast; V - III <small>(MAIOR)</small></li>
+              <li>&lowast; V - III&flat; <small>(MAIOR)</small><br>
+                <span class="cad-desc" style="font-size: 0.75rem; font-weight: normal; margin-left: 20px;">(NÃO FAZ PARTE DO CAMPO HARMÔNICO)</span>
+              </li>
+            </ul>
+          </td>
+          <td>
+            <span class="cad-title">MODULANTE</span>
+            <span class="cad-desc" style="display: block; font-size: 0.85rem; margin-top: 5px; text-transform: uppercase;">(O III&flat; TEM A FUNÇÃO SUB V PARA RESOLVER NO PRÓXIMO ACORDE)</span>
+          </td>
+        </tr>
+
+        <!-- 6. Meia Cadência -->
+        <tr>
+          <td>
+            <ul class="prog-list">
+              <li>&lowast; II - V</li>
+              <li>&lowast; IV - V</li>
+              <li>&lowast; VI - V</li>
+            </ul>
+          </td>
+          <td>
+            <span class="cad-title">MEIA CADÊNCIA</span>
+            <span class="cad-desc">(SEM RESOLUÇÃO)</span>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <div class="logica-box">
+      <div class="logica-title">A LÓGICA QUE PRECISA SER GUARDADA:</div>
+      <div class="logica-subtitle">- PENSE EM 3 PERGUNTAS:</div>
+      
+      <ul class="q-list">
+        <li>
+          <div style="display: flex; align-items: center;">
+            <span class="q-num">1</span> <span class="q-text">PARA ONDE ESTOU INDO?</span>
+          </div>
+          <div class="q-answer">&rarr; I? V? OUTRO GRAU?</div>
+        </li>
+        <li>
+          <div style="display: flex; align-items: center;">
+            <span class="q-num">2</span> <span class="q-text">QUAL A FUNÇÃO DO ACORDE ANTERIOR?</span>
+          </div>
+          <div class="q-answer">&rarr; TÔNICA? SUB DOMINANTE? DOMINANTE?</div>
+        </li>
+        <li>
+          <div style="display: flex; align-items: center;">
+            <span class="q-num">3</span> <span class="q-text">O QUE O OUVIDO ESPERAVA?</span>
+          </div>
+          <ul class="expectativas-list">
+            <li>SE ESPERAVA <strong>I</strong> E CHEGOU <strong>I</strong>: <strong style="text-transform: uppercase;">Resolução</strong></li>
+            <li>SE ESPERAVA <strong>I</strong> E FOI PARA <strong>VI</strong>: <strong style="text-transform: uppercase;">Deceptiva</strong></li>
+            <li>SE TERMINOU NO <strong>V</strong>: <strong style="text-transform: uppercase;">Meia-Cadência</strong></li>
+            <li>SE <strong>IV</strong> E FOI PARA <strong>I</strong>: <strong style="text-transform: uppercase;">Plagal</strong></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
