@@ -1,0 +1,187 @@
+<style>
+/* CSS incorporated directly in the HTML */
+.dedilhado-lesson {
+  font-family: inherit;
+  line-height: 1.6;
+}
+.finger-label {
+  font-weight: bold;
+  color: #2b78e4;
+}
+.cordas-label {
+  font-weight: bold;
+  color: #d62728;
+}
+.dica-box {
+  background-color: #f0f4f8;
+  padding: 15px 20px;
+  border-left: 4px solid #2b78e4;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+}
+.ex-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+  margin: 1.5rem 0;
+}
+.ex-card {
+  background: #fdfdfd;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.ex-card h3 {
+  margin-top: 0;
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+.ex-seq {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ex-seq li {
+  margin-bottom: 8px;
+  font-family: monospace;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+.num {
+  color: #888;
+  margin-right: 10px;
+  font-size: 1rem;
+}
+.ex-seq-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.ex-seq-row {
+  display: flex;
+  align-items: center;
+  font-family: monospace;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  flex-wrap: wrap;
+}
+.ex-seq-row .num {
+  margin-right: 15px;
+}
+.p-note {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 5px;
+}
+.p-num {
+  color: #d62728;
+  border: 1px solid #d62728;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  margin-left: 2px;
+  line-height: 1;
+}
+.spacer {
+  display: inline-block;
+  width: 15px;
+}
+</style>
+
+<div class="dedilhado-lesson">
+  <h1>Dedilhado, Posição da Mão e Exercícios</h1>
+
+  <section>
+    <h2>Posição da Mão Direita</h2>
+    <div style="text-align: center; margin: 1.5rem 0;">
+      <img src="../../assets/mao-direita-correta.png" alt="Desenho da Posição da Mão Direita" style="max-width: 100%; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+    </div>
+    <p>A imagem do manuscrito ilustra a posição da mão direita para a execução do dedilhado. Os dedos devem tocar as cordas da seguinte forma (da mais aguda para a grave):</p>
+    <ul>
+      <li><span class="finger-label">Indicador (I)</span> &rarr; Toca a <span class="cordas-label">3ª corda</span></li>
+      <li><span class="finger-label">Médio (M)</span> &rarr; Toca a <span class="cordas-label">2ª corda</span></li>
+      <li><span class="finger-label">Anelar (A)</span> &rarr; Toca a <span class="cordas-label">1ª corda</span></li>
+      <li><span class="finger-label">Polegar (P)</span> &rarr; Toca os bordões nas cordas <span class="cordas-label">6, 5 e 4</span></li>
+    </ul>
+
+    <p><strong>Atenção:</strong> O polegar deve ser tocado <em>sem apoio</em>, ou seja, ao tocar a corda 6, ele não deve se apoiar na corda inferior (5).</p>
+  </section>
+
+  <section>
+    <h2>Dinâmica de Estudo</h2>
+    <div class="dica-box">
+      <strong>Metrônomo:</strong> Executar as variações lentamente, movimentando cada dedo para cada tempo (em repetição contínua). <br>
+      <em>Sugestão de progressão:</em> Iniciar com o metrônomo em <strong>60 BPM</strong>, depois passar para <strong>90 BPM</strong> e <strong>120 BPM</strong>. Sem pressa para cada exercício.
+    </div>
+  </section>
+
+  <section>
+    <h2>Série A: Variações I, M, A</h2>
+    <p>Nos primeiros exercícios executaremos variações com os dedos I, M e A, mantendo o polegar levemente apoiado na corda 6.</p>
+    
+    <div class="ex-card">
+      <h3>Grupo A</h3>
+      <ul class="ex-seq">
+        <li><span class="num">1-</span> I M A ...</li>
+        <li><span class="num">2-</span> I A M ...</li>
+        <li><span class="num">3-</span> M I A ...</li>
+        <li><span class="num">4-</span> M A I ...</li>
+        <li><span class="num">5-</span> A M I ...</li>
+        <li><span class="num">6-</span> A I M ...</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Série B e C: O Polegar</h2>
+    <p>Na sequência, será a vez de exercitar o polegar nas cordas 6, 5 e 4 (P<span class="p-num">6</span>, P<span class="p-num">5</span>, P<span class="p-num">4</span>).<br> 
+    Agora, com os dedos I, M e A levemente apoiados nas cordas 3, 2 e 1, execute mantendo a mesma lógica do metrônomo:</p>
+
+    <div class="ex-grid">
+      <div class="ex-card" style="margin-bottom: 0;">
+        <h3>Grupo B</h3>
+        <div class="ex-seq-flex">
+          <div class="ex-seq-row"><span class="num">1-</span> P<span class="p-num">6</span> P<span class="p-num">6</span> P<span class="p-num">6</span> <span class="spacer"></span> P<span class="p-num">5</span> P<span class="p-num">5</span> P<span class="p-num">5</span> <span class="spacer"></span> P<span class="p-num">4</span> P<span class="p-num">4</span> P<span class="p-num">4</span></div>
+          <div class="ex-seq-row"><span class="num">2-</span> P<span class="p-num">5</span> P<span class="p-num">5</span> P<span class="p-num">5</span> <span class="spacer"></span> P<span class="p-num">4</span> P<span class="p-num">4</span> P<span class="p-num">4</span> <span class="spacer"></span> P<span class="p-num">6</span> P<span class="p-num">6</span> P<span class="p-num">6</span></div>
+          <div class="ex-seq-row"><span class="num">3-</span> P<span class="p-num">4</span> P<span class="p-num">4</span> P<span class="p-num">4</span> <span class="spacer"></span> P<span class="p-num">6</span> P<span class="p-num">6</span> P<span class="p-num">6</span> <span class="spacer"></span> P<span class="p-num">5</span> P<span class="p-num">5</span> P<span class="p-num">5</span></div>
+          <div class="ex-seq-row"><span class="num">4-</span> P<span class="p-num">5</span> P<span class="p-num">5</span> P<span class="p-num">5</span> <span class="spacer"></span> P<span class="p-num">6</span> P<span class="p-num">6</span> P<span class="p-num">6</span> <span class="spacer"></span> P<span class="p-num">4</span> P<span class="p-num">4</span> P<span class="p-num">4</span></div>
+          <div class="ex-seq-row"><span class="num">5-</span> P<span class="p-num">4</span> P<span class="p-num">4</span> P<span class="p-num">4</span> <span class="spacer"></span> P<span class="p-num">5</span> P<span class="p-num">5</span> P<span class="p-num">5</span> <span class="spacer"></span> P<span class="p-num">6</span> P<span class="p-num">6</span> P<span class="p-num">6</span></div>
+          <div class="ex-seq-row"><span class="num">6-</span> P<span class="p-num">4</span> P<span class="p-num">4</span> P<span class="p-num">4</span> <span class="spacer"></span> P<span class="p-num">6</span> P<span class="p-num">6</span> P<span class="p-num">6</span> <span class="spacer"></span> P<span class="p-num">5</span> P<span class="p-num">5</span> P<span class="p-num">5</span></div>
+        </div>
+      </div>
+      <div class="ex-card" style="margin-bottom: 0;">
+        <h3>Grupo C</h3>
+        <div class="ex-seq-flex">
+          <div class="ex-seq-row"><span class="num">7-</span> P<span class="p-num">6</span> P<span class="p-num">5</span> P<span class="p-num">4</span> <span class="spacer"></span> ... <small style="margin-left:10px; font-family:sans-serif; letter-spacing:0; color:#555;">(repetindo)</small></div>
+          <div class="ex-seq-row"><span class="num">8-</span> P<span class="p-num">5</span> P<span class="p-num">4</span> P<span class="p-num">6</span> <span class="spacer"></span> ...</div>
+          <div class="ex-seq-row"><span class="num">9-</span> P<span class="p-num">4</span> P<span class="p-num">6</span> P<span class="p-num">5</span> <span class="spacer"></span> ...</div>
+          <div class="ex-seq-row"><span class="num">10-</span> P<span class="p-num">5</span> P<span class="p-num">6</span> P<span class="p-num">4</span> <span class="spacer"></span> ...</div>
+          <div class="ex-seq-row"><span class="num">11-</span> P<span class="p-num">4</span> P<span class="p-num">5</span> P<span class="p-num">6</span> <span class="spacer"></span> ...</div>
+          <div class="ex-seq-row"><span class="num">12-</span> P<span class="p-num">4</span> P<span class="p-num">6</span> P<span class="p-num">5</span> <span class="spacer"></span> ...</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Série D: Mesclando Polegar e I, M, A</h2>
+    <div class="ex-card">
+      <h3>Grupo D</h3>
+      <div class="ex-seq-flex">
+        <div class="ex-seq-row"><span class="num">1-</span> P<span class="p-num">6</span> I M A <span class="spacer"></span> P<span class="p-num">5</span> I M A <span class="spacer"></span> P<span class="p-num">4</span> I M A</div>
+        <div class="ex-seq-row"><span class="num">2-</span> P<span class="p-num">6</span> I A M <span class="spacer"></span> P<span class="p-num">5</span> I A M <span class="spacer"></span> P<span class="p-num">4</span> I A M</div>
+        <div class="ex-seq-row"><span class="num">3-</span> P<span class="p-num">6</span> M I A <span class="spacer"></span> P<span class="p-num">5</span> M I A <span class="spacer"></span> P<span class="p-num">4</span> M I A</div>
+        <div class="ex-seq-row"><span class="num">4-</span> P<span class="p-num">6</span> M A I <span class="spacer"></span> P<span class="p-num">5</span> M A I <span class="spacer"></span> P<span class="p-num">4</span> M A I</div>
+        <div class="ex-seq-row"><span class="num">5-</span> P<span class="p-num">6</span> A M I <span class="spacer"></span> P<span class="p-num">5</span> A M I <span class="spacer"></span> P<span class="p-num">4</span> A M I</div>
+        <div class="ex-seq-row"><span class="num">6-</span> P<span class="p-num">6</span> A I M <span class="spacer"></span> P<span class="p-num">5</span> A I M <span class="spacer"></span> P<span class="p-num">4</span> A I M</div>
+      </div>
+    </div>
+  </section>
+</div>
