@@ -23,6 +23,7 @@ const bibliotecaData = [
         titulo: "Fundamentos das Escalas",
         capitulos: [
           { titulo: "1. A Escala Maior Natural", arquivo: "livros/escalas/01-escala-maior.html" },
+          { titulo: "2. Escala Maior, Menores e Exóticas", arquivo: "livros/escalas/02-maior-menores-e-exoticas.html" }
         ]
       }
     ]

@@ -210,3 +210,82 @@ document.addEventListener("DOMContentLoaded", function () {
   // Init principal
   renderizarBiblioteca();
 });
+
+// Funcionalidade de Áudio para Escalas
+let audioCtx;
+let activeOscillators = [];
+let activeTimeouts = [];
+let playingButton = null;
+
+window.playScale = function(intervals, btnElement) {
+  if (playingButton === btnElement) {
+    stopScale();
+    return;
+  }
+  
+  stopScale();
+
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  if (audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+  
+  playingButton = btnElement;
+  btnElement.style.backgroundColor = '#28a745';
+  btnElement.innerHTML = '&#9632; Parar';
+  
+  const baseFreq = 261.63;
+  let time = audioCtx.currentTime;
+  
+  intervals.forEach((semitones) => {
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    
+    osc.type = 'triangle';
+    osc.frequency.value = baseFreq * Math.pow(2, semitones / 12);
+    
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    
+    gain.gain.setValueAtTime(0, time);
+    gain.gain.linearRampToValueAtTime(0.3, time + 0.05);
+    gain.gain.exponentialRampToValueAtTime(0.001, time + 0.5);
+    
+    osc.start(time);
+    osc.stop(time + 0.5);
+    
+    activeOscillators.push(osc);
+    time += 0.35;
+  });
+  
+  const totalDurationMs = (time - audioCtx.currentTime) * 1000;
+  const finishTimeout = setTimeout(() => {
+    resetButton(btnElement);
+    playingButton = null;
+    activeOscillators = [];
+    activeTimeouts = [];
+  }, totalDurationMs);
+  
+  activeTimeouts.push(finishTimeout);
+};
+
+window.stopScale = function() {
+  if (playingButton) {
+    resetButton(playingButton);
+    playingButton = null;
+  }
+  activeOscillators.forEach(osc => {
+    try { osc.stop(); } catch(e) {}
+  });
+  activeOscillators = [];
+  activeTimeouts.forEach(t => clearTimeout(t));
+  activeTimeouts = [];
+};
+
+function resetButton(btnElement) {
+  if (!btnElement) return;
+  btnElement.style.backgroundColor = '';
+  btnElement.innerHTML = '&#9658; Ouvir';
+}
