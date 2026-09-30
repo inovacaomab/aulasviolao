@@ -1,0 +1,378 @@
+<style>
+.escalas-lesson {
+  font-family: inherit;
+  line-height: 1.6;
+}
+.escala-wrapper {
+  overflow-x: auto;
+  margin-bottom: 2.5rem;
+  padding-bottom: 15px;
+  background-color: #fdfdfd;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding-top: 20px;
+}
+.escala-grid {
+  display: grid;
+  grid-template-rows: 25px 35px 25px;
+  grid-auto-columns: min-content;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-items: center;
+  padding: 0 5px;
+}
+.eg-grau {
+  grid-row: 2;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0 2px;
+  color: #333;
+}
+.eg-nota {
+  grid-row: 3;
+  font-family: monospace;
+  font-size: 0.95rem;
+  color: #555;
+  text-transform: uppercase;
+}
+.eg-dist {
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  width: 100%;
+}
+.dist-text {
+  font-size: 0.55rem;
+  color: #d62728;
+  font-weight: bold;
+  margin-bottom: 2px;
+  text-align: center;
+  white-space: nowrap;
+}
+.escala-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #2b78e4;
+}
+.curiosidade-box {
+  background-color: #fff9f9;
+  border: 1px solid #d62728;
+  padding: 15px 20px;
+  margin: 2rem 0;
+  border-radius: 4px;
+}
+.curiosidade-box strong {
+  color: #d62728;
+  text-transform: uppercase;
+}
+.intro-box {
+  background-color: #f0f4f8;
+  border-left: 4px solid #2b78e4;
+  padding: 15px 20px;
+  margin-bottom: 2rem;
+  border-radius: 0 4px 4px 0;
+}
+.play-btn {
+  cursor: pointer;
+  background-color: #2b78e4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  margin-left: 10px;
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.2s;
+}
+.play-btn:hover {
+  background-color: #1c5baf;
+}
+.play-btn:active {
+  transform: scale(0.95);
+}
+</style>
+
+<div class="escalas-lesson">
+  <h1>Escala Maior, Menores e Exóticas</h1>
+
+  <section>
+    <p>Apresentarei a formação das escalas em graus e exemplificadas no tom de Dó (Maior e Menor).</p>
+    
+    <div class="intro-box">
+      <strong>Dica de Estudo:</strong> É importante treinar no tom de exemplo e depois nos demais tons em todas as regiões do braço do instrumento. Parece muito extenso, e sinceramente o é, mas prossiga aos poucos (uma região por vez em cada tom).
+    </div>
+
+    <p style="margin-bottom: 2rem; font-weight: bold; color: #555;">
+      &rarr; DISTÂNCIAS: 
+      <svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg> 1 TON; 
+      <svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg> &frac12; TON.
+    </p>
+
+  <div class="escala-title" style="display: block; line-height: 1.5;">&bull; ESCALA MAIOR <button class="play-btn" onclick="playScale([0, 2, 4, 5, 7, 9, 11, 12, 11, 9, 7, 5, 4, 2, 0], this)">&#9658; Ouvir</button></div>
+  <div class="escala-wrapper">
+    <div class="escala-grid">
+      <div class="eg-dist" style="grid-column: 2;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 4;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 6;"><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 8;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 10;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 12;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 14;"><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-grau" style="grid-column: 1;">I</div>
+      <div class="eg-nota" style="grid-column: 1;">DÓ</div>
+      <div class="eg-grau" style="grid-column: 3;">II</div>
+      <div class="eg-nota" style="grid-column: 3;">RÉ</div>
+      <div class="eg-grau" style="grid-column: 5;">III</div>
+      <div class="eg-nota" style="grid-column: 5;">MI</div>
+      <div class="eg-grau" style="grid-column: 7;">IV</div>
+      <div class="eg-nota" style="grid-column: 7;">FÁ</div>
+      <div class="eg-grau" style="grid-column: 9;">V</div>
+      <div class="eg-nota" style="grid-column: 9;">SOL</div>
+      <div class="eg-grau" style="grid-column: 11;">VI</div>
+      <div class="eg-nota" style="grid-column: 11;">LÁ</div>
+      <div class="eg-grau" style="grid-column: 13;">VII</div>
+      <div class="eg-nota" style="grid-column: 13;">SI</div>
+      <div class="eg-grau" style="grid-column: 15;">VIII</div>
+      <div class="eg-nota" style="grid-column: 15;">DÓ</div>
+    </div>
+  </div>
+
+  <div class="escala-title" style="display: block; line-height: 1.5;">&bull; ESCALA MENOR (NATURAL OU ANTIGA) <button class="play-btn" onclick="playScale([0, 2, 3, 5, 7, 8, 10, 12, 10, 8, 7, 5, 3, 2, 0], this)">&#9658; Ouvir</button></div>
+  <div class="escala-wrapper">
+    <div class="escala-grid">
+      <div class="eg-dist" style="grid-column: 2;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 4;"><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 6;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 8;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 10;"><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 12;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 14;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-grau" style="grid-column: 1;">I</div>
+      <div class="eg-nota" style="grid-column: 1;">DÓ</div>
+      <div class="eg-grau" style="grid-column: 3;">II</div>
+      <div class="eg-nota" style="grid-column: 3;">RÉ</div>
+      <div class="eg-grau" style="grid-column: 5;">III&flat;</div>
+      <div class="eg-nota" style="grid-column: 5;">MI&flat;</div>
+      <div class="eg-grau" style="grid-column: 7;">IV</div>
+      <div class="eg-nota" style="grid-column: 7;">FÁ</div>
+      <div class="eg-grau" style="grid-column: 9;">V</div>
+      <div class="eg-nota" style="grid-column: 9;">SOL</div>
+      <div class="eg-grau" style="grid-column: 11;">VI&flat;</div>
+      <div class="eg-nota" style="grid-column: 11;">LÁ&flat;</div>
+      <div class="eg-grau" style="grid-column: 13;">VII&flat;</div>
+      <div class="eg-nota" style="grid-column: 13;">SI&flat;</div>
+      <div class="eg-grau" style="grid-column: 15;">VIII</div>
+      <div class="eg-nota" style="grid-column: 15;">DÓ</div>
+    </div>
+  </div>
+
+  <div class="escala-title" style="display: block; line-height: 1.5;">&bull; ESCALA MENOR HARMÔNICA <button class="play-btn" onclick="playScale([0, 2, 3, 5, 7, 8, 11, 12, 11, 8, 7, 5, 3, 2, 0], this)">&#9658; Ouvir</button></div>
+  <div class="escala-wrapper">
+    <div class="escala-grid">
+      <div class="eg-dist" style="grid-column: 2;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 4;"><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 6;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 8;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 10;"><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 12;"><span class="dist-text">1 ½ TONS</span><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 14;"><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-grau" style="grid-column: 1;">I</div>
+      <div class="eg-nota" style="grid-column: 1;">DÓ</div>
+      <div class="eg-grau" style="grid-column: 3;">II</div>
+      <div class="eg-nota" style="grid-column: 3;">RÉ</div>
+      <div class="eg-grau" style="grid-column: 5;">III&flat;</div>
+      <div class="eg-nota" style="grid-column: 5;">MI&flat;</div>
+      <div class="eg-grau" style="grid-column: 7;">IV</div>
+      <div class="eg-nota" style="grid-column: 7;">FÁ</div>
+      <div class="eg-grau" style="grid-column: 9;">V</div>
+      <div class="eg-nota" style="grid-column: 9;">SOL</div>
+      <div class="eg-grau" style="grid-column: 11;">VI&flat;</div>
+      <div class="eg-nota" style="grid-column: 11;">LÁ&flat;</div>
+      <div class="eg-grau" style="grid-column: 13;">VII</div>
+      <div class="eg-nota" style="grid-column: 13;">SI</div>
+      <div class="eg-grau" style="grid-column: 15;">VIII</div>
+      <div class="eg-nota" style="grid-column: 15;">DÓ</div>
+    </div>
+  </div>
+
+  <div class="escala-title" style="display: block; line-height: 1.5;">&bull; ESCALA MENOR MELÓDICA <button class="play-btn" onclick="playScale([0, 2, 3, 5, 7, 9, 11, 12, 10, 8, 7, 5, 3, 2, 0], this)">&#9658; Ouvir</button></div>
+  <div class="escala-wrapper">
+    <div class="escala-grid">
+      <div class="eg-dist" style="grid-column: 2;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 4;"><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 6;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 8;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 10;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 12;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 14;"><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-grau" style="grid-column: 1;">I</div>
+      <div class="eg-nota" style="grid-column: 1;">DÓ</div>
+      <div class="eg-grau" style="grid-column: 3;">II</div>
+      <div class="eg-nota" style="grid-column: 3;">RÉ</div>
+      <div class="eg-grau" style="grid-column: 5;">III&flat;</div>
+      <div class="eg-nota" style="grid-column: 5;">MI&flat;</div>
+      <div class="eg-grau" style="grid-column: 7;">IV</div>
+      <div class="eg-nota" style="grid-column: 7;">FÁ</div>
+      <div class="eg-grau" style="grid-column: 9;">V</div>
+      <div class="eg-nota" style="grid-column: 9;">SOL</div>
+      <div class="eg-grau" style="grid-column: 11;">VI</div>
+      <div class="eg-nota" style="grid-column: 11;">LÁ</div>
+      <div class="eg-grau" style="grid-column: 13;">VII</div>
+      <div class="eg-nota" style="grid-column: 13;">SI</div>
+      <div class="eg-grau" style="grid-column: 15;">VIII</div>
+      <div class="eg-nota" style="grid-column: 15;">DÓ</div>
+    </div>
+  </div>
+
+    <div class="curiosidade-box">
+      <strong>Curiosidade:</strong> A escala menor melódica "sobe" no intervalo acima, mas "desce" no intervalo da escala menor natural. Quando a escala melódica "sobe" e "desce" sem essa alteração, passa a se chamar <u>Escala Bachiana</u>.<button class="play-btn" onclick="playScale([0, 2, 3, 5, 7, 9, 11, 12, 11, 9, 7, 5, 3, 2, 0], this)" style="display:inline-flex; vertical-align:middle; margin-left:10px;">&#9658; Ouvir</button>
+    </div>
+
+  <div class="escala-title" style="display: block; line-height: 1.5;">&bull; ESCALA ÁRABE/EGÍPSIA <button class="play-btn" onclick="playScale([0, 1, 4, 5, 7, 8, 10, 12, 10, 8, 7, 5, 4, 1, 0], this)">&#9658; Ouvir</button></div>
+  <div class="escala-wrapper">
+    <div class="escala-grid">
+      <div class="eg-dist" style="grid-column: 2;"><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 4;"><span class="dist-text">1 ½ TONS</span><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 6;"><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 8;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 10;"><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 12;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 14;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-grau" style="grid-column: 1;">I</div>
+      <div class="eg-nota" style="grid-column: 1;">DÓ</div>
+      <div class="eg-grau" style="grid-column: 3;">II&flat;</div>
+      <div class="eg-nota" style="grid-column: 3;">RÉ&flat;</div>
+      <div class="eg-grau" style="grid-column: 5;">III</div>
+      <div class="eg-nota" style="grid-column: 5;">MI</div>
+      <div class="eg-grau" style="grid-column: 7;">IV</div>
+      <div class="eg-nota" style="grid-column: 7;">FÁ</div>
+      <div class="eg-grau" style="grid-column: 9;">V</div>
+      <div class="eg-nota" style="grid-column: 9;">SOL</div>
+      <div class="eg-grau" style="grid-column: 11;">VI&flat;</div>
+      <div class="eg-nota" style="grid-column: 11;">LÁ&flat;</div>
+      <div class="eg-grau" style="grid-column: 13;">VII&flat;</div>
+      <div class="eg-nota" style="grid-column: 13;">SI&flat;</div>
+      <div class="eg-grau" style="grid-column: 15;">VIII</div>
+      <div class="eg-nota" style="grid-column: 15;">DÓ</div>
+    </div>
+  </div>
+
+  <div class="escala-title" style="display: block; line-height: 1.5;">&bull; ESCALA CELTA (MODO DÓRICO) <button class="play-btn" onclick="playScale([0, 2, 3, 5, 7, 9, 10, 12, 10, 9, 7, 5, 3, 2, 0], this)">&#9658; Ouvir</button></div>
+  <div class="escala-wrapper">
+    <div class="escala-grid">
+      <div class="eg-dist" style="grid-column: 2;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 4;"><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 6;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 8;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 10;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 12;"><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 14;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-grau" style="grid-column: 1;">I</div>
+      <div class="eg-nota" style="grid-column: 1;">DÓ</div>
+      <div class="eg-grau" style="grid-column: 3;">II</div>
+      <div class="eg-nota" style="grid-column: 3;">RÉ</div>
+      <div class="eg-grau" style="grid-column: 5;">III&flat;</div>
+      <div class="eg-nota" style="grid-column: 5;">MI&flat;</div>
+      <div class="eg-grau" style="grid-column: 7;">IV</div>
+      <div class="eg-nota" style="grid-column: 7;">FÁ</div>
+      <div class="eg-grau" style="grid-column: 9;">V</div>
+      <div class="eg-nota" style="grid-column: 9;">SOL</div>
+      <div class="eg-grau" style="grid-column: 11;">VI</div>
+      <div class="eg-nota" style="grid-column: 11;">LÁ</div>
+      <div class="eg-grau" style="grid-column: 13;">VII&flat;</div>
+      <div class="eg-nota" style="grid-column: 13;">SI&flat;</div>
+      <div class="eg-grau" style="grid-column: 15;">VIII</div>
+      <div class="eg-nota" style="grid-column: 15;">DÓ</div>
+    </div>
+  </div>
+
+  <div class="escala-title" style="display: block; line-height: 1.5;">&bull; ESCALA CHINESA (PENTATÔNICA) <span style=\'font-size:0.9rem; color:#888; margin-left: 5px;\'>[GŌNG DIÀO]</span> <button class="play-btn" onclick="playScale([0, 2, 4, 7, 9, 12, 9, 7, 4, 2, 0], this)">&#9658; Ouvir</button></div>
+  <div class="escala-wrapper">
+    <div class="escala-grid">
+      <div class="eg-dist" style="grid-column: 2;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 4;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 6;"><span class="dist-text">1 ½ TONS</span><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 8;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 10;"><span class="dist-text">1 ½ TONS</span><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-grau" style="grid-column: 1;">I</div>
+      <div class="eg-nota" style="grid-column: 1;">DÓ</div>
+      <div class="eg-grau" style="grid-column: 3;">II</div>
+      <div class="eg-nota" style="grid-column: 3;">RÉ</div>
+      <div class="eg-grau" style="grid-column: 5;">III</div>
+      <div class="eg-nota" style="grid-column: 5;">MI</div>
+      <div class="eg-grau" style="grid-column: 7;">V</div>
+      <div class="eg-nota" style="grid-column: 7;">SOL</div>
+      <div class="eg-grau" style="grid-column: 9;">VI</div>
+      <div class="eg-nota" style="grid-column: 9;">LÁ</div>
+      <div class="eg-grau" style="grid-column: 11;">VIII</div>
+      <div class="eg-nota" style="grid-column: 11;">DÓ</div>
+    </div>
+  </div>
+
+  <div class="escala-title" style="display: block; line-height: 1.5;">&bull; ESCALA JAPONESA <span style=\'font-size:0.9rem; color:#888; margin-left: 5px;\'>[MIYAKO - BUSHI]</span> <button class="play-btn" onclick="playScale([0, 1, 5, 7, 8, 12, 8, 7, 5, 1, 0], this)">&#9658; Ouvir</button></div>
+  <div class="escala-wrapper">
+    <div class="escala-grid">
+      <div class="eg-dist" style="grid-column: 2;"><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 4;"><span class="dist-text">2 TONS</span><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 6;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 8;"><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 10;"><span class="dist-text">2 TONS</span><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-grau" style="grid-column: 1;">I</div>
+      <div class="eg-nota" style="grid-column: 1;">DÓ</div>
+      <div class="eg-grau" style="grid-column: 3;">II&flat;</div>
+      <div class="eg-nota" style="grid-column: 3;">RÉ&flat;</div>
+      <div class="eg-grau" style="grid-column: 5;">IV</div>
+      <div class="eg-nota" style="grid-column: 5;">FÁ</div>
+      <div class="eg-grau" style="grid-column: 7;">V</div>
+      <div class="eg-nota" style="grid-column: 7;">SOL</div>
+      <div class="eg-grau" style="grid-column: 9;">VI&flat;</div>
+      <div class="eg-nota" style="grid-column: 9;">LÁ&flat;</div>
+      <div class="eg-grau" style="grid-column: 11;">VIII</div>
+      <div class="eg-nota" style="grid-column: 11;">DÓ</div>
+    </div>
+  </div>
+
+  <div class="escala-title" style="display: block; line-height: 1.5;">&bull; ESCALA CIGANA <button class="play-btn" onclick="playScale([0, 2, 3, 6, 7, 8, 11, 12, 11, 8, 7, 6, 3, 2, 0], this)">&#9658; Ouvir</button></div>
+  <div class="escala-wrapper">
+    <div class="escala-grid">
+      <div class="eg-dist" style="grid-column: 2;"><svg width="28" height="12"><polyline points="0,12 0,2 28,2 28,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 4;"><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 6;"><span class="dist-text">1 ½ TONS</span><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 8;"><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 10;"><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 12;"><span class="dist-text">1 ½ TONS</span><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-dist" style="grid-column: 14;"><svg width="24" height="12"><polyline points="0,12 12,2 24,12" fill="none" stroke="#d62728" stroke-width="1.5"/></svg></div>
+      <div class="eg-grau" style="grid-column: 1;">I</div>
+      <div class="eg-nota" style="grid-column: 1;">DÓ</div>
+      <div class="eg-grau" style="grid-column: 3;">II</div>
+      <div class="eg-nota" style="grid-column: 3;">RÉ</div>
+      <div class="eg-grau" style="grid-column: 5;">III&flat;</div>
+      <div class="eg-nota" style="grid-column: 5;">MI&flat;</div>
+      <div class="eg-grau" style="grid-column: 7;">IV&sharp;</div>
+      <div class="eg-nota" style="grid-column: 7;">FÁ&sharp;</div>
+      <div class="eg-grau" style="grid-column: 9;">V</div>
+      <div class="eg-nota" style="grid-column: 9;">SOL</div>
+      <div class="eg-grau" style="grid-column: 11;">VI&flat;</div>
+      <div class="eg-nota" style="grid-column: 11;">LÁ&flat;</div>
+      <div class="eg-grau" style="grid-column: 13;">VII</div>
+      <div class="eg-nota" style="grid-column: 13;">SI</div>
+      <div class="eg-grau" style="grid-column: 15;">VIII</div>
+      <div class="eg-nota" style="grid-column: 15;">DÓ</div>
+    </div>
+  </div>
+
+    <p style="text-align: right; font-weight: bold; color: #2b78e4; font-size: 1.1rem; text-transform: uppercase; margin-top: 3rem;">
+      Bons estudos!<br>Deus abençoe!
+    </p>
+
+  </section>
+</div>
+
+
