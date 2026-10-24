@@ -1,0 +1,984 @@
+<style>
+/* Estilos específicos para a aula de Substituições II-V-I */
+.substituicoes-lesson {
+  font-family: inherit;
+  line-height: 1.6;
+  color: #333;
+}
+
+.substituicoes-lesson h1 {
+  font-size: 1.8rem;
+  color: #1a252f;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.75rem;
+}
+
+.lesson-subtitle {
+  font-size: 1.05rem;
+  color: #4a5568;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+/* Painel do Diagrama Principal (Inspirado no caderno) */
+.fluxo-diagrama-wrapper {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.fluxo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+/* Conector Vertical entre os blocos */
+.fluxo-conector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 6px 0;
+  width: 100%;
+}
+
+.fluxo-conector-linha {
+  width: 2px;
+  height: 12px;
+  background-color: #cbd5e0;
+}
+
+.fluxo-conector-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #edf2f7;
+  color: #4a5568;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.fluxo-conector-badge.destino {
+  background: #f0fff4;
+  color: #2f855a;
+  border-color: #c6f6d5;
+}
+
+.conector-seta {
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+/* Cards de Acordes (Pillars) */
+.chord-pillar {
+  background: #ffffff;
+  border: 2px solid #2b6cb0;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(43, 108, 176, 0.08);
+}
+
+.chord-pillar.destino {
+  border-color: #2f855a;
+  box-shadow: 0 4px 6px rgba(47, 133, 90, 0.08);
+}
+
+.pillar-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #718096;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.chord-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #2b6cb0;
+  display: block;
+  line-height: 1.2;
+}
+
+.chord-pillar.destino .chord-title {
+  color: #2f855a;
+}
+
+.grau-tag {
+  display: inline-block;
+  background: #ebf8ff;
+  color: #2b6cb0;
+  border: 1px solid #bee3f8;
+  font-weight: bold;
+  padding: 2px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.chord-pillar.destino .grau-tag {
+  background: #f0fff4;
+  color: #2f855a;
+  border-color: #c6f6d5;
+}
+
+.extensoes-row {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed #cbd5e0;
+  font-size: 0.85rem;
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* Caixa Central das Opções (Substituições do V7) */
+.options-box {
+  background: #ffffff;
+  border: 2px solid #dd6b20;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(221, 107, 32, 0.12);
+}
+
+.options-box-title {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #c05621;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: block;
+  text-align: center;
+}
+
+.options-chords {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.opt-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #fffaf0;
+  border: 1px solid #feebc8;
+  color: #7b341e;
+  transition: all 0.2s ease;
+}
+
+.opt-item:hover {
+  background: #feebc8;
+  transform: translateX(2px);
+}
+
+.opt-chord-text {
+  white-space: nowrap;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+/* Destaque para o G7 primário */
+.opt-item.original-g7 {
+  background: #ffffff;
+  border: 2px solid #2d3748;
+  color: #1a202c;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.opt-badge {
+  font-size: 0.72rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-aem {
+  background: #fed7d7;
+  color: #9b2c2c;
+  border: 1px solid #feb2b2;
+}
+
+.badge-dom {
+  background: #edf2f7;
+  color: #2d3748;
+  border: 1px solid #cbd5e0;
+}
+
+.badge-inv {
+  background: #e2e8f0;
+  color: #4a5568;
+}
+
+.badge-sus {
+  background: #e9d8fd;
+  color: #6b46c1;
+  border: 1px solid #d6bcfa;
+}
+
+.diagram-credit {
+  text-align: right;
+  font-size: 0.8rem;
+  color: #718096;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+/* Seções Explicativas */
+.info-section {
+  margin: 2.5rem 0;
+}
+
+.info-section h2 {
+  font-size: 1.35rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge-pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* Caixa dos AEM (Chave do caderno) */
+.aem-highlight-box {
+  background: #fff5f5;
+  border: 1px solid #feb2b2;
+  border-left: 5px solid #e53e3e;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.aem-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #9b2c2c;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.aem-desc {
+  color: #4a5568;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+.aem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.aem-card {
+  background: #ffffff;
+  border: 1px solid #fed7d7;
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.aem-card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.aem-chord-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #c53030;
+}
+
+.aem-modal-origin {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #742a2a;
+  background: #fed7d7;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.aem-card-body {
+  font-size: 0.88rem;
+  color: #4a5568;
+  line-height: 1.45;
+}
+
+/* Laboratório de Cadências em Cards Responsivos */
+.cadencias-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 1.5rem 0;
+}
+
+.cadencia-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+  border-left: 4px solid #cbd5e0;
+}
+
+.cadencia-card:hover {
+  border-color: #cbd5e0;
+  border-left-color: #2b6cb0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.cadencia-card.aem-cad {
+  border-left-color: #feb2b2;
+}
+
+.cadencia-card.aem-cad:hover {
+  border-left-color: #e53e3e;
+}
+
+.cad-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.cad-prog-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.cad-prog-row .cad-chord.c-orig { color: #2b6cb0; }
+.cad-prog-row .cad-arrow { color: #a0aec0; font-size: 0.95rem; }
+.cad-prog-row .cad-chord.c-alvo.dom { color: #1a202c; }
+.cad-prog-row .cad-chord.c-alvo.inv { color: #4a5568; }
+.cad-prog-row .cad-chord.c-alvo.sus { color: #6b46c1; }
+.cad-prog-row .cad-chord.c-alvo.aem { color: #c53030; }
+.cad-prog-row .cad-chord.c-dest { color: #2f855a; }
+
+.cad-body {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: #4a5568;
+  flex-wrap: wrap;
+}
+
+.cad-sensacao {
+  color: #4a5568;
+  line-height: 1.4;
+}
+
+/* Botão Ouvir Cadência */
+.btn-ouvir-cadencia {
+  background-color: #2b6cb0;
+  color: #ffffff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-ouvir-cadencia:hover {
+  background-color: #2c5282;
+  transform: translateY(-1px);
+}
+
+.btn-ouvir-cadencia:active {
+  transform: translateY(0);
+}
+
+/* Tabela de Posições no Violão */
+.posicoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 1rem;
+}
+
+.posicao-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px 14px;
+  border-left: 4px solid #3182ce;
+}
+
+.posicao-card.aem-pos {
+  border-left-color: #e53e3e;
+}
+
+.posicao-nome {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #2d3748;
+  margin-bottom: 4px;
+}
+
+.posicao-cifra {
+  font-family: monospace;
+  background: #edf2f7;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #2b6cb0;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.posicao-desc {
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+/* Dica de Ouro */
+.dica-box {
+  background: #ebf8ff;
+  border-left: 4px solid #3182ce;
+  border-radius: 6px;
+  padding: 1.25rem;
+  margin: 2rem 0;
+  font-size: 0.95rem;
+  color: #2c5282;
+}
+
+.dica-box strong {
+  color: #2b6cb0;
+}
+</style>
+
+<div class="substituicoes-lesson">
+  <h1>Substituições para Progressão IIm7 - V7 - I7M</h1>
+  <div class="lesson-subtitle">
+    Explorando as variações dominantes, tensões modernas e os Acordes de Empréstimo Modal (AEM) na cadência mais famosa da música.
+  </div>
+
+  <section class="info-section">
+    <p>
+      A progressão <strong>II - V - I</strong> (em Dó Maior: <code>Dm7 &rarr; G7 &rarr; C7M</code>) é a fórmula mestra do movimento harmônico tonal:
+      o <strong>II grau (Subdominante)</strong> prepara o caminho, o <strong>V grau (Dominante)</strong> cria a tensão máxima através do trítono, e o <strong>I grau (Tônica)</strong> proporciona o repouso e a resolução final.
+    </p>
+    <p>
+      No violão moderno, no jazz, no choro e na Bossa Nova, raramente tocamos apenas o acorde dominante em sua forma pura. É aqui que entram as <strong>substituições harmônicas</strong>, capazes de colorir a cadência com texturas inovadoras, melancólicas, cinematográficas ou aveludadas.
+    </p>
+  </section>
+
+  <!-- DIAGRAMA VISUAL PRINCIPAL (Transposição fiel do caderno) -->
+  <div class="fluxo-diagrama-wrapper">
+    <div class="fluxo-container">
+      
+      <!-- 1. ACORDE DE ORIGEM (GRAU II) -->
+      <div class="chord-pillar">
+        <div class="pillar-label">Preparação &bull; Subdominante</div>
+        <span class="chord-title">Dm<sup>7</sup></span>
+        <span class="grau-tag">Grau II</span>
+      </div>
+
+      <!-- CONECTOR 1 -->
+      <div class="fluxo-conector">
+        <div class="fluxo-conector-linha"></div>
+        <div class="fluxo-conector-badge">
+          <span class="conector-seta">&darr;</span>
+          <span>Opções de Substituição do V7</span>
+        </div>
+        <div class="fluxo-conector-linha"></div>
+      </div>
+
+      <!-- 2. BLOCO CENTRAL DE SUBSTITUIÇÕES -->
+      <div class="options-box">
+        <span class="options-box-title">Possibilidades de Acordes</span>
+        <div class="options-chords">
+          <div class="opt-item">
+            <span class="opt-chord-text">A&flat; / B&flat;</span>
+            <span class="opt-badge badge-aem">AEM</span>
+          </div>
+          <div class="opt-item">
+            <span class="opt-chord-text">B&flat;7M</span>
+            <span class="opt-badge badge-aem">AEM</span>
+          </div>
+          <div class="opt-item">
+            <span class="opt-chord-text">A&flat;7M</span>
+            <span class="opt-badge badge-aem">AEM</span>
+          </div>
+          <div class="opt-item original-g7">
+            <span class="opt-chord-text">[ G<sup>7</sup> ]</span>
+            <span class="opt-badge badge-dom">Dominante Padrão</span>
+          </div>
+          <div class="opt-item">
+            <span class="opt-chord-text">G / B</span>
+            <span class="opt-badge badge-inv">Inversão (3ª)</span>
+          </div>
+          <div class="opt-item">
+            <span class="opt-chord-text">Fm<sup>6</sup></span>
+            <span class="opt-badge badge-aem">AEM</span>
+          </div>
+          <div class="opt-item">
+            <span class="opt-chord-text">Fm<sup>6</sup> / A&flat;</span>
+            <span class="opt-badge badge-aem">AEM</span>
+          </div>
+          <div class="opt-item">
+            <span class="opt-chord-text">F / G</span>
+            <span class="opt-badge badge-sus">V7sus4(9)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONECTOR 2 -->
+      <div class="fluxo-conector">
+        <div class="fluxo-conector-linha"></div>
+        <div class="fluxo-conector-badge destino">
+          <span class="conector-seta">&darr;</span>
+          <span>Resolução na Tônica</span>
+        </div>
+        <div class="fluxo-conector-linha"></div>
+      </div>
+
+      <!-- 3. ACORDE DE DESTINO (GRAU I) -->
+      <div class="chord-pillar destino">
+        <div class="pillar-label">Resolução &bull; Tônica</div>
+        <span class="chord-title">C7M</span>
+        <span class="grau-tag">Grau I</span>
+        <div class="extensoes-row">
+          <span>Extensões:</span>
+          <strong>C7M(9)</strong>
+          <span>&bull;</span>
+          <strong>Cmaj13</strong>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="diagram-credit">
+      Anotações de harmonia &bull; <a href="https://www.instagram.com/andessonpiano?mdxt=MXJ3bnIzYjBlbW1maw==" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">@andessonpiano</a>
+    </div>
+  </div>
+
+  <!-- SEÇÃO DE ACORDES DE EMPRÉSTIMO MODAL (AEM) -->
+  <section class="info-section">
+    <div class="aem-highlight-box">
+      <div class="aem-title">Acordes de Empréstimo Modal (AEM)</div>
+      <div class="aem-desc">
+        <strong>O que são?</strong> São acordes gerados a partir dos <em>modos gregos homônimos</em> (principalmente Dó Menor Eólio, Dó Dórico e Dó Mixolídio). Eles trazem notas estranhas à escala maior de Dó (como o <strong>A&flat;</strong> e o <strong>B&flat;</strong>), gerando tensões cromáticas ricas e melancólicas que resolvem de maneira surpreendente e acolhedora na tônica <strong>C7M</strong>.
+      </div>
+
+      <div class="aem-grid">
+        
+        <!-- Fm6 -->
+        <div class="aem-card">
+          <div class="aem-card-header">
+            <span class="aem-chord-name">Fm<sup>6</sup></span>
+            <span class="aem-modal-origin">IVm6 &bull; Dó Eólio</span>
+          </div>
+          <div class="aem-card-body">
+            O mais clássico dos AEM (subdominante menor). A nota <strong>A&flat;</strong> atua com gravidade descendente suave em direção ao <strong>Sol</strong> de C7M, enquanto a sexta maior (<strong>D</strong>) já conecta com a melodia.
+          </div>
+        </div>
+
+        <!-- Fm6/Ab -->
+        <div class="aem-card">
+          <div class="aem-card-header">
+            <span class="aem-chord-name">Fm<sup>6</sup> / A&flat;</span>
+            <span class="aem-modal-origin">IVm6/3ª &bull; Dó Eólio</span>
+          </div>
+          <div class="aem-card-body">
+            Variação com baixo na terça menor (<strong>A&flat;</strong>). Conduz o baixo cromaticamente descendo para o Sol ou caminhando em salto marcante para a tônica Dó.
+          </div>
+        </div>
+
+        <!-- Ab7M -->
+        <div class="aem-card">
+          <div class="aem-card-header">
+            <span class="aem-chord-name">A&flat;7M</span>
+            <span class="aem-modal-origin">&flat;VI7M &bull; Dó Eólio</span>
+          </div>
+          <div class="aem-card-body">
+            Acorde com sonoridade cinematográfica e de intensa emoção. O movimento <code>Dm7 &rarr; Ab7M &rarr; C7M</code> quebra a expectativa do dominante tradicional e abraça o ouvinte com sofisticação.
+          </div>
+        </div>
+
+        <!-- Bb7M -->
+        <div class="aem-card">
+          <div class="aem-card-header">
+            <span class="aem-chord-name">B&flat;7M</span>
+            <span class="aem-modal-origin">&flat;VII7M &bull; Dó Dórico/Eólio</span>
+          </div>
+          <div class="aem-card-body">
+            Conhecida como a <em>cadência Backdoor</em> ("porta dos fundos"). Chega à tônica através do grau subtônico por tom inteiro (<code>B&flat; &rarr; C</code>), recurso indispensável no Jazz e Bossa Nova.
+          </div>
+        </div>
+
+        <!-- Ab/Bb -->
+        <div class="aem-card">
+          <div class="aem-card-header">
+            <span class="aem-chord-name">A&flat; / B&flat;</span>
+            <span class="aem-modal-origin">Tríade sobre Baixo &bull; B&flat;9sus4</span>
+          </div>
+          <div class="aem-card-body">
+            Tríade de Láb Maior montada sobre o baixo em Si bemol. Cria uma atmosfera moderna de Soul/MPB, gerando tensão sem aspereza antes de repousar suavemente em C7M.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO DE DOMINANTES E INVERSÕES -->
+  <section class="info-section">
+    <h2>Variações Naturais do Dominante (V7)</h2>
+    <p>
+      Além dos Empréstimos Modais, temos as variações diatônicas que exploram a linha do baixo e a eliminação do trítono:
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 1rem;">
+      <div style="background: #f7fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px;">
+        <strong style="color: #2d3748; font-size: 1.1rem; display: block; margin-bottom: 4px;">G7 (Dominante Primário)</strong>
+        <p style="font-size: 0.88rem; color: #4a5568; margin: 0;">
+          A força tradicional da cadência perfeita: o trítono <strong>Si - Fá</strong> tensiona e resolve nas notas <strong>Dó - Mi</strong> do acorde C7M.
+        </p>
+      </div>
+
+      <div style="background: #f7fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px;">
+        <strong style="color: #2d3748; font-size: 1.1rem; display: block; margin-bottom: 4px;">G / B (Primeira Inversão)</strong>
+        <p style="font-size: 0.88rem; color: #4a5568; margin: 0;">
+          Com a sensível (<strong>Si</strong>) no baixo, a condução caminha suavemente meio tom acima em direção à tônica: <code>Ré &rarr; Si &rarr; Dó</code>.
+        </p>
+      </div>
+
+      <div style="background: #f7fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px;">
+        <strong style="color: #2d3748; font-size: 1.1rem; display: block; margin-bottom: 4px;">F / G (V7sus4(9))</strong>
+        <p style="font-size: 0.88rem; color: #4a5568; margin: 0;">
+          Tríade de Fá Maior sobre baixo Sol. Sem a terça (Si), o trítono desaparece, resultando em um acorde aberto, moderno e flutuante.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LABORATÓRIO DE ÁUDIO COM CADÊNCIAS EM CARDS -->
+  <section class="info-section">
+    <h2>Laboratório de Áudio: Ouça as 8 Cadências</h2>
+    <p>
+      Clique nos botões abaixo para ouvir a progressão completa sintetizada no navegador (<code>Dm7 &rarr; [Substituição] &rarr; C7M</code>):
+    </p>
+
+    <div class="cadencias-grid">
+
+      <!-- 1. G7 Padrão -->
+      <div class="cadencia-card">
+        <div class="cad-header">
+          <div class="cad-prog-row">
+            <span class="cad-chord c-orig">Dm<sup>7</sup></span>
+            <span class="cad-arrow">&rarr;</span>
+            <span class="cad-chord c-alvo dom">G<sup>7</sup></span>
+            <span class="cad-arrow">&rarr;</span>
+            <span class="cad-chord c-dest">C7M</span>
+          </div>
+          <button class="btn-ouvir-cadencia" onclick="playCadence([[-10, -3, 0, 5], [-5, -1, 2, 5], [-12, -5, -1, 4]], this)">
+            &#9658; Ouvir Cadência
+          </button>
+        </div>
+        <div class="cad-body">
+          <span class="opt-badge badge-dom">Dominante Padrão</span>
+          <span class="cad-sensacao">Resolução tradicional, tensão clássica do trítono.</span>
+        </div>
+      </div>
+
+      <!-- 2. G / B -->
+      <div class="cadencia-card">
+        <div class="cad-header">
+          <div class="cad-prog-row">
+            <span class="cad-chord c-orig">Dm<sup>7</sup></span>
+            <span class="cad-arrow">&rarr;</span>
+            <span class="cad-chord c-alvo inv">G / B</span>
+            <span class="cad-arrow">&rarr;</span>
+            <span class="cad-chord c-dest">C7M</span>
+          </div>
+          <button class="btn-ouvir-cadencia" onclick="playCadence([[-10, -3, 0, 5], [-1, -5, 2, 7], [-12, -5, -1, 4]], this)">
+            &#9658; Ouvir Cadência
+          </button>
+        </div>
+        <div class="cad-body">
+          <span class="opt-badge badge-inv">Inversão (3ª)</span>
+          <span class="cad-sensacao">Baixo melódico que sobe suavemente por semitom (Si &rarr; Dó).</span>
+        </div>
+      </div>
+
+      <!-- 3. F / G -->
+      <div class="cadencia-card">
+        <div class="cad-header">
+          <div class="cad-prog-row">
+            <span class="cad-chord c-orig">Dm<sup>7</sup></span>
+            <span class="cad-arrow">&rarr;</span>
+            <span class="cad-chord c-alvo sus">F / G</span>
+            <span class="cad-arrow">&rarr;</span>
+            <span class="cad-chord c-dest">C7M</span>
+          </div>
+          <button class="btn-ouvir-cadencia" onclick="playCadence([[-10, -3, 0, 5], [-5, -7, -3, 0, 5], [-12, -5, -1, 4]], this)">
+            &#9658; Ouvir Cadência
+          </button>
+        </div>
+        <div class="cad-body">
+          <span class="opt-badge badge-sus">Dominante Sus4</span>
+          <span class="cad-sensacao">Sonoridade lírica de MPB, elegante e sem agressividade.</span>
+        </div>
+      </div>
+
+      <!-- 4. Fm6 -->
+      <div class="cadencia-card aem-cad">
+        <div class="cad-header">
+          <div class="cad-prog-row">
+            <span class="cad-chord c-orig">Dm<sup>7</sup></span>
+            <span class="cad-arrow">&rarr;</span>
+            <span class="cad-chord c-alvo aem">Fm<sup>6</sup></span>
+            <span class="cad-arrow">&rarr;</span>
+            <span class="cad-chord c-dest">C7M</span>
+          </div>
+          <button class="btn-ouvir-cadencia" onclick="playCadence([[-10, -3, 0, 5], [-7, -4, 0, 2], [-12, -5, -1, 4]], this)">
+            &#9658; Ouvir Cadência
+          </button>
+        </div>
+        <div class="cad-body">
+          <span class="opt-badge badge-aem">AEM (IVm6)</span>
+          <span class="cad-sensacao">O clássico subdominante menor: doce, nostálgico e aveludado.</span>
+        </div>
+      </div>
+
+      <!-- 5. Fm6 / Ab -->
+      <div class="cadencia-card aem-cad">
+        <div class="cad-header">
+          <div class="cad-prog-row">
+            <span class="cad-chord c-orig">Dm<sup>7</sup></span>
+            <span class="cad-arrow">&rarr;</span>
+            <span class="cad-chord c-alvo aem">Fm<sup>6</sup> / A&flat;</span>
+            <span class="cad-arrow">&rarr;</span>
+            <span class="cad-chord c-dest">C7M</span>
+          </div>
+          <button class="btn-ouvir-cadencia" onclick="playCadence([[-10, -3, 0, 5], [-4, -7, 0, 2], [-12, -5, -1, 4]], this)">
+            &#9658; Ouvir Cadência
+          </button>
+        </div>
+        <div class="cad-body">
+          <span class="opt-badge badge-aem">AEM (IVm6/3ª)</span>
+          <span class="cad-sensacao">Dramatismo reforçado pela nota Láb marcando presença no baixo.</span>
+        </div>
+      </div>
+
+      <!-- 6. Ab7M -->
+      <div class="cadencia-card aem-cad">
+        <div class="cad-header">
+          <div class="cad-prog-row">
+            <span class="cad-chord c-orig">Dm<sup>7</sup></span>
+            <span class="cad-arrow">&rarr;</span>
+            <span class="cad-chord c-alvo aem">A&flat;7M</span>
+            <span class="cad-arrow">&rarr;</span>
+            <span class="cad-chord c-dest">C7M</span>
+          </div>
+          <button class="btn-ouvir-cadencia" onclick="playCadence([[-10, -3, 0, 5], [-4, 0, 3, 7], [-12, -5, -1, 4]], this)">
+            &#9658; Ouvir Cadência
+          </button>
+        </div>
+        <div class="cad-body">
+          <span class="opt-badge badge-aem">AEM (&flat;VI7M)</span>
+          <span class="cad-sensacao">Efeito surpreendente e cinematográfico; cor expansiva.</span>
+        </div>
+      </div>
+
+      <!-- 7. Bb7M -->
+      <div class="cadencia-card aem-cad">
+        <div class="cad-header">
+          <div class="cad-prog-row">
+            <span class="cad-chord c-orig">Dm<sup>7</sup></span>
+            <span class="cad-arrow">&rarr;</span>
+            <span class="cad-chord c-alvo aem">B&flat;7M</span>
+            <span class="cad-arrow">&rarr;</span>
+            <span class="cad-chord c-dest">C7M</span>
+          </div>
+          <button class="btn-ouvir-cadencia" onclick="playCadence([[-10, -3, 0, 5], [-2, 2, 5, 9], [-12, -5, -1, 4]], this)">
+            &#9658; Ouvir Cadência
+          </button>
+        </div>
+        <div class="cad-body">
+          <span class="opt-badge badge-aem">AEM (&flat;VII7M)</span>
+          <span class="cad-sensacao">Cadência Backdoor do Jazz: movimento suave de tom inteiro.</span>
+        </div>
+      </div>
+
+      <!-- 8. Ab / Bb -->
+      <div class="cadencia-card aem-cad">
+        <div class="cad-header">
+          <div class="cad-prog-row">
+            <span class="cad-chord c-orig">Dm<sup>7</sup></span>
+            <span class="cad-arrow">&rarr;</span>
+            <span class="cad-chord c-alvo aem">A&flat; / B&flat;</span>
+            <span class="cad-arrow">&rarr;</span>
+            <span class="cad-chord c-dest">C7M</span>
+          </div>
+          <button class="btn-ouvir-cadencia" onclick="playCadence([[-10, -3, 0, 5], [-2, -4, 0, 3], [-12, -5, -1, 4]], this)">
+            &#9658; Ouvir Cadência
+          </button>
+        </div>
+        <div class="cad-body">
+          <span class="opt-badge badge-aem">AEM (Neo-Soul)</span>
+          <span class="cad-sensacao">Combinação de &flat;VI e &flat;VII: moderno, sofisticado e aveludado.</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- POSIÇÕES SUGERIDAS NO VIOLÃO -->
+  <section class="info-section">
+    <h2>Dicionário Prático: Formações no Violão</h2>
+    <p>
+      Posições recomendadas no braço do violão (com cordas 6ª à 1ª indicadas: <code>X</code> = corda abafada/não tocada):
+    </p>
+
+    <div class="posicoes-grid">
+      <div class="posicao-card">
+        <div class="posicao-nome">Dm7</div>
+        <div class="posicao-cifra">X 5 7 5 6 5</div>
+        <div class="posicao-desc">Ou simples na 1ª posição: <code>X X 0 2 1 1</code>.</div>
+      </div>
+
+      <div class="posicao-card">
+        <div class="posicao-nome">G7</div>
+        <div class="posicao-cifra">3 X 3 4 3 X</div>
+        <div class="posicao-desc">Voicing limpo de bossa sem a quinta redundante.</div>
+      </div>
+
+      <div class="posicao-card">
+        <div class="posicao-nome">G / B</div>
+        <div class="posicao-cifra">X 2 0 0 3 3</div>
+        <div class="posicao-desc">Ou fechado: <code>7 X 5 7 8 X</code>.</div>
+      </div>
+
+      <div class="posicao-card">
+        <div class="posicao-nome">F / G</div>
+        <div class="posicao-cifra">3 X 3 2 1 1</div>
+        <div class="posicao-desc">Baixo com o polegar na 6ª corda e pestana em Fá.</div>
+      </div>
+
+      <div class="posicao-card aem-pos">
+        <div class="posicao-nome">Fm6 (AEM)</div>
+        <div class="posicao-cifra">1 X 0 1 1 X</div>
+        <div class="posicao-desc">Ou agudo: <code>X X 3 1 3 1</code>.</div>
+      </div>
+
+      <div class="posicao-card aem-pos">
+        <div class="posicao-nome">Fm6 / Ab (AEM)</div>
+        <div class="posicao-cifra">4 X 3 5 3 X</div>
+        <div class="posicao-desc">Baixo no Láb (4ª casa da 6ª corda).</div>
+      </div>
+
+      <div class="posicao-card aem-pos">
+        <div class="posicao-nome">Ab7M (AEM)</div>
+        <div class="posicao-cifra">4 X 5 5 4 X</div>
+        <div class="posicao-desc">Formação clássica de 7ª Maior com tônica na 6ª corda.</div>
+      </div>
+
+      <div class="posicao-card aem-pos">
+        <div class="posicao-nome">Bb7M (AEM)</div>
+        <div class="posicao-cifra">6 X 7 7 6 X</div>
+        <div class="posicao-desc">Ou na 5ª corda: <code>X 1 3 2 3 1</code>.</div>
+      </div>
+
+      <div class="posicao-card aem-pos">
+        <div class="posicao-nome">Ab / Bb (AEM)</div>
+        <div class="posicao-cifra">6 X 6 5 4 X</div>
+        <div class="posicao-desc">Baixo em Sib e tríade de Láb nas cordas agudas.</div>
+      </div>
+
+      <div class="posicao-card" style="border-left-color: #2f855a;">
+        <div class="posicao-nome">C7M</div>
+        <div class="posicao-cifra">X 3 5 4 5 3</div>
+        <div class="posicao-desc">Ou na 1ª posição: <code>X 3 2 0 0 0</code>.</div>
+      </div>
+
+      <div class="posicao-card" style="border-left-color: #2f855a;">
+        <div class="posicao-nome">C7M(9) / Cmaj9</div>
+        <div class="posicao-cifra">X 3 2 4 3 X</div>
+        <div class="posicao-desc">Típico acorde de Bossa Nova com a 9ª no dedo 4.</div>
+      </div>
+
+      <div class="posicao-card" style="border-left-color: #2f855a;">
+        <div class="posicao-nome">Cmaj13</div>
+        <div class="posicao-cifra">X 3 2 2 0 0</div>
+        <div class="posicao-desc">Ou na casa 8: <code>8 X 9 9 10 X</code>.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DICA DE OURO E RESSALVA HARMÔNICA -->
+  <div class="dica-box">
+    <p style="margin-top: 0; margin-bottom: 0.85rem;">
+      <strong>Dica Prática para o Violonista:</strong>
+      Experimente pegar uma música que você já toca com a sequência tradicional <code>Dm7 &rarr; G7 &rarr; C7M</code> (como <em>Wave</em>, <em>Corcovado</em> ou <em>Chega de Saudade</em>) e teste substituir o <strong>G7</strong> por <strong>Fm6</strong> ou por <strong>A&flat;7M</strong>. Perceba imediatamente como a sonoridade ganha um colorido mais profundo e refinado!
+    </p>
+
+    <div style="background: #ffffff; border: 1.5px solid #feb2b2; border-left: 4px solid #e53e3e; border-radius: 6px; padding: 12px 14px; margin-top: 12px;">
+      <strong style="color: #c53030; display: flex; align-items: center; gap: 6px; margin-bottom: 6px; font-size: 0.98rem;">
+        ⚠️ Ressalva Fundamental ao Estudante: Atenção à Melodia!
+      </strong>
+      <span style="color: #2d3748; font-size: 0.92rem; line-height: 1.55; display: block;">
+        Ao rearmonizar e aplicar essas substituições no trecho <strong>II - V - I</strong>, fique sempre muito atento à <strong>nota da melodia</strong> executada ou cantada naquele compasso exato, para <strong>não ocorrer choque sonoro</strong> entre a melodia e as notas do novo acorde.<br><br>
+        <em>Exemplo:</em> Se a melodia repousar sobre a nota <strong>Si natural</strong> (a terça maior de G7), usar um <strong>A&flat;7M</strong> ou <strong>B&flat;7M</strong> poderá criar um atrito indesejado de semitom com o <em>Láb</em> ou <em>Sib</em>.<br>
+        <strong>Regra de ouro:</strong> <em>a melodia é soberana! O acorde escolhido deve sempre acolher, apoiar e valorizar a melodia, nunca brigar com ela.</em>
+      </span>
+    </div>
+  </div>
+
+  <!-- CRÉDITOS E AUTORIA -->
+  <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; font-size: 0.95rem; color: #718096; text-align: center; line-height: 1.6;">
+    <div>Créditos: <a href="https://www.instagram.com/andessonpiano?mdxt=MXJ3bnIzYjBlbW1maw==" target="_blank" rel="noopener noreferrer" style="color: #2b6cb0; font-weight: bold; text-decoration: underline;">Andersson Piano</a></div>
+    <div style="font-size: 0.88rem; margin-top: 4px; color: #718096; font-style: italic;">
+      Adaptação ao violão site Cordas e Vida, por Moacir Báia, com autorização.
+    </div>
+  </div>
+
+</div>
