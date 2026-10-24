@@ -233,6 +233,9 @@ window.playScale = function(intervals, btnElement) {
   }
   
   playingButton = btnElement;
+  if (!btnElement.dataset.originalText) {
+    btnElement.dataset.originalText = btnElement.innerHTML;
+  }
   btnElement.style.backgroundColor = '#28a745';
   btnElement.innerHTML = '&#9632; Parar';
   
@@ -271,6 +274,70 @@ window.playScale = function(intervals, btnElement) {
   activeTimeouts.push(finishTimeout);
 };
 
+// Funcionalidade de Áudio para Cadências e Acordes
+window.playCadence = function(chordList, btnElement) {
+  if (playingButton === btnElement) {
+    stopScale();
+    return;
+  }
+  
+  stopScale();
+
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  if (audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+
+  playingButton = btnElement;
+  if (!btnElement.dataset.originalText) {
+    btnElement.dataset.originalText = btnElement.innerHTML;
+  }
+  btnElement.style.backgroundColor = '#28a745';
+  btnElement.innerHTML = '&#9632; Parar';
+
+  const baseFreq = 261.63; // C4
+  let currentTime = audioCtx.currentTime;
+
+  chordList.forEach((chordNotes, chordIdx) => {
+    const chordStartTime = currentTime + (chordIdx * 1.4);
+    chordNotes.forEach((semitones, noteIdx) => {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      osc.type = 'triangle';
+      osc.frequency.value = baseFreq * Math.pow(2, semitones / 12);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      const noteStartTime = chordStartTime + (noteIdx * 0.035);
+      const isLast = (chordIdx === chordList.length - 1);
+      const noteDuration = isLast ? 2.2 : 1.35;
+
+      gain.gain.setValueAtTime(0, noteStartTime);
+      gain.gain.linearRampToValueAtTime(0.18, noteStartTime + 0.04);
+      gain.gain.exponentialRampToValueAtTime(0.001, noteStartTime + noteDuration);
+
+      osc.start(noteStartTime);
+      osc.stop(noteStartTime + noteDuration);
+
+      activeOscillators.push(osc);
+    });
+  });
+
+  const totalDurationMs = (chordList.length * 1.4 + 1.0) * 1000;
+  const finishTimeout = setTimeout(() => {
+    resetButton(btnElement);
+    playingButton = null;
+    activeOscillators = [];
+    activeTimeouts = [];
+  }, totalDurationMs);
+
+  activeTimeouts.push(finishTimeout);
+};
+
 window.stopScale = function() {
   if (playingButton) {
     resetButton(playingButton);
@@ -287,5 +354,5 @@ window.stopScale = function() {
 function resetButton(btnElement) {
   if (!btnElement) return;
   btnElement.style.backgroundColor = '';
-  btnElement.innerHTML = '&#9658; Ouvir';
+  btnElement.innerHTML = btnElement.dataset.originalText || '&#9658; Ouvir';
 }

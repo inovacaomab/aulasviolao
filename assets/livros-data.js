@@ -37,7 +37,8 @@ const bibliotecaData = [
           { titulo: "1. Introdução ao Campo Harmônico", arquivo: "livros/harmonia/01-introducao-campo-harmonico.html" },
           { titulo: "2. Funções Harmônicas", arquivo: "livros/harmonia/02-funcoes-harmonicas.html" },
           { titulo: "3. Intervalos", arquivo: "livros/harmonia/03-intervalos.html" },
-          { titulo: "4. Progressões Harmônicas - Cadências", arquivo: "livros/harmonia/04-progressoes-e-cadencias.html" }
+          { titulo: "4. Progressões Harmônicas - Cadências", arquivo: "livros/harmonia/04-progressoes-e-cadencias.html" },
+          { titulo: "5. Substituições para Progressão IIm7 - V7 - I7M", arquivo: "livros/harmonia/05-substituicoes-ii-v-i.html" }
         ]
       }
     ]
