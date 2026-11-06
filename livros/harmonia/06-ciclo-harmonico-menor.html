@@ -1,0 +1,628 @@
+<style>
+/* Estilos para a aula Ciclo Harmônico Menor */
+.ciclo-menor-lesson {
+  font-family: inherit;
+  line-height: 1.6;
+  color: #333;
+}
+
+.ciclo-menor-lesson h1 {
+  font-size: 1.8rem;
+  color: #1a252f;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.75rem;
+}
+
+.lesson-subtitle {
+  font-size: 1.05rem;
+  color: #4a5568;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+/* Caixa Fórmula dos Graus */
+.formula-box {
+  background: #ffffff;
+  border: 2px solid #2b6cb0;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0 2rem 0;
+  box-shadow: 0 4px 6px rgba(43, 108, 176, 0.08);
+  text-align: center;
+}
+
+.formula-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #2b6cb0;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.formula-graus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.grau-pill {
+  background: #ebf8ff;
+  border: 1px solid #bee3f8;
+  color: #2b6cb0;
+  padding: 4px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.grau-pill.destaque-v7 {
+  background: #fff5f5;
+  border-color: #feb2b2;
+  color: #c53030;
+}
+
+.grau-pill.prep {
+  background: #edf2f7;
+  border-color: #cbd5e0;
+  color: #4a5568;
+}
+
+.formula-arrow {
+  color: #a0aec0;
+  font-weight: bold;
+}
+
+/* Painel da Tabela Principal */
+.tabela-ciclo-wrapper {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.tabela-header-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.legenda-ciclo {
+  display: flex;
+  gap: 14px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-wrap: wrap;
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.leg-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.leg-color.bemois { background: #2b6cb0; }
+.leg-color.sustenidos { background: #c53030; }
+
+.scroll-hint {
+  font-size: 0.78rem;
+  color: #718096;
+  font-style: italic;
+}
+
+/* Tabela Responsiva com Scroll Horizontal Suave */
+.table-scroll-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.ciclo-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 680px;
+  font-size: 0.95rem;
+}
+
+.ciclo-table th {
+  background: #f7fafc;
+  color: #2d3748;
+  padding: 10px 12px;
+  text-align: center;
+  font-weight: 800;
+  border-bottom: 2px solid #cbd5e0;
+  white-space: nowrap;
+  font-size: 0.88rem;
+}
+
+.ciclo-table th:first-child {
+  text-align: left;
+  padding-left: 16px;
+}
+
+.ciclo-table td {
+  padding: 10px 12px;
+  text-align: center;
+  border-bottom: 1px solid #edf2f7;
+  white-space: nowrap;
+  font-weight: 700;
+  font-family: inherit;
+}
+
+.ciclo-table td:first-child {
+  text-align: left;
+  padding-left: 16px;
+  font-weight: 800;
+}
+
+/* Estilo do bloco de Bemóis (Azul) */
+.row-bemois td {
+  color: #2b6cb0;
+  background-color: #ffffff;
+}
+
+.row-bemois:hover td {
+  background-color: #f0f7ff;
+}
+
+/* Estilo do bloco de Sustenidos (Vermelho) */
+.row-sustenidos td {
+  color: #c53030;
+  background-color: #ffffff;
+}
+
+.row-sustenidos:hover td {
+  background-color: #fff5f5;
+}
+
+/* Destaque para o acorde de preparação (V7) */
+.td-prep {
+  font-weight: 800;
+  opacity: 0.9;
+}
+
+.row-bemois .td-prep { color: #d97706; }
+.row-sustenidos .td-prep { color: #d97706; }
+
+/* Linha de repetição do ciclo */
+.row-loop td {
+  background-color: #fffaf0 !important;
+  color: #b7791f !important;
+  border-bottom: 2px solid #feebc8;
+}
+
+/* Repetição do Ciclo Banner */
+.ciclo-loop-banner {
+  background: #fffaf0;
+  border: 1px solid #feebc8;
+  border-left: 4px solid #dd6b20;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #7b341e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Player de Áudio Am */
+.player-box {
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.player-info strong {
+  display: block;
+  font-size: 1.05rem;
+  color: #2d3748;
+}
+
+.player-info span {
+  font-size: 0.88rem;
+  color: #718096;
+}
+
+/* Cards Explicativos */
+.explicacao-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin: 1.5rem 0;
+}
+
+.exp-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 14px 16px;
+  border-left: 4px solid #2b6cb0;
+}
+
+.exp-card.vermelho {
+  border-left-color: #c53030;
+}
+
+.exp-card.dourado {
+  border-left-color: #d97706;
+}
+
+.exp-title {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #2d3748;
+  margin-bottom: 6px;
+}
+
+.exp-desc {
+  font-size: 0.88rem;
+  color: #4a5568;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Dica de Ouro */
+.dica-box {
+  background: #ebf8ff;
+  border-left: 4px solid #3182ce;
+  border-radius: 6px;
+  padding: 1.25rem;
+  margin: 2rem 0;
+  font-size: 0.95rem;
+  color: #2c5282;
+}
+
+.dica-box strong {
+  color: #2b6cb0;
+}
+</style>
+
+<div class="ciclo-menor-lesson">
+  <h1>Ciclo Harmônico Menor</h1>
+  <div class="lesson-subtitle">
+    O estudo completo da progressão circular por quartas nas 12 tonalidades menores com acordes tétrades e modulação contínua.
+  </div>
+
+  <section>
+    <p>
+      O <strong>Ciclo Harmônico Menor</strong> é uma das estruturas mais ricas e indispensáveis de toda a harmonia tonal.
+      Ele encadeia todos os acordes do campo harmônico menor em um movimento contínuo de <strong>quartas justas ascendentes</strong> (ou quintas descendentes), criando a condução melódica e harmônica mais natural e fluida para o ouvido humano.
+    </p>
+    <p>
+      Essa progressão é a base estrutural de grandes clássicos da música ocidental, como os <em>concertos barrocos de Vivaldi e Bach</em>, o standard de jazz <strong>"Autumn Leaves"</strong> (<em>Les Feuilles Mortes</em>), a canção <strong>"Fly Me to the Moon"</strong> e inúmeras composições da MPB e Bossa Nova.
+    </p>
+  </section>
+
+  <!-- FÓRMULA DOS GRAUS -->
+  <div class="formula-box">
+    <span class="formula-title">Fórmula Geral dos Graus no Ciclo Menor</span>
+    <div class="formula-graus">
+      <span class="grau-pill">Im<sup>7</sup></span>
+      <span class="formula-arrow">&rarr;</span>
+      <span class="grau-pill">IVm<sup>7</sup></span>
+      <span class="formula-arrow">&rarr;</span>
+      <span class="grau-pill">VII<sup>7</sup></span>
+      <span class="formula-arrow">&rarr;</span>
+      <span class="grau-pill">III7M</span>
+      <span class="formula-arrow">&rarr;</span>
+      <span class="grau-pill">VI7M</span>
+      <span class="formula-arrow">&rarr;</span>
+      <span class="grau-pill">II&empty;</span>
+      <span class="formula-arrow">&rarr;</span>
+      <span class="grau-pill destaque-v7">V<sup>7</sup></span>
+      <span class="formula-arrow">&rarr;</span>
+      <span class="grau-pill">Im<sup>7</sup></span>
+      <span class="formula-arrow">&rarr;</span>
+      <span class="grau-pill prep">(V<sup>7</sup>)</span>
+    </div>
+  </div>
+
+  <!-- PLAYER DE ÁUDIO INTERATIVO -->
+  <div class="player-box">
+    <div class="player-info">
+      <strong>Ouça o Ciclo Completo em Lá Menor (Am)</strong>
+      <span>Am7 &rarr; Dm7 &rarr; G7 &rarr; C7M &rarr; F7M &rarr; B&empty; &rarr; E7 &rarr; Am7</span>
+    </div>
+    <button class="btn-ouvir-cadencia" onclick="playCadence([[-12, -9, -5, 0], [-10, -7, -3, 5], [-5, -1, 2, 5], [-12, -5, -1, 4], [-7, -3, 0, 4], [-13, -7, -2, 2], [-8, -4, -1, 2], [-12, -9, -5, 0]], this)">
+      &#9658; Ouvir Ciclo em Am
+    </button>
+  </div>
+
+  <!-- TABELA COMPLETA DAS 12 TONALIDADES -->
+  <div class="tabela-ciclo-wrapper">
+    <div class="tabela-header-info">
+      <div class="legenda-ciclo">
+        <div class="legenda-item">
+          <span class="leg-color bemois"></span>
+          <span>Ciclo usando Bemóis (4ª &darr;)</span>
+        </div>
+        <div class="legenda-item">
+          <span class="leg-color sustenidos"></span>
+          <span>Ciclo usando Sustenidos (5ª &uarr;)</span>
+        </div>
+      </div>
+      <div class="scroll-hint">&larr; Deslize para visualizar todas as colunas &rarr;</div>
+    </div>
+
+    <div class="table-scroll-container">
+      <table class="ciclo-table">
+        <thead>
+          <tr>
+            <th>Tom</th>
+            <th>Im<sup>7</sup></th>
+            <th>IVm<sup>7</sup></th>
+            <th>VII<sup>7</sup></th>
+            <th>III7M</th>
+            <th>VI7M</th>
+            <th>II&empty;</th>
+            <th>V<sup>7</sup></th>
+            <th>Im<sup>7</sup></th>
+            <th>(V<sup>7</sup>) Prep</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- 1. Am -->
+          <tr class="row-bemois">
+            <td>Am</td>
+            <td>Am<sup>7</sup></td>
+            <td>Dm<sup>7</sup></td>
+            <td>G<sup>7</sup></td>
+            <td>C7M</td>
+            <td>F7M</td>
+            <td>B&empty;</td>
+            <td>E<sup>7</sup></td>
+            <td>Am<sup>7</sup></td>
+            <td class="td-prep">(A<sup>7</sup>)</td>
+          </tr>
+
+          <!-- 2. Dm -->
+          <tr class="row-bemois">
+            <td>Dm</td>
+            <td>Dm<sup>7</sup></td>
+            <td>Gm<sup>7</sup></td>
+            <td>C<sup>7</sup></td>
+            <td>F7M</td>
+            <td>B&flat;7M</td>
+            <td>E&empty;</td>
+            <td>A<sup>7</sup></td>
+            <td>Dm<sup>7</sup></td>
+            <td class="td-prep">(D<sup>7</sup>)</td>
+          </tr>
+
+          <!-- 3. Gm -->
+          <tr class="row-bemois">
+            <td>Gm</td>
+            <td>Gm<sup>7</sup></td>
+            <td>Cm<sup>7</sup></td>
+            <td>F<sup>7</sup></td>
+            <td>B&flat;7M</td>
+            <td>E&flat;7M</td>
+            <td>A&empty;</td>
+            <td>D<sup>7</sup></td>
+            <td>Gm<sup>7</sup></td>
+            <td class="td-prep">(G<sup>7</sup>)</td>
+          </tr>
+
+          <!-- 4. Cm -->
+          <tr class="row-bemois">
+            <td>Cm</td>
+            <td>Cm<sup>7</sup></td>
+            <td>Fm<sup>7</sup></td>
+            <td>B&flat;<sup>7</sup></td>
+            <td>E&flat;7M</td>
+            <td>A&flat;7M</td>
+            <td>D&empty;</td>
+            <td>G<sup>7</sup></td>
+            <td>Cm<sup>7</sup></td>
+            <td class="td-prep">(C<sup>7</sup>)</td>
+          </tr>
+
+          <!-- 5. Fm -->
+          <tr class="row-bemois">
+            <td>Fm</td>
+            <td>Fm<sup>7</sup></td>
+            <td>B&flat;m<sup>7</sup></td>
+            <td>E&flat;<sup>7</sup></td>
+            <td>A&flat;7M</td>
+            <td>D&flat;7M</td>
+            <td>G&empty;</td>
+            <td>C<sup>7</sup></td>
+            <td>Fm<sup>7</sup></td>
+            <td class="td-prep">(F<sup>7</sup>)</td>
+          </tr>
+
+          <!-- 6. Bbm -->
+          <tr class="row-bemois">
+            <td>B&flat;m</td>
+            <td>B&flat;m<sup>7</sup></td>
+            <td>E&flat;m<sup>7</sup></td>
+            <td>A&flat;<sup>7</sup></td>
+            <td>D&flat;7M</td>
+            <td>G&flat;7M</td>
+            <td>C&empty;</td>
+            <td>F<sup>7</sup></td>
+            <td>B&flat;m<sup>7</sup></td>
+            <td class="td-prep">(B&flat;<sup>7</sup>)</td>
+          </tr>
+
+          <!-- 7. Ebm -->
+          <tr class="row-bemois">
+            <td>E&flat;m</td>
+            <td>E&flat;m<sup>7</sup></td>
+            <td>A&flat;m<sup>7</sup></td>
+            <td>D&flat;<sup>7</sup></td>
+            <td>G&flat;7M</td>
+            <td>C&flat;7M</td>
+            <td>F&empty;</td>
+            <td>B&flat;<sup>7</sup></td>
+            <td>E&flat;m<sup>7</sup></td>
+            <td class="td-prep">(E&flat;<sup>7</sup>)</td>
+          </tr>
+
+          <!-- 8. G#m -->
+          <tr class="row-sustenidos">
+            <td>G&sharp;m</td>
+            <td>G&sharp;m<sup>7</sup></td>
+            <td>C&sharp;m<sup>7</sup></td>
+            <td>F&sharp;<sup>7</sup></td>
+            <td>B7M</td>
+            <td>E7M</td>
+            <td>A&sharp;&empty;</td>
+            <td>D&sharp;<sup>7</sup></td>
+            <td>G&sharp;m<sup>7</sup></td>
+            <td class="td-prep">(G&sharp;<sup>7</sup>)</td>
+          </tr>
+
+          <!-- 9. C#m -->
+          <tr class="row-sustenidos">
+            <td>C&sharp;m</td>
+            <td>C&sharp;m<sup>7</sup></td>
+            <td>F&sharp;m<sup>7</sup></td>
+            <td>B<sup>7</sup></td>
+            <td>E7M</td>
+            <td>A7M</td>
+            <td>D&sharp;&empty;</td>
+            <td>G&sharp;<sup>7</sup></td>
+            <td>C&sharp;m<sup>7</sup></td>
+            <td class="td-prep">(C&sharp;<sup>7</sup>)</td>
+          </tr>
+
+          <!-- 10. F#m -->
+          <tr class="row-sustenidos">
+            <td>F&sharp;m</td>
+            <td>F&sharp;m<sup>7</sup></td>
+            <td>Bm<sup>7</sup></td>
+            <td>E<sup>7</sup></td>
+            <td>A7M</td>
+            <td>D7M</td>
+            <td>G&sharp;&empty;</td>
+            <td>C&sharp;<sup>7</sup></td>
+            <td>F&sharp;m<sup>7</sup></td>
+            <td class="td-prep">(F&sharp;<sup>7</sup>)</td>
+          </tr>
+
+          <!-- 11. Bm -->
+          <tr class="row-sustenidos">
+            <td>Bm</td>
+            <td>Bm<sup>7</sup></td>
+            <td>Em<sup>7</sup></td>
+            <td>A<sup>7</sup></td>
+            <td>D7M</td>
+            <td>G7M</td>
+            <td>C&sharp;&empty;</td>
+            <td>F&sharp;<sup>7</sup></td>
+            <td>Bm<sup>7</sup></td>
+            <td class="td-prep">(B<sup>7</sup>)</td>
+          </tr>
+
+          <!-- 12. Em -->
+          <tr class="row-sustenidos">
+            <td>Em</td>
+            <td>Em<sup>7</sup></td>
+            <td>Am<sup>7</sup></td>
+            <td>D<sup>7</sup></td>
+            <td>G7M</td>
+            <td>C7M</td>
+            <td>F&sharp;&empty;</td>
+            <td>B<sup>7</sup></td>
+            <td>Em<sup>7</sup></td>
+            <td class="td-prep">(E<sup>7</sup>)</td>
+          </tr>
+
+          <!-- 13. Am (Fechamento) -->
+          <tr class="row-loop">
+            <td>Am</td>
+            <td>Am<sup>7</sup></td>
+            <td>Dm<sup>7</sup></td>
+            <td>G<sup>7</sup></td>
+            <td>C7M</td>
+            <td>F7M</td>
+            <td>B&empty;</td>
+            <td>E<sup>7</sup></td>
+            <td>Am<sup>7</sup></td>
+            <td class="td-prep">(A<sup>7</sup>)</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ciclo-loop-banner">
+      <div>
+        <strong>&crarr; Repete o ciclo!</strong> Chegando novamente em <strong>Am7</strong>, a progressão fecha o círculo harmônico das 12 tonalidades menores.
+      </div>
+      <div style="font-size: 0.8rem; font-style: italic;">@andessonpiano</div>
+    </div>
+  </div>
+
+  <!-- SEÇÃO DE ANÁLISE TEÓRICA -->
+  <section style="margin: 2.5rem 0;">
+    <h2>Entendendo a Lógica do Ciclo</h2>
+
+    <div class="explicacao-grid">
+      
+      <div class="exp-card">
+        <div class="exp-title">1. A Condução por Quartas</div>
+        <p class="exp-desc">
+          Dentro de cada linha, repare na raiz de cada acorde: <code>A &rarr; D &rarr; G &rarr; C &rarr; F &rarr; B &rarr; E &rarr; A</code>. Todos os acordes caminham a uma distância de <strong>quarta justa</strong> ascendente, aproveitando a máxima atração harmônica tonal.
+        </p>
+      </div>
+
+      <div class="exp-card dourado">
+        <div class="exp-title">2. O Acorde Preparatório (V7)</div>
+        <p class="exp-desc">
+          Ao final de cada linha, o acorde entre parênteses <code>(V7)</code> atua como <strong>dominante secundário</strong> preparando a tônica da linha seguinte. Exemplo: em Lá Menor, o <strong>A7</strong> é o dominante que conduz com precisão para <strong>Dm7</strong>!
+        </p>
+      </div>
+
+      <div class="exp-card vermelho">
+        <div class="exp-title">3. Bemóis vs. Sustenidos</div>
+        <p class="exp-desc">
+          O ciclo inicia no tom neutro de <strong>Am</strong>, desce pelas armaduras com bemóis até <strong>E&flat;m</strong> (6 bemóis), onde se conecta enarmonicamente com <strong>G&sharp;m</strong> (5 sustenidos), subindo até retornar perfeitamente para <strong>Am</strong>.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DICA PARA O VIOLONISTA -->
+  <div class="dica-box">
+    <strong>Dica Prática para o Violonista:</strong>
+    Ao praticar esse ciclo no braço do violão, procure manter os acordes em regiões próximas (sem dar grandes saltos de casas). Preste atenção especial na digitação dos acordes meio-diminutos (<strong>&empty;</strong> ou <code>m7(b5)</code>), como o <strong>B&empty;</strong> (<code>X 2 3 2 3 X</code>) e o <strong>E&empty;</strong> (<code>X X 2 3 3 3</code> ou <code>X 7 8 7 8 X</code>), que proporcionam a clássica preparação para o acorde dominante!
+  </div>
+
+  <!-- CRÉDITOS E AUTORIA -->
+  <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; font-size: 0.95rem; color: #718096; text-align: center; line-height: 1.6;">
+    <div>Créditos: <a href="https://www.instagram.com/andessonpiano?mdxt=MXJ3bnIzYjBlbW1maw==" target="_blank" rel="noopener noreferrer" style="color: #2b6cb0; font-weight: bold; text-decoration: underline;">Andersson Piano</a></div>
+    <div style="font-size: 0.88rem; margin-top: 4px; color: #718096; font-style: italic;">
+      Adaptação ao violão site Cordas e Vida, por Moacir Báia, com autorização.
+    </div>
+  </div>
+
+</div>
