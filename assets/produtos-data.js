@@ -322,6 +322,13 @@ const catalogo = [
         "linkProduto": "https://www.mercadolivre.com.br/violao-presenca-brasil-flat-eletrico-rozini-rx515-rx-515/up/MLBU1967047664",
         "linkAfiliado": "https://meli.la/1t4RTEw",
         "imagem": "img/produtos/violao-eletroacustico-rozini-presenca-brasil-rx515-flat.webp"
+      },
+      {
+        "nome": "Violão Elétrico Folk Rozini RX320 Premium (Natural)",
+        "descricao": "Folk brasileiro de alto padrão com projeção encorpada, madeiras selecionadas e ótima captação.",
+        "linkProduto": "https://www.mercadolivre.com.br/violao-eletrico-premium-folk-rozini-rx320-6-cordas-natural-orientacao-da-mao-destro/p/MLB21914713",
+        "linkAfiliado": "https://meli.la/334UW8t",
+        "imagem": "img/produtos/violao-eletrico-folk-rozini-rx320-natural.webp"
       }
     ]
   },
