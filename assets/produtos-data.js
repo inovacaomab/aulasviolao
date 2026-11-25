@@ -35,6 +35,20 @@ const catalogo = [
         "imagem": "img/produtos/encordoamento-elixir-0-11-custom-light-violao-aco.webp"
       },
       {
+        "nome": "Encordoamento Elixir 0.12 Light Phosphor Bronze 16052 (violão aço)",
+        "descricao": "Timbre encorpado e quente com proteção Nanoweb de altíssima durabilidade.",
+        "linkProduto": "https://www.mercadolivre.com.br/encordoamento-elixir-012-violao-aco-phosphor-bronze-16052/up/MLBU4550388965",
+        "linkAfiliado": "https://meli.la/2NSgRuE",
+        "imagem": "img/produtos/encordoamento-elixir-0-12-phosphor-bronze-16052-violao-aco.webp"
+      },
+      {
+        "nome": "Encordoamento Elixir 0.13 HD Light Nanoweb 16182 (violão aço)",
+        "descricao": "Agudos articulados e graves cheios com revestimento Nanoweb de longa duração.",
+        "linkProduto": "https://www.mercadolivre.com.br/encordoamento-elixir-violao-013-aco-nanoweb-hd-light-16182/up/MLBU1136702449",
+        "linkAfiliado": "https://meli.la/29aqWQg",
+        "imagem": "img/produtos/encordoamento-elixir-0-13-nanoweb-hd-light-16182-violao-aco.webp"
+      },
+      {
         "nome": "Encordoamento Savarez New Cristal Cantiga Premium 510CRP (nylon)",
         "descricao": "Referência mundial para violão de nylon: alta projeção, clareza e riqueza de timbres.",
         "linkProduto": "https://www.mercadolivre.com.br/cordas-violao-savarez-new-cristal-cantiga-premium-510crp/p/MLB22773062",
